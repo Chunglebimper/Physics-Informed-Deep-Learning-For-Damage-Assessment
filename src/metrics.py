@@ -1,4 +1,5 @@
 from sklearn.metrics import confusion_matrix, f1_score
+import numpy as np
 
 # Compute confusion matrix for ordinal classes
 def compute_ordinal_conf_matrix(y_true, y_pred, num_classes=5):
