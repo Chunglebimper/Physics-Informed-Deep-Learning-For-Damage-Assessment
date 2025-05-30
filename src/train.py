@@ -1,4 +1,6 @@
 import os
+from log import Log
+import time
 import torch
 import torch.nn.functional as F
 import numpy as np
@@ -11,8 +13,24 @@ from utils import get_class_weights, analyze_class_distribution
 from visuals import plot_loss_curves, plot_multiclass_roc, visualize_predictions
 from sklearn.metrics import accuracy_score, f1_score, precision_score
 
-# Function to train and evaluate the model
+# Function to train and evaluate the model with logging
 def train_and_eval(use_glcm, patch_size, stride, batch_size, epochs, lr, root):
+    # create log file
+    log = Log()
+    log.open()
+    params = use_glcm, patch_size, stride, batch_size, epochs, lr, root
+    # begin logging
+    log.append(f'{" Running config ":=^105}\n'
+                f'{"".join(f"{str(i):<{15}}" for i in ("use_glcm", "patch_size", "stride", "batch_size", "epochs", "lr", "root"))}\n'
+                f'{105 * "-"}\n'
+                f'{"".join(f"{i:<{15}}" for i in (params))}\n'
+                f'{105 * "-"}\n'
+                f"{'Training on CUDA cores':<30}: {str(torch.cuda.is_available())}\n"
+                f"{'Training with texture loss':<30}: {str(use_glcm)}\n"          
+                f'{105 * "-"}'
+                )
+
+    print(f'Training on cuda cores: {torch.cuda.is_available()}')
     print(f"Training with texture loss: {use_glcm}")
     # Define data paths
     train_pre = os.path.join(root, "img_pre")
@@ -48,6 +66,7 @@ def train_and_eval(use_glcm, patch_size, stride, batch_size, epochs, lr, root):
     # Training loop over epochs
     for epoch in range(epochs):
         print(f"\nEpoch {epoch + 1}/{epochs}")
+        start_time = time.perf_counter()  # Record the start time           PART OF TIME FUNCTION
         model.train()
         if epoch < 3:
             # Freeze early layers to stabilize training
@@ -108,6 +127,14 @@ def train_and_eval(use_glcm, patch_size, stride, batch_size, epochs, lr, root):
         print(f"Macro F1 Score: {macro_f1:.4f}")
         print(f"xView2 Score: {xview2:.4f}")
 
+        end_time = time.perf_counter()  # Record the end time                 PART OF TIME FUNCTION
+        elapsed_time = end_time - start_time                                # PART OF TIME FUNCTION
+        hours = int(elapsed_time // 3600)                                   # PART OF TIME FUNCTION
+        minutes = int((elapsed_time % 3600) // 60)                          # PART OF TIME FUNCTION
+        seconds = int(elapsed_time % 60)                                    # PART OF TIME FUNCTION
+        print(f"Epoch {epoch+1} took: {hours: >2} hours, {minutes: >2} minutes, {seconds: >2} seconds")   # PART OF TIME FUNCTION
+
+
         # Track best scores and save model
         if xview2 > best_xview2:
             best_acc = acc
@@ -118,19 +145,42 @@ def train_and_eval(use_glcm, patch_size, stride, batch_size, epochs, lr, root):
             best_true = y_true
             best_preds = y_pred
 
+        # ----------------------LOG-----------------------
+        log.append(f"{'Epoch':<30}: {epoch + 1}/{epochs}")
+        log.append(f"{'Train Loss':<30}: {train_loss:.4f}")
+        log.append(f"{'Confusion Matrix':<30}:\n{cm}")
+        log.append(f"{'Validation Accuracy':<30}: {acc:.4f}")
+        log.append(f"{'Macro F1 Score':<30}: {macro_f1:.4f}")
+        log.append(f"{'xView2 Score':<30}: {xview2:.4f}")
+        log.append(f"{'Epoch Duration':<30}: {hours:>2} hours, {minutes:>2} minutes, {seconds:>2} seconds")
+        if epoch + 1 < epochs:      # if all epochs printed, dont add seperator
+            log.append("-" * 67)
+        # ------------------------------------------------
+
+
     # Final metrics
     print("=== FINAL EVALUATION ===")
     print(f"Best Accuracy: {best_acc:.4f}")
     print(f"Best Macro F1: {best_macro_f1:.4f}")
     print(f"Best xView2 Score: {best_xview2:.4f}")
+    #----------------------LOG-----------------------
+    log.append(f"{' FINAL EVALUATION ':=^105}")
+    log.append(f"{'Best Accuracy':<30}: {best_acc:.4f}")
+    log.append(f"{'Best Macro F1: ':<30}: {best_macro_f1:.4f}")
+    log.append(f"{'Best xView2 Score':<30}: {best_xview2:.4f}")
+    #------------------------------------------------
 
     # Precision calculation
     precision_per_class = precision_score(best_true, best_preds, average=None, labels=range(5))
     macro_precision = precision_score(best_true, best_preds, average='macro')
     print("=== FINAL PRECISION RESULTS ===")
+    log.append(f"{' FINAL PRECISION RESULTS ':=^105}")                                      #LOG
     for i, prec in enumerate(precision_per_class):
         print(f"Class {i} Precision: {prec:.4f}")
+        log.append(f"{f'Class {i} Precision':<30}: {prec:.4f}")                             #LOG
     print(f"Macro Precision: {macro_precision:.4f}")
+    log.append(f"{f'CMacro Precision':<30}: {macro_precision:.4f}\n\n\n")                         #LOG
+
 
     # Visualization
     plot_multiclass_roc(best_true, best_probs, n_classes=5, class_names=[
@@ -139,3 +189,4 @@ def train_and_eval(use_glcm, patch_size, stride, batch_size, epochs, lr, root):
     ])
     plot_loss_curves(train_loss_history, val_loss_history)
     visualize_predictions(model, val_dataset, device)
+    log.close()                                                                            # BE SURE TO CLOSE LOG
