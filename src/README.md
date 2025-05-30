@@ -14,26 +14,31 @@ This is a modular PyTorch implementation for damage assessment using multi-tempo
 
 ```
 final_project/
-│
-├── config.py
-├── dataset.py
-├── loss.py
-├── main.py
-├── metrics.py
-├── model.py
-├── train.py
-├── utils.py
-├── visuals.py
-├── README.md
+    ├── data/
+        ├── gt_post/
+        ├── gt_pre/
+        ├── img_post/
+        ├── img_pre/
+    ├── src/
+        ├── config.py
+        ├── dataset.py
+        ├── loss.py
+        ├── main.py
+        ├── metrics.py
+        ├── model.py
+        ├── train.py
+        ├── utils.py
+        ├── visuals.py
+        ├── README.md
 ```
 
 ## Usage
 
-To train the model:
+Given the above directory structure, use the following commands to train the model:
 
 ```bash
-python main.py --use_glcm --batch_size 4 --patch_size 128 --stride 64 --epochs 20
-python main.py --batch_size 4 --patch_size 128 --stride 64 --epochs 20
+python main.py --use_glcm --batch_size 4 --patch_size 128 --stride 64 --epochs 20 --data_root ../data
+python main.py --batch_size 4 --patch_size 128 --stride 64 --epochs 20  --data_root ../data
 ```
 
 Disable GLCM loss with `--no-use_glcm`. Configure paths in `config.py` or pass `--data_root` at runtime.
