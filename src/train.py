@@ -1,19 +1,25 @@
+import numpy as np
 import os
 from log import Log
 import time
 import torch
 import torch.nn.functional as F
-import numpy as np
 from torch.utils.data import DataLoader, random_split
 from dataset import DamageDataset
 from model import EnhancedDamageModel
 from loss import adaptive_texture_loss
+import metrics  # Import the entire module
 from metrics import compute_ordinal_conf_matrix, print_f1_per_class, calculate_xview2_score
 from utils import get_class_weights, analyze_class_distribution
 from visuals import plot_loss_curves, plot_multiclass_roc, visualize_predictions
 from sklearn.metrics import accuracy_score, f1_score, precision_score
 
+
 # Function to train and evaluate the model with logging
+
+import metrics
+print("Loaded metrics.py from:", metrics.__file__)
+
 def train_and_eval(use_glcm, patch_size, stride, batch_size, epochs, lr, root):
     # create log file
     log = Log()
@@ -32,49 +38,44 @@ def train_and_eval(use_glcm, patch_size, stride, batch_size, epochs, lr, root):
 
     print(f'Training on cuda cores: {torch.cuda.is_available()}')
     print(f"Training with texture loss: {use_glcm}")
-    # Define data paths
+    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+    print(f"Using device: {device}")
+
+    # Prepare dataset paths
     train_pre = os.path.join(root, "img_pre")
     train_post = os.path.join(root, "img_post")
     train_mask = os.path.join(root, "gt_post")
 
-    # Load dataset with patching and stride
+    # Load dataset with patch size and stride
     dataset = DamageDataset(train_pre, train_post, train_mask, patch_size=patch_size, stride=stride)
     analyze_class_distribution(dataset)
 
-    # Split into training and validation sets
     train_size = int(0.8 * len(dataset))
     val_size = len(dataset) - train_size
     train_dataset, val_dataset = random_split(dataset, [train_size, val_size])
 
-    # Prepare DataLoader
     train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True)
     val_loader = DataLoader(val_dataset, batch_size=batch_size)
 
-    # Initialize model, optimizer, loss
-    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+    # Initialize model, optimizer, and loss
     model = EnhancedDamageModel().to(device)
+    print(f"Model loaded on: {next(model.parameters()).device}")
     weights = get_class_weights(train_dataset).to(device)
     loss_fn = torch.nn.CrossEntropyLoss(weight=weights)
     optimizer = torch.optim.Adam(model.parameters(), lr=lr)
 
-    best_acc = 0.0
-    best_macro_f1 = 0.0
-    best_xview2 = 0.0
-    train_loss_history = []
-    val_loss_history = []
+    best_acc, best_macro_f1, best_xview2 = 0.0, 0.0, 0.0
+    train_loss_history, val_loss_history = [], []
+    best_probs, best_true, best_preds = [], [], []
 
-    # Training loop over epochs
     for epoch in range(epochs):
         print(f"\nEpoch {epoch + 1}/{epochs}")
         start_time = time.perf_counter()  # Record the start time           PART OF TIME FUNCTION
         model.train()
-        if epoch < 3:
-            # Freeze early layers to stabilize training
-            for param in model.backbone.parameters():
-                param.requires_grad = False
-        else:
-            for param in model.backbone.parameters():
-                param.requires_grad = True
+
+        # Freeze backbone layers for first 3 epochs
+        for param in model.backbone.parameters():
+            param.requires_grad = epoch >= 3
 
         total_loss = 0
         for pre, post, mask, _ in train_loader:
@@ -83,16 +84,11 @@ def train_and_eval(use_glcm, patch_size, stride, batch_size, epochs, lr, root):
             damage_out = model(pre, post)
             loss_ce = loss_fn(damage_out, mask)
             pred_classes = torch.argmax(damage_out, dim=1)
-            if use_glcm:
-                loss_tex = adaptive_texture_loss(pre, post, pred_classes)
-                loss = loss_ce + 0.3 * loss_tex
-            else:
-                loss = loss_ce
+            loss = loss_ce + 0.3 * adaptive_texture_loss(pre, post, pred_classes) if use_glcm else loss_ce
             loss.backward()
             optimizer.step()
             total_loss += loss.item()
 
-        # Log training loss
         train_loss = total_loss / len(train_loader)
         train_loss_history.append(train_loss)
         print(f"Train Loss: {train_loss:.4f}")
@@ -116,7 +112,6 @@ def train_and_eval(use_glcm, patch_size, stride, batch_size, epochs, lr, root):
         val_loss /= len(val_loader)
         val_loss_history.append(val_loss)
 
-        # Metrics
         cm = compute_ordinal_conf_matrix(y_true, y_pred)
         print("Confusion Matrix:\n", cm)
         print_f1_per_class(y_true, y_pred)
@@ -137,13 +132,9 @@ def train_and_eval(use_glcm, patch_size, stride, batch_size, epochs, lr, root):
 
         # Track best scores and save model
         if xview2 > best_xview2:
-            best_acc = acc
-            best_macro_f1 = macro_f1
-            best_xview2 = xview2
+            best_acc, best_macro_f1, best_xview2 = acc, macro_f1, xview2
             torch.save(model.state_dict(), "best_model.pth")
-            best_probs = np.array(y_probs)
-            best_true = y_true
-            best_preds = y_pred
+            best_probs, best_true, best_preds = np.array(y_probs), y_true.copy(), y_pred.copy()
 
         # ----------------------LOG-----------------------
         log.append(f"{'Epoch':<30}: {epoch + 1}/{epochs}")
@@ -160,6 +151,9 @@ def train_and_eval(use_glcm, patch_size, stride, batch_size, epochs, lr, root):
 
     # Final metrics
     print("=== FINAL EVALUATION ===")
+
+    print("\n=== FINAL EVALUATION ===")
+
     print(f"Best Accuracy: {best_acc:.4f}")
     print(f"Best Macro F1: {best_macro_f1:.4f}")
     print(f"Best xView2 Score: {best_xview2:.4f}")
@@ -170,9 +164,9 @@ def train_and_eval(use_glcm, patch_size, stride, batch_size, epochs, lr, root):
     log.append(f"{'Best xView2 Score':<30}: {best_xview2:.4f}")
     #------------------------------------------------
 
-    # Precision calculation
-    precision_per_class = precision_score(best_true, best_preds, average=None, labels=range(5))
-    macro_precision = precision_score(best_true, best_preds, average='macro')
+    # Precision Calculation
+    precision_per_class = precision_score(best_true, best_preds, average=None, labels=range(5), zero_division=0)
+    macro_precision = precision_score(best_true, best_preds, average='macro', zero_division=0)
     print("=== FINAL PRECISION RESULTS ===")
     log.append(f"{' FINAL PRECISION RESULTS ':=^105}")                                      #LOG
     for i, prec in enumerate(precision_per_class):
@@ -182,7 +176,7 @@ def train_and_eval(use_glcm, patch_size, stride, batch_size, epochs, lr, root):
     log.append(f"{f'CMacro Precision':<30}: {macro_precision:.4f}\n\n\n")                         #LOG
 
 
-    # Visualization
+    # Visualizations
     plot_multiclass_roc(best_true, best_probs, n_classes=5, class_names=[
         "Class 0: No Damage", "Class 1: Undamaged", "Class 2: Minor Damage",
         "Class 3: Major Damage", "Class 4: Destroyed"
@@ -190,3 +184,6 @@ def train_and_eval(use_glcm, patch_size, stride, batch_size, epochs, lr, root):
     plot_loss_curves(train_loss_history, val_loss_history)
     visualize_predictions(model, val_dataset, device)
     log.close()                                                                            # BE SURE TO CLOSE LOG
+
+
+

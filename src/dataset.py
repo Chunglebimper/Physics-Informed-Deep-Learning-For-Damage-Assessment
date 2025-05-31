@@ -1,8 +1,8 @@
 import os
 import numpy as np
 from PIL import Image
-import torch
 from torch.utils.data import Dataset
+import torch
 from torchvision import transforms
 
 # Dataset class to handle pre, post, and mask images
