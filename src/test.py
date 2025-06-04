@@ -19,7 +19,7 @@ def test_model(model_path, data_root, batch_size, patch_size, stride, device):
     )
     loader = DataLoader(dataset, batch_size=batch_size)
 
-    # Load model
+    # Load model (resnet50)
     model = EnhancedDamageModel()
     model.load_state_dict(torch.load(model_path))
     model.to(device)

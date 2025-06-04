@@ -35,7 +35,6 @@ def train_and_eval(use_glcm, patch_size, stride, batch_size, epochs, lr, root):
                 f"{'Training with texture loss':<30}: {str(use_glcm)}\n"          
                 f'{105 * "-"}'
                 )
-
     print(f'Training on cuda cores: {torch.cuda.is_available()}')
     print(f"Training with texture loss: {use_glcm}")
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -73,9 +72,13 @@ def train_and_eval(use_glcm, patch_size, stride, batch_size, epochs, lr, root):
         start_time = time.perf_counter()  # Record the start time           PART OF TIME FUNCTION
         model.train()
 
+        """
+        changing the freezing layers could help output
+        original 3
+        """
         # Freeze backbone layers for first 3 epochs
         for param in model.backbone.parameters():
-            param.requires_grad = epoch >= 3
+            param.requires_grad = epoch >= 10
 
         total_loss = 0
         for pre, post, mask, _ in train_loader:
@@ -150,8 +153,6 @@ def train_and_eval(use_glcm, patch_size, stride, batch_size, epochs, lr, root):
 
 
     # Final metrics
-    print("=== FINAL EVALUATION ===")
-
     print("\n=== FINAL EVALUATION ===")
 
     print(f"Best Accuracy: {best_acc:.4f}")
