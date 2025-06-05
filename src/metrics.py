@@ -1,5 +1,5 @@
 import numpy as np
-from sklearn.metrics import confusion_matrix, f1_score
+from sklearn.metrics import confusion_matrix, f1_score, precision_score, recall_score
 
 # Compute confusion matrix for ordinal classes
 def compute_ordinal_conf_matrix(y_true, y_pred, num_classes=5):
@@ -10,6 +10,18 @@ def print_f1_per_class(y_true, y_pred, num_classes=5):
     scores = f1_score(y_true, y_pred, average=None, labels=range(num_classes))
     for i, score in enumerate(scores):
         print(f"Class {i} F1: {score:.4f}")
+    return scores
+
+def print_precision_per_class(y_true, y_pred, num_classes=5):
+    scores = precision_score(y_true, y_pred, average=None, labels=range(num_classes))
+    for i, score in enumerate(scores):
+        print(f"Class {i} Precision: {score:.4f}")
+    return scores
+
+def print_recall_per_class(y_true, y_pred, num_classes=5):
+    scores = recall_score(y_true, y_pred, average=None, labels=range(num_classes))
+    for i, score in enumerate(scores):
+        print(f"Class {i} Recall: {score:.4f}")
     return scores
 
 # xView2 scoring: combines localization and damage detection performance

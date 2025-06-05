@@ -1,7 +1,8 @@
 import matplotlib.pyplot as plt
 import torch
 from sklearn.preprocessing import label_binarize
-from sklearn.metrics import roc_curve, auc
+from sklearn.metrics import roc_curve, auc, accuracy_score
+
 
 # Function to plot the ROC curve for multiple classes
 def plot_multiclass_roc(y_true, y_prob, n_classes, class_names=None, save_path='../results/plot_multiclass_roc.jpg'):
@@ -88,3 +89,20 @@ def visualize_predictions(model, dataset, device, num_samples=3, save_path='../r
         if save_path:
             plt.savefig(save_path)
             print(f"ROC curve saved to {save_path}")
+
+
+def plot_epoch_accuracy(epochs, accuracy, save_path='../results/plot_epoch_accuracy.jpg'):
+    plt.figure(figsize=(10, 6))
+    plt.plot(epochs, accuracy, linewidth=2)
+    plt.xlabel("Epoch", fontsize=16)
+    plt.ylabel("Accuracy", fontsize=16)
+    plt.title("Accuracy per Epoch", fontsize=20)
+    plt.legend(fontsize=16)
+    plt.grid(True)
+    plt.tight_layout()
+    # plt.show()
+
+    # Save to file if path provided
+    if save_path:
+        plt.savefig(save_path)
+        print(f"ROC curve saved to {save_path}")

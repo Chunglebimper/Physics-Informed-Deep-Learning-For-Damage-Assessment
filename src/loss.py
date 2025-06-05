@@ -12,9 +12,9 @@ def calculate_glcm_energy(patch, levels=32):
     #print("glcm before = ",glcm)
     for y in range(patch.shape[0] - 1):
         for x in range(patch.shape[1] - 1):
-            glcm[patch[y,x], patch[y,x+1]] += 1
-            glcm[patch[y,x], patch[y+1,x]] += 1
-            glcm[patch[y,x], patch[y+1,x+1]] += 1
+            glcm[patch[y,x], patch[y,x+1]] += 1     # right
+            glcm[patch[y,x], patch[y+1,x]] += 1     # up
+            glcm[patch[y,x], patch[y+1,x+1]] += 1   # top-left
     glcm /= glcm.sum() + 1e-6
     #print("glcm after = ", glcm)
     return np.sum(glcm ** 2)
@@ -22,7 +22,9 @@ def calculate_glcm_energy(patch, levels=32):
 def adaptive_texture_loss(pre_img, post_img, pred_classes, debris_class=4, patch_size=32, sample_size=50):
     device = post_img.device
     delta = torch.abs(post_img - pre_img)
-    delta_gray = 0.2989 * delta[:, 0] + 0.5870 * delta[:, 1] + 0.1140 * delta[:, 2] # what are the other values here applied to the delta RGB values?
+    delta_gray = (0.2989 * delta[:, 0] +
+                  0.5870 * delta[:, 1] +
+                  0.1140 * delta[:, 2]) # what are the other values here applied to the delta RGB values?
     loss = torch.tensor(0.0, device=device)
     count = 0
     for b in range(delta_gray.shape[0]):

@@ -9,11 +9,11 @@ from dataset import DamageDataset
 from model import EnhancedDamageModel
 from loss import adaptive_texture_loss
 import metrics  # Import the entire module
-from metrics import compute_ordinal_conf_matrix, print_f1_per_class, calculate_xview2_score
+from metrics import compute_ordinal_conf_matrix, calculate_xview2_score, print_f1_per_class, print_precision_per_class, print_recall_per_class
 from utils import get_class_weights, analyze_class_distribution
-from visuals import plot_loss_curves, plot_multiclass_roc, visualize_predictions
+from visuals import plot_loss_curves, plot_multiclass_roc, visualize_predictions, plot_epoch_accuracy
 from sklearn.metrics import accuracy_score, f1_score, precision_score
-
+import matplotlib.pyplot as plt
 
 # Function to train and evaluate the model with logging
 
@@ -67,6 +67,9 @@ def train_and_eval(use_glcm, patch_size, stride, batch_size, epochs, lr, root):
     train_loss_history, val_loss_history = [], []
     best_probs, best_true, best_preds = [], [], []
 
+    # build accuracy graph over epoch time
+    epochs_for_plotting = {}
+
     for epoch in range(epochs):
         print(f"\nEpoch {epoch + 1}/{epochs}")
         start_time = time.perf_counter()  # Record the start time           PART OF TIME FUNCTION
@@ -78,7 +81,7 @@ def train_and_eval(use_glcm, patch_size, stride, batch_size, epochs, lr, root):
         """
         # Freeze backbone layers for first 3 epochs
         for param in model.backbone.parameters():
-            param.requires_grad = epoch >= 10
+            param.requires_grad = epoch >= 3
 
         total_loss = 0
         for pre, post, mask, _ in train_loader:
@@ -118,6 +121,13 @@ def train_and_eval(use_glcm, patch_size, stride, batch_size, epochs, lr, root):
         cm = compute_ordinal_conf_matrix(y_true, y_pred)
         print("Confusion Matrix:\n", cm)
         print_f1_per_class(y_true, y_pred)
+
+        ##############################################
+        print_precision_per_class(y_true, y_pred)
+        print_recall_per_class(y_true, y_pred)
+        #############################################
+
+
         acc = accuracy_score(y_true, y_pred)
         macro_f1 = f1_score(y_true, y_pred, average='macro', zero_division=0)
         xview2 = calculate_xview2_score(y_true, y_pred)
@@ -131,6 +141,9 @@ def train_and_eval(use_glcm, patch_size, stride, batch_size, epochs, lr, root):
         minutes = int((elapsed_time % 3600) // 60)                          # PART OF TIME FUNCTION
         seconds = int(elapsed_time % 60)                                    # PART OF TIME FUNCTION
         print(f"Epoch {epoch+1} took: {hours: >2} hours, {minutes: >2} minutes, {seconds: >2} seconds")   # PART OF TIME FUNCTION
+        #------------------------------
+        epochs_for_plotting[(epoch+1)] = (acc)
+        # ------------------------------
 
 
         # Track best scores and save model
@@ -184,6 +197,16 @@ def train_and_eval(use_glcm, patch_size, stride, batch_size, epochs, lr, root):
     ])
     plot_loss_curves(train_loss_history, val_loss_history)
     visualize_predictions(model, val_dataset, device)
+
+    a = []
+    count = 1
+    print(epochs_for_plotting)
+    for key_val_pair in epochs_for_plotting:
+        a.append(epochs_for_plotting[(count)])
+        count += 1
+    #plot_epoch_accuracy(list(range(1, epochs)), a)
+    plot_epoch_accuracy(range(0,epochs), a)
+
     log.close()                                                                            # BE SURE TO CLOSE LOG
 
 
