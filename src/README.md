@@ -3,6 +3,7 @@
 This is a modular PyTorch implementation for damage assessment using multi-temporal satellite imagery. The model supports physics-informed learning via GLCM-based texture loss, and includes tools for visualization, evaluation, and preprocessing.
 
 ## TODO
+- Put results in new directory
 - Improve efficiency 
   - See if the default values from ImageNet are applicable to this data (mean and std)
   - Find appropriate stride and patch size
@@ -48,8 +49,13 @@ final_project/
 Given the above directory structure, use the following commands to train the model:
 
 ```bash
-python main.py --use_glcm --batch_size 4 --patch_size 32 --stride 16 --epochs 30 --data_root ../data
-python main.py --batch_size 4 --patch_size 32 --stride 16 --epochs 30  --data_root ../data
+python main.py --use_glcm --batch_size 4 --patch_size 64 --stride 32 --epochs 50 --data_root ../data
+python main.py --use_glcm --batch_size 5 --patch_size 64 --stride 32 --epochs 50 --data_root ../data
+python main.py --use_glcm --batch_size 6 --patch_size 64 --stride 32 --epochs 50 --data_root ../data
+python main.py --use_glcm --batch_size 7 --patch_size 64 --stride 32 --epochs 50 --data_root ../data
+python main.py --use_glcm --batch_size 8 --patch_size 64 --stride 32 --epochs 50 --data_root ../data
+python main.py --use_glcm --batch_size 9 --patch_size 64 --stride 32 --epochs 50 --data_root ../data
+python main.py --use_glcm --batch_size 10 --patch_size 64 --stride 32 --epochs 50 --data_root ../data
 ```
 
 Disable GLCM loss with `--no-use_glcm`. Configure paths in `config.py` or pass `--data_root` at runtime.

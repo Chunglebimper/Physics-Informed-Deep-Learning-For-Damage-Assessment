@@ -153,6 +153,7 @@ def train_and_eval(use_glcm, patch_size, stride, batch_size, epochs, lr, root):
             best_probs, best_true, best_preds = np.array(y_probs), y_true.copy(), y_pred.copy()
 
         # ----------------------LOG-----------------------
+        """
         log.append(f"{'Epoch':<30}: {epoch + 1}/{epochs}")
         log.append(f"{'Train Loss':<30}: {train_loss:.4f}")
         log.append(f"{'Confusion Matrix':<30}:\n{cm}")
@@ -162,6 +163,7 @@ def train_and_eval(use_glcm, patch_size, stride, batch_size, epochs, lr, root):
         log.append(f"{'Epoch Duration':<30}: {hours:>2} hours, {minutes:>2} minutes, {seconds:>2} seconds")
         if epoch + 1 < epochs:      # if all epochs printed, dont add seperator
             log.append("-" * 67)
+        """
         # ------------------------------------------------
 
 

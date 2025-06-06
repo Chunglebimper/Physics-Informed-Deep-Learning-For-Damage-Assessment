@@ -15,6 +15,11 @@ def calculate_glcm_energy(patch, levels=32):
             glcm[patch[y,x], patch[y,x+1]] += 1     # right
             glcm[patch[y,x], patch[y+1,x]] += 1     # up
             glcm[patch[y,x], patch[y+1,x+1]] += 1   # top-left
+
+            #glcm[patch[y, x], patch[y, x + 2]] += 1  # right 2
+            #glcm[patch[y, x], patch[y + 2, x]] += 1  # up 2
+            #glcm[patch[y, x], patch[y + 2, x + 1]] += 1  # top-left 2
+
     glcm /= glcm.sum() + 1e-6
     #print("glcm after = ", glcm)
     return np.sum(glcm ** 2)
