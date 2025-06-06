@@ -1,5 +1,5 @@
 class Log:
-    def __init__(self, path='../results/log.txt'):
+    def __init__(self, path):
         self.path = path
         self.log_file = None
         self.run_number = 1

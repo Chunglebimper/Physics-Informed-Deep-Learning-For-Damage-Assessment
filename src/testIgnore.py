@@ -1,1 +1,0 @@
-def mkdir_results():

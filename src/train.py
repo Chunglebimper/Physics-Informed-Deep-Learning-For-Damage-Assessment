@@ -14,15 +14,19 @@ from utils import get_class_weights, analyze_class_distribution
 from visuals import plot_loss_curves, plot_multiclass_roc, visualize_predictions, plot_epoch_accuracy
 from sklearn.metrics import accuracy_score, f1_score, precision_score
 import matplotlib.pyplot as plt
+from mkdir import mkdir_results
 
 # Function to train and evaluate the model with logging
 
 import metrics
 print("Loaded metrics.py from:", metrics.__file__)
 
+
 def train_and_eval(use_glcm, patch_size, stride, batch_size, epochs, lr, root):
+    results_path = mkdir_results()                      # works to place contents of each individual run into respective directory
+    os.makedirs(results_path, exist_ok=True)            # create output directory
     # create log file
-    log = Log()
+    log = Log(path = f'{results_path}/log.txt')
     log.open()
     params = use_glcm, patch_size, stride, batch_size, epochs, lr, root
     # begin logging
@@ -195,10 +199,10 @@ def train_and_eval(use_glcm, patch_size, stride, batch_size, epochs, lr, root):
     # Visualizations
     plot_multiclass_roc(best_true, best_probs, n_classes=5, class_names=[
         "Class 0: No Damage", "Class 1: Undamaged", "Class 2: Minor Damage",
-        "Class 3: Major Damage", "Class 4: Destroyed"
-    ])
-    plot_loss_curves(train_loss_history, val_loss_history)
-    visualize_predictions(model, val_dataset, device)
+        "Class 3: Major Damage", "Class 4: Destroyed"],
+        save_path=f'{results_path}/plot_multiclass_roc.jpg')
+    plot_loss_curves(train_loss_history, val_loss_history, save_path=f'{results_path}/plot_loss_curves.jpg')
+    visualize_predictions(model, val_dataset, device, save_path=f'{results_path}/visualize_predictions.jpg')
 
     a = []
     count = 1
@@ -206,8 +210,8 @@ def train_and_eval(use_glcm, patch_size, stride, batch_size, epochs, lr, root):
     for key_val_pair in epochs_for_plotting:
         a.append(epochs_for_plotting[(count)])
         count += 1
-    #plot_epoch_accuracy(list(range(1, epochs)), a)
-    plot_epoch_accuracy(range(0,epochs), a)
+
+    plot_epoch_accuracy(range(0,epochs), a, save_path=f'{results_path}/plot_epoch_accuracy.jpg')
 
     log.close()                                                                            # BE SURE TO CLOSE LOG
 

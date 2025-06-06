@@ -5,11 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a1b87a2a-ec1b-4f93-b49f-0c0acaeca423" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/mkdir.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/PCSE555Cont.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/PCSE555Cont.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/loss.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/loss.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/testIgnore.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/testIgnore.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/log.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/log.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/testIgnore.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/train.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/visuals.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/visuals.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,6 +58,7 @@
   "keyToString": {
     "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Python.DELETE.PY.executor": "Run",
     "Python.python main.py --use_glcm --batch_size 10 --patch_size 64 --stride 32 --epochs 50 --data_root ../data.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
@@ -70,13 +76,36 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/results/good_run2" />
+      <recent name="$PROJECT_DIR$/results" />
       <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/results/good_run2" />
       <recent name="C:\Users\bjren\PycharmProjects\PCSE555Cont\data" />
       <recent name="C:\Users\bjren\PycharmProjects\PCSE555Cont\src" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.DELETE.PY">
+    <configuration name="DELETE.PY" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="PCSE555Cont" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/DELETEME" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/DELETEME/DELETE.PY.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="python main.py --use_glcm --batch_size 10 --patch_size 64 --stride 32 --epochs 50 --data_root ../data" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="PCSE555Cont" />
       <option name="ENV_FILES" value="" />
@@ -101,6 +130,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.DELETE.PY" />
         <item itemvalue="Python.python main.py --use_glcm --batch_size 10 --patch_size 64 --stride 32 --epochs 50 --data_root ../data" />
       </list>
     </recent_temporary>
@@ -108,7 +138,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-python-sdk-348a24fa61fa-5312c7369657-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-251.23774.444" />
+        <option value="bundled-python-sdk-dfff61a61320-9cdd278e9d02-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-251.25410.159" />
       </set>
     </attachedChunks>
   </component>

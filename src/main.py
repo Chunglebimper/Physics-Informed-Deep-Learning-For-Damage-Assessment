@@ -1,8 +1,7 @@
 import argparse
 import os
-
-from sympy import print_tree
-
+from os import mkdir
+#from sympy import print_tree
 from train import train_and_eval
 import time
 
@@ -18,7 +17,6 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     start_time = time.perf_counter()  # Record the start time           PART OF TIME FUNCTION
-    os.makedirs('../results', exist_ok=True)                      #create output directory
 
     # ------ FUNCTION TO BE TIMED ------
     train_and_eval(
