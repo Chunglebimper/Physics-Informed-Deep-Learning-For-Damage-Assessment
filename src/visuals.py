@@ -105,3 +105,20 @@ def plot_epoch_accuracy(epochs, accuracy, save_path=f'plot_epoch_accuracy.jpg'):
     if save_path:
         plt.savefig(save_path)
         print(f"ROC curve saved to {save_path}")
+
+
+def plot_epoch_f1(epochs, f1, save_path=f'plot_epoch_f1.jpg'):
+    plt.figure(figsize=(10, 6))
+    plt.plot(epochs, f1, linewidth=2)
+    plt.xlabel("Epoch", fontsize=16)
+    plt.ylabel("F1", fontsize=16)
+    plt.title("F1 per Epoch", fontsize=20)
+    plt.legend(fontsize=16)
+    plt.grid(True)
+    plt.tight_layout()
+    # plt.show()
+
+    # Save to file if path provided
+    if save_path:
+        plt.savefig(save_path)
+        print(f"ROC curve saved to {save_path}")

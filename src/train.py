@@ -11,7 +11,7 @@ from loss import adaptive_texture_loss
 import metrics  # Import the entire module
 from metrics import compute_ordinal_conf_matrix, calculate_xview2_score, print_f1_per_class, print_precision_per_class, print_recall_per_class
 from utils import get_class_weights, analyze_class_distribution
-from visuals import plot_loss_curves, plot_multiclass_roc, visualize_predictions, plot_epoch_accuracy
+from visuals import plot_loss_curves, plot_multiclass_roc, visualize_predictions, plot_epoch_accuracy, plot_epoch_f1
 from sklearn.metrics import accuracy_score, f1_score, precision_score
 import matplotlib.pyplot as plt
 from mkdir import mkdir_results
@@ -146,7 +146,7 @@ def train_and_eval(use_glcm, patch_size, stride, batch_size, epochs, lr, root):
         seconds = int(elapsed_time % 60)                                    # PART OF TIME FUNCTION
         print(f"Epoch {epoch+1} took: {hours: >2} hours, {minutes: >2} minutes, {seconds: >2} seconds")   # PART OF TIME FUNCTION
         #------------------------------
-        epochs_for_plotting[(epoch+1)] = (acc)
+        epochs_for_plotting[(epoch+1)] = (acc, macro_f1)
         # ------------------------------
 
 
@@ -204,16 +204,18 @@ def train_and_eval(use_glcm, patch_size, stride, batch_size, epochs, lr, root):
     plot_loss_curves(train_loss_history, val_loss_history, save_path=f'{results_path}/plot_loss_curves.jpg')
     visualize_predictions(model, val_dataset, device, save_path=f'{results_path}/visualize_predictions.jpg')
 
+
     a = []
+    b = []
     count = 1
-    print(epochs_for_plotting)
+    #print(epochs_for_plotting)
     for key_val_pair in epochs_for_plotting:
-        a.append(epochs_for_plotting[(count)])
+        a.append((epochs_for_plotting[(count)])[0])
+        b.append((epochs_for_plotting[(count)])[1])
         count += 1
 
+
     plot_epoch_accuracy(range(0,epochs), a, save_path=f'{results_path}/plot_epoch_accuracy.jpg')
+    plot_epoch_f1(range(0, epochs), b, save_path=f'{results_path}/plot_epoch_f1.jpg')
 
     log.close()                                                                            # BE SURE TO CLOSE LOG
-
-
-
