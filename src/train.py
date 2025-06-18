@@ -72,7 +72,8 @@ def train_and_eval(use_glcm, patch_size, stride, batch_size, epochs, lr, root):
     best_probs, best_true, best_preds = [], [], []
 
     ################################### begin signifcant changes ##########################################
-
+    """
+    
     import pandas as pd
     import numpy as np
     import sys
@@ -126,7 +127,7 @@ def train_and_eval(use_glcm, patch_size, stride, batch_size, epochs, lr, root):
             os.mkdir(train_sep_dir + str(label))
         pil_img = array_to_img(Xsmote_img[i] * 255)
         pil_img.save(train_sep_dir + str(label) + '/' + 'smote_' + str(i) + '.jpg')
-
+    """
 
 
 
@@ -173,7 +174,7 @@ def train_and_eval(use_glcm, patch_size, stride, batch_size, epochs, lr, root):
 
     # build accuracy graph over epoch time
     epochs_for_plotting = {}
-    1/0
+
     for epoch in range(epochs):
         print(f"\nEpoch {epoch + 1}/{epochs}")
         start_time = time.perf_counter()  # Record the start time           PART OF TIME FUNCTION
