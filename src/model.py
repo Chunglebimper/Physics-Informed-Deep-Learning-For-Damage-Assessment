@@ -7,7 +7,7 @@ class EnhancedDamageModel(nn.Module):
     def __init__(self, num_classes=5):
         super().__init__()
         # Backbone from ResNet50 with FPN (Feature Pyramid Network)
-        self.backbone = resnet_fpn_backbone('resnet50', pretrained=True, trainable_layers=3)
+        self.backbone = resnet_fpn_backbone('resnet50', pretrained=True, trainable_layers=3, )
 
         # Fusion layer to combine pre/post features
         self.fusion = nn.Sequential(
