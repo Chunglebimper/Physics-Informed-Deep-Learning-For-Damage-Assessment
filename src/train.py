@@ -22,22 +22,27 @@ import metrics
 print("Loaded metrics.py from:", metrics.__file__)
 
 
-def train_and_eval(use_glcm, patch_size, stride, batch_size, epochs, lr, root):
+def train_and_eval(use_glcm, patch_size, stride, batch_size, epochs, lr, root, verbose, sample_size, levels):
     results_path = mkdir_results()                      # works to place contents of each individual run into respective directory
     os.makedirs(results_path, exist_ok=True)            # create output directory
     # create log file
     log = Log(path = f'{results_path}/log.txt')
     log.open()
-    params = use_glcm, patch_size, stride, batch_size, epochs, lr, root
+    params1 = use_glcm, patch_size, stride, batch_size, epochs
+    params2= lr, root, verbose, sample_size, levels
     # begin logging
-    log.append(f'{" Running config ":=^105}\n'
-                f'{"".join(f"{str(i):<{15}}" for i in ("use_glcm", "patch_size", "stride", "batch_size", "epochs", "lr", "root"))}\n'
-                f'{105 * "-"}\n'
-                f'{"".join(f"{i:<{15}}" for i in (params))}\n'
-                f'{105 * "-"}\n'
+    log.append(f'{" Running config ":=^110}\n'
+                f'{"|".join(f"{str(i):^{14}}" for i in ("use_glcm", "patch_size", "stride", "batch_size", "epochs"))}\n'
+                f'{70 * "-"}\n'
+                f'{"|".join(f"{i:^{14}}" for i in params1)}\n'
+                f'{70 * "="}\n'
+                f'{"|".join(f"{str(i):^{14}}" for i in ("lr", "root", "verbose", "sample_size", "levels"))}\n'
+                f'{70 * "-"}\n'
+                f'{"|".join(f"{i:^{14}}" for i in params2)}\n'
+                f'{110 * "-"}\n'
                 f"{'Training on CUDA cores':<30}: {str(torch.cuda.is_available())}\n"
                 f"{'Training with texture loss':<30}: {str(use_glcm)}\n"          
-                f'{105 * "-"}'
+                f'{110 * "-"}'
                 )
     print(f'Training on cuda cores: {torch.cuda.is_available()}')
     print(f"Training with texture loss: {use_glcm}")
@@ -94,7 +99,7 @@ def train_and_eval(use_glcm, patch_size, stride, batch_size, epochs, lr, root):
             damage_out = model(pre, post)
             loss_ce = loss_fn(damage_out, mask)
             pred_classes = torch.argmax(damage_out, dim=1)
-            loss = loss_ce + 0.3 * adaptive_texture_loss(pre, post, pred_classes) if use_glcm else loss_ce
+            loss = loss_ce + 0.3 * adaptive_texture_loss(pre, post, pred_classes, sample_size, levels) if use_glcm else loss_ce
             loss.backward()
             optimizer.step()
             total_loss += loss.item()
@@ -178,7 +183,7 @@ def train_and_eval(use_glcm, patch_size, stride, batch_size, epochs, lr, root):
     print(f"Best Macro F1: {best_macro_f1:.4f}")
     print(f"Best xView2 Score: {best_xview2:.4f}")
     #----------------------LOG-----------------------
-    log.append(f"{' FINAL EVALUATION ':=^105}")
+    log.append(f"{' FINAL EVALUATION ':=^110}")
     log.append(f"{'Best Accuracy':<30}: {best_acc:.4f}")
     log.append(f"{'Best Macro F1: ':<30}: {best_macro_f1:.4f}")
     log.append(f"{'Best xView2 Score':<30}: {best_xview2:.4f}")
@@ -188,7 +193,7 @@ def train_and_eval(use_glcm, patch_size, stride, batch_size, epochs, lr, root):
     precision_per_class = precision_score(best_true, best_preds, average=None, labels=range(5), zero_division=0)
     macro_precision = precision_score(best_true, best_preds, average='macro', zero_division=0)
     print("=== FINAL PRECISION RESULTS ===")
-    log.append(f"{' FINAL PRECISION RESULTS ':=^105}")                                      #LOG
+    log.append(f"{' FINAL PRECISION RESULTS ':=^110}")                                      #LOG
     for i, prec in enumerate(precision_per_class):
         print(f"Class {i} Precision: {prec:.4f}")
         log.append(f"{f'Class {i} Precision':<30}: {prec:.4f}")                             #LOG

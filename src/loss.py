@@ -2,7 +2,7 @@ import numpy as np
 import torch
 
 # GLCM-based texture loss: encourages model to capture texture-based patterns
-def calculate_glcm_energy(patch, levels=32):
+def calculate_glcm_energy(patch, levels):
     if patch.size == 0:
         return 0.0
     patch = np.clip(patch, 0, 255).astype(np.uint8)
@@ -24,7 +24,7 @@ def calculate_glcm_energy(patch, levels=32):
     #print("glcm after = ", glcm)
     return np.sum(glcm ** 2)
 
-def adaptive_texture_loss(pre_img, post_img, pred_classes, debris_class=4, patch_size=32, sample_size=50):
+def adaptive_texture_loss(pre_img, post_img, pred_classes, sample_size, levels, debris_class=4, patch_size=32):
     device = post_img.device
     delta = torch.abs(post_img - pre_img)
     delta_gray = (0.2989 * delta[:, 0] +
@@ -43,7 +43,7 @@ def adaptive_texture_loss(pre_img, post_img, pred_classes, debris_class=4, patch
             y, x = y.item(), x.item()
             patch = img_np[max(0,y-patch_size//2):min(img_np.shape[0],y+patch_size//2),
                            max(0,x-patch_size//2):min(img_np.shape[1],x+patch_size//2)]
-            energy = calculate_glcm_energy(patch)
+            energy = calculate_glcm_energy(patch, levels)
             weight = 1.0 if energy < 0.7 else 0.3
             loss += weight * (1.0 - energy)
             count += 1

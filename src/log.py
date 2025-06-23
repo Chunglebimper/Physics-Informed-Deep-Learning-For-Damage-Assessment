@@ -4,24 +4,25 @@ class Log:
         self.log_file = None
         self.run_number = 1
 
-    def open(self):
+    def open(self, override = False):
         """
         * creates new or opens existing file
         * automatic run detection
         """
         self.log_file = open(self.path, "a")
         # Try to read the last line to find last run number
-        with open(self.path, 'r') as f:
-            #
-            lines = f.readlines()
-            for line in reversed(lines):    #for each reveresed line
-                if line.strip().startswith("-> Run #"):
-                    try:
-                        self.run_number = int(line.strip().split('#')[-1]) + 1
-                        break
-                    except ValueError:
-                        pass  # malformed line, skip
-            self.append(f"-> Run #{self.run_number}")
+        if not override:
+            with open(self.path, 'r') as f:
+                #
+                lines = f.readlines()
+                for line in reversed(lines):    #for each reveresed line
+                    if line.strip().startswith("-> Run #"):
+                        try:
+                            self.run_number = int(line.strip().split('#')[-1]) + 1
+                            break
+                        except ValueError:
+                            pass  # malformed line, skip
+                self.append(f"-> Run #{self.run_number}")
 
     def close(self):
         """
