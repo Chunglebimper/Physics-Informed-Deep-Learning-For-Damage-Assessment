@@ -1,5 +1,5 @@
 #torch==2.0
-torch
+pytorch
 #torchvision==0.15
 torchvision
 numpy
