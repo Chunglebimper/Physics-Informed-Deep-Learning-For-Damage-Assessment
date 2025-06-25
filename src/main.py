@@ -4,6 +4,7 @@ from os import mkdir
 #from sympy import print_tree
 from train import train_and_eval
 import time
+from log import Log
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Damage Assessment Training")

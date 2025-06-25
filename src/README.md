@@ -2,6 +2,10 @@
 
 This is a modular PyTorch implementation for damage assessment using multi-temporal satellite imagery. The model supports physics-informed learning via GLCM-based texture loss, and includes tools for visualization, evaluation, and preprocessing.
 
+## Details
+This is a modular PyTorch implementation for damage assessment using multi-temporal satellite imagery that has been preprocessed by from a script located in 
+
+
 ## TODO
 - Put results in new directory
 - Improve efficiency 
