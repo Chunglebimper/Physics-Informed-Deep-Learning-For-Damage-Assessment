@@ -8,11 +8,9 @@
       <change beforePath="$PROJECT_DIR$/.idea/PCSE555Cont.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/PCSE555Cont.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/log.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/log.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/loss.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/loss.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/run.sh" beforeDir="false" afterPath="$PROJECT_DIR$/src/run.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/orderOfOperations.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/orderOfOperations.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/train.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -65,7 +63,7 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/caiden/PycharmProjects/preproccessing/xBD-summer-scholars-25&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/caiden/PycharmProjects/SMOTEdemo&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -139,7 +137,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-python-sdk-9f8e2b94138c-36ea0e71a18c-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-251.26094.141" />
+        <option value="bundled-python-sdk-348a24fa61fa-5312c7369657-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-251.23774.444" />
       </set>
     </attachedChunks>
   </component>

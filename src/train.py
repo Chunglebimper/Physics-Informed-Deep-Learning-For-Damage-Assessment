@@ -56,7 +56,8 @@ def train_and_eval(use_glcm, patch_size, stride, batch_size, epochs, lr, root, v
 
     # Load dataset with patch size and stride
     dataset = DamageDataset(train_pre, train_post, train_mask, patch_size=patch_size, stride=stride)
-    analyze_class_distribution(dataset)
+    print("Dataset loaded")
+    #analyze_class_distribution(dataset)
 
     train_size = int(0.8 * len(dataset))
     val_size = len(dataset) - train_size
@@ -176,7 +177,7 @@ def train_and_eval(use_glcm, patch_size, stride, batch_size, epochs, lr, root, v
         # ------------------------------------------------
 
 
-    # Final metrics
+    # Final metrics end of epoch loop
     print("\n=== FINAL EVALUATION ===")
 
     print(f"Best Accuracy: {best_acc:.4f}")
@@ -210,13 +211,12 @@ def train_and_eval(use_glcm, patch_size, stride, batch_size, epochs, lr, root, v
     visualize_predictions(model, val_dataset, device, save_path=f'{results_path}/visualize_predictions.jpg')
 
 
-    a = []
-    b = []
+    acc_list = []
+    f1_list = []
     count = 1
-    #print(epochs_for_plotting)
     for key_val_pair in epochs_for_plotting:
-        a.append((epochs_for_plotting[(count)])[0])
-        b.append((epochs_for_plotting[(count)])[1])
+        acc_list.append((epochs_for_plotting[(count)])[0])
+        f1_list.append((epochs_for_plotting[(count)])[1])
         count += 1
 
 

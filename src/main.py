@@ -43,7 +43,10 @@ if __name__ == "__main__":
     minutes = int((elapsed_time % 3600) // 60)  # PART OF TIME FUNCTION
     seconds = int(elapsed_time % 60)  # PART OF TIME FUNCTION
 
-    log_instance=Log()
+    # HENRY, FIX ME
+    """
+    log_instance = Log()
     log_instance.open(override=True)
     log_instance.append(f"Total elapsed time: {hours: >6} hours, {minutes: >6} minutes, {seconds: >6} seconds")
     log_instance.close()
+    """
