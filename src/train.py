@@ -83,11 +83,12 @@ def train_and_eval(use_glcm, patch_size, stride, batch_size, epochs, lr, root, v
     for epoch in range(epochs):
         print(f"\nEpoch {epoch + 1}/{epochs}")
         start_time = time.perf_counter()  # Record the start time           PART OF TIME FUNCTION
+        print("Training...............")
         model.train()
 
         """
-        changing the freezing layers could help output
-        original 3
+        changing the freezing layers could help output.
+        original was 3
         """
         # Freeze backbone layers for first 3 epochs
         for param in model.backbone.parameters():
@@ -131,11 +132,8 @@ def train_and_eval(use_glcm, patch_size, stride, batch_size, epochs, lr, root, v
         cm = compute_ordinal_conf_matrix(y_true, y_pred)
         print("Confusion Matrix:\n", cm)
         print_f1_per_class(y_true, y_pred)
-
-        ##############################################
         print_precision_per_class(y_true, y_pred)
         print_recall_per_class(y_true, y_pred)
-        #############################################
 
 
         acc = accuracy_score(y_true, y_pred)
@@ -220,7 +218,7 @@ def train_and_eval(use_glcm, patch_size, stride, batch_size, epochs, lr, root, v
         count += 1
 
 
-    plot_epoch_accuracy(range(0,epochs), a, save_path=f'{results_path}/plot_epoch_accuracy.jpg')
-    plot_epoch_f1(range(0, epochs), b, save_path=f'{results_path}/plot_epoch_f1.jpg')
+    plot_epoch_accuracy(range(0,epochs), acc_list, save_path=f'{results_path}/plot_epoch_accuracy.jpg')
+    plot_epoch_f1(range(0, epochs), f1_list, save_path=f'{results_path}/plot_epoch_f1.jpg')
 
     log.close()                                                                            # BE SURE TO CLOSE LOG

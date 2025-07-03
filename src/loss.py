@@ -2,7 +2,7 @@ import numpy as np
 import torch
 
 # GLCM-based texture loss: encourages model to capture texture-based patterns
-def calculate_glcm_energy(patch, levels):
+def calculate_glcm_energy(patch, levels, expand_test=False):
     if patch.size == 0:
         return 0.0
     patch = np.clip(patch, 0, 255).astype(np.uint8)
@@ -10,15 +10,23 @@ def calculate_glcm_energy(patch, levels):
     glcm = np.zeros((levels, levels), dtype=np.float32)
     #print("patch.shape[0] = ", patch.shape[0])
     #print("glcm before = ",glcm)
-    for y in range(patch.shape[0] - 1):
-        for x in range(patch.shape[1] - 1):
-            glcm[patch[y,x], patch[y,x+1]] += 1     # right
-            glcm[patch[y,x], patch[y+1,x]] += 1     # up
-            glcm[patch[y,x], patch[y+1,x+1]] += 1   # top-left
 
-            #glcm[patch[y, x], patch[y, x + 2]] += 1  # right 2
-            #glcm[patch[y, x], patch[y + 2, x]] += 1  # up 2
-            #glcm[patch[y, x], patch[y + 2, x + 1]] += 1  # top-left 2
+    if expand_test:
+        for y in range(patch.shape[0] - 2):
+            for x in range(patch.shape[1] - 2):
+                glcm[patch[y,x], patch[y,x+1]] += 1     # right
+                glcm[patch[y,x], patch[y+1,x]] += 1     # up
+                glcm[patch[y,x], patch[y+1,x+1]] += 1   # top-left
+
+                glcm[patch[y, x], patch[y, x + 2]] += 1  # right 2
+                glcm[patch[y, x], patch[y + 2, x]] += 1  # up 2
+                glcm[patch[y, x], patch[y + 2, x + 1]] += 1  # top-left 2
+    else:
+        for y in range(patch.shape[0] - 1):
+            for x in range(patch.shape[1] - 1):
+                glcm[patch[y,x], patch[y,x+1]] += 1     # right
+                glcm[patch[y,x], patch[y+1,x]] += 1     # up
+                glcm[patch[y,x], patch[y+1,x+1]] += 1   # top-left
 
     glcm /= glcm.sum() + 1e-6
     #print("glcm after = ", glcm)

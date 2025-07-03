@@ -12,6 +12,7 @@ def get_class_weights(dataset):
         all_labels.extend(mask.flatten().numpy())
     labels_np = np.array(all_labels)
     present_classes = np.unique(labels_np)
+    print(present_classes)
 
     # Calculate initial weights from sklearn
     weights = compute_class_weight('balanced', classes=present_classes, y=labels_np)

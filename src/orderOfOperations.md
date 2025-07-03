@@ -28,7 +28,7 @@
         4. Apply manual scaling to class_weight_dict to focus on rare damage classes
         5. Print weights and send them to tensor
     ### train.py
-   9. Initialze object for loss function with weights for each class and initilize optimizer
+   9. Initialize object for loss function with weights for each class and initialize optimizer
    10. Additional initializing for best epochs, graphing, and general history
    11. Begin epoch loop for epoch in epochs
        12. start epoch timer
@@ -39,5 +39,10 @@
            17. send them to the GPU
            18. reset gradients (optimizer)
            19. damage_out recorded from forward pass of EnhancedDamageModel
-           20. loss_ce calculated using loss_fn 
-           21. TO BE FILLED COUNTINUED
+           20. loss_ce calculated using loss_fn (from CrossEntropyLoss object)
+           21. loss is calculated with adaptive_texture_loss function if glcm is activated
+               ### loss.py
+               22. device assigned
+               23. the delta of post - pre_img is created and normalized
+               24. loss initialized on device
+               25. 
