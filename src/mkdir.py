@@ -15,12 +15,12 @@ Features:
 """
 
 
-def mkdir_results():
-    os.makedirs('../results', exist_ok=True)  # create output directory
+def mkdir_results(new_dir_name):
+    os.makedirs(f'../{new_dir_name}_results', exist_ok=True)  # create output directory
     highest = -1
-    for folder in os.listdir('../results',):  # inside directory
+    for folder in os.listdir(f'../{new_dir_name}_results',):  # inside directory
         if int(folder) > highest:
             highest = int(folder)
     highest += 1
-    return os.path.join('../results', f'{highest}')
+    return os.path.join(f'../{new_dir_name}_results', f'{highest}')
 

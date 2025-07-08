@@ -17,6 +17,7 @@ def get_class_weights(dataset):
     # Calculate initial weights from sklearn
     weights = compute_class_weight('balanced', classes=present_classes, y=labels_np)
     class_weight_dict = dict(zip(present_classes, weights))
+    print(class_weight_dict)
 
     # Apply manual scaling to focus on rare damage classes
     full_weights = []

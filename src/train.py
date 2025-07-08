@@ -22,8 +22,10 @@ import metrics
 print("Loaded metrics.py from:", metrics.__file__)
 
 
-def train_and_eval(use_glcm, patch_size, stride, batch_size, epochs, lr, root, verbose, sample_size, levels):
-    results_path = mkdir_results()                      # works to place contents of each individual run into respective directory
+def train_and_eval(use_glcm, patch_size, stride, batch_size, epochs, lr, root, verbose, sample_size, levels, save_name):
+    TOTAL_start_time = time.perf_counter()  # Record the start time           PART OF TIME FUNCTION
+
+    results_path = mkdir_results(save_name)                      # works to place contents of each individual run into respective directory
     os.makedirs(results_path, exist_ok=True)            # create output directory
     # create log file
     log = Log(path = f'{results_path}/log.txt')
@@ -57,7 +59,7 @@ def train_and_eval(use_glcm, patch_size, stride, batch_size, epochs, lr, root, v
     # Load dataset with patch size and stride
     dataset = DamageDataset(train_pre, train_post, train_mask, patch_size=patch_size, stride=stride)
     print("Dataset loaded")
-    #analyze_class_distribution(dataset)
+    analyze_class_distribution(dataset)
 
     train_size = int(0.8 * len(dataset))
     val_size = len(dataset) - train_size
@@ -83,7 +85,6 @@ def train_and_eval(use_glcm, patch_size, stride, batch_size, epochs, lr, root, v
     for epoch in range(epochs):
         print(f"\nEpoch {epoch + 1}/{epochs}")
         start_time = time.perf_counter()  # Record the start time           PART OF TIME FUNCTION
-        print("Training...............")
         model.train()
 
         """
@@ -211,6 +212,7 @@ def train_and_eval(use_glcm, patch_size, stride, batch_size, epochs, lr, root, v
 
     acc_list = []
     f1_list = []
+    total = 0
     count = 1
     for key_val_pair in epochs_for_plotting:
         acc_list.append((epochs_for_plotting[(count)])[0])
@@ -218,7 +220,20 @@ def train_and_eval(use_glcm, patch_size, stride, batch_size, epochs, lr, root, v
         count += 1
 
 
+    for i in acc_list:
+        total = i + total
+    avg_accuracy = total/len(acc_list)
+    log.append(f'Average Accuracy: {avg_accuracy}')
     plot_epoch_accuracy(range(0,epochs), acc_list, save_path=f'{results_path}/plot_epoch_accuracy.jpg')
     plot_epoch_f1(range(0, epochs), f1_list, save_path=f'{results_path}/plot_epoch_f1.jpg')
 
-    log.close()                                                                            # BE SURE TO CLOSE LOG
+    # End timing function
+    TOTAL_end_time = time.perf_counter()  # Record the end time                  PART OF TIME FUNCTION
+    TOTAL_elapsed_time = TOTAL_end_time - TOTAL_start_time                                 # PART OF TIME FUNCTION
+    TOTAL_hours = int(TOTAL_elapsed_time // 3600)                                    # PART OF TIME FUNCTION
+    TOTAL_minutes = int((TOTAL_elapsed_time % 3600) // 60)                           # PART OF TIME FUNCTION
+    TOTAL_seconds = int(TOTAL_elapsed_time % 60)                                     # PART OF TIME FUNCTION
+    log.append(f'Seconds elapsed: {TOTAL_elapsed_time}')
+    log.append(f"Total elapsed time: {TOTAL_hours: >6} hours, {TOTAL_minutes: >6} minutes, {TOTAL_seconds: >6} seconds")
+    log.append(f"{TOTAL_elapsed_time}, {macro_precision}")
+    log.close()                                                          # BE SURE TO CLOSE LOG

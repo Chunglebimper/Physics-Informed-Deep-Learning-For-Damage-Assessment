@@ -3,6 +3,9 @@
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
       <excludeFolder url="file://$MODULE_DIR$/.venv" />
+      <excludeFolder url="file://$MODULE_DIR$/data1/gt_post" />
+      <excludeFolder url="file://$MODULE_DIR$/data1/gt_pre" />
+      <excludeFolder url="file://$MODULE_DIR$/results" />
     </content>
     <orderEntry type="jdk" jdkName="Python 3.8 (Physics-Informed-Deep-Learning-For-Damage-Assessment)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />

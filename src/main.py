@@ -18,9 +18,9 @@ if __name__ == "__main__":
     parser.add_argument('--verbose', action='store_true', help='Includes Epoch data in log')
     parser.add_argument('--sample_size', type=int,  default=128, help='Amount of images sampled')
     parser.add_argument('--levels', type=int, default=32, help='Levels in powers of two')
+    parser.add_argument('--save_name', type=str, default='results')
     args = parser.parse_args()
 
-    start_time = time.perf_counter()  # Record the start time           PART OF TIME FUNCTION
 
     # ------ FUNCTION TO BE TIMED ------
     train_and_eval(
@@ -33,20 +33,7 @@ if __name__ == "__main__":
         root=args.data_root,
         verbose=args.verbose,
         sample_size=args.sample_size,
-        levels=args.levels
+        levels=args.levels,
+        save_name=args.save_name
     )
     # ---------------------------------
-
-    end_time = time.perf_counter()  # Record the end time                 PART OF TIME FUNCTION
-    elapsed_time = end_time - start_time  # PART OF TIME FUNCTION
-    hours = int(elapsed_time // 3600)  # PART OF TIME FUNCTION
-    minutes = int((elapsed_time % 3600) // 60)  # PART OF TIME FUNCTION
-    seconds = int(elapsed_time % 60)  # PART OF TIME FUNCTION
-
-    # HENRY, FIX ME
-    """
-    log_instance = Log()
-    log_instance.open(override=True)
-    log_instance.append(f"Total elapsed time: {hours: >6} hours, {minutes: >6} minutes, {seconds: >6} seconds")
-    log_instance.close()
-    """

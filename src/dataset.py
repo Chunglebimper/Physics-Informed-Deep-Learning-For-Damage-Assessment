@@ -34,12 +34,14 @@ class DamageDataset(Dataset):
             basename = fname.replace(f"_{mode}_disaster_target.png", "")
             mask = np.array(Image.open(os.path.join(self.mask_dir, fname)).convert('L'))
             h, w = mask.shape
+            print("Patches featuring class 4:")
             for y in range(0, h - patch_size + 1, stride):
                 for x in range(0, w - patch_size + 1, stride):
                     patch = mask[y:y + patch_size, x:x + patch_size]
                     include = (4 in patch or 3 in patch or 2 in patch or np.random.rand() < 0.1)
                     if include:
                         is_priority = any(cls in patch for cls in [2, 3, 4])
+                        print((f'\t{basename, x, y}\n') if 4 in patch else "", end="")
                         self.samples.append((basename, x, y, is_priority))
 
     def __len__(self):
