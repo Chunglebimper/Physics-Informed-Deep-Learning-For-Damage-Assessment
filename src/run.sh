@@ -39,4 +39,4 @@
 #python main.py --batch_size 4 --patch_size 64 --stride 32 --epochs 31 --data_root ../data --save_name 'GLCM-off'
 #python main.py --batch_size 4 --patch_size 64 --stride 32 --epochs 31 --data_root ../data --save_name 'GLCM-off'
 
-python main.py --batch_size 4 --patch_size 64 --stride 32 --epochs 31 --data_root ../data --save_name 'delete_me' --verbose
+python main.py --batch_size 64 --patch_size 256 --stride 128 --epochs 2 --data_root ../data --save_name 'delete_me' --verbose

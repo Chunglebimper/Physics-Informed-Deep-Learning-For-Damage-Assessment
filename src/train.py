@@ -212,18 +212,25 @@ def train_and_eval(use_glcm, patch_size, stride, batch_size, epochs, lr, root, v
 
     acc_list = []
     f1_list = []
-    total = 0
+    total_acc = 0
+    total_f1 = 0
     count = 1
     for key_val_pair in epochs_for_plotting:
         acc_list.append((epochs_for_plotting[(count)])[0])
         f1_list.append((epochs_for_plotting[(count)])[1])
         count += 1
 
-
+    # Calculations
     for i in acc_list:
-        total = i + total
-    avg_accuracy = total/len(acc_list)
-    log.append(f'Average Accuracy: {avg_accuracy}')
+        total_acc = i + total_acc
+    for i in f1_list:
+        total_f1 = i + total_f1
+    avg_accuracy = total_acc/len(acc_list)
+    avg_f1 = total_f1 / len(f1_list)
+
+
+    log.append(f"{'Average Accuracy':<30}: {avg_accuracy:.4f}")
+    log.append(f"{'Average f1':<30}: {avg_f1:.4f}")
     plot_epoch_accuracy(range(0,epochs), acc_list, save_path=f'{results_path}/plot_epoch_accuracy.jpg')
     plot_epoch_f1(range(0, epochs), f1_list, save_path=f'{results_path}/plot_epoch_f1.jpg')
 
@@ -235,5 +242,6 @@ def train_and_eval(use_glcm, patch_size, stride, batch_size, epochs, lr, root, v
     TOTAL_seconds = int(TOTAL_elapsed_time % 60)                                     # PART OF TIME FUNCTION
     log.append(f'Seconds elapsed: {TOTAL_elapsed_time}')
     log.append(f"Total elapsed time: {TOTAL_hours: >6} hours, {TOTAL_minutes: >6} minutes, {TOTAL_seconds: >6} seconds")
-    log.append(f"{TOTAL_elapsed_time}, {macro_precision}")
+    log.append(f"{TOTAL_elapsed_time}, {avg_f1}, {macro_precision}, {avg_accuracy}")
+    log.append("TOTAL_elapsed_time, avg_f1, macro_precision, avg_accuracy")
     log.close()                                                          # BE SURE TO CLOSE LOG
