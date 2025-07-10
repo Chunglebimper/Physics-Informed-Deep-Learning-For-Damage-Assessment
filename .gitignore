@@ -1,4 +1,6 @@
-/results/
 /src/best_model.pth
 /.venv/
-/data1/
+/data_flood/
+/delete_me_results/
+
+/test_results/

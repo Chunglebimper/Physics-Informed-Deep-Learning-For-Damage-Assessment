@@ -30,11 +30,12 @@ class DamageDataset(Dataset):
         # Collect image samples
         self.filenames = sorted([f for f in os.listdir(mask_dir) if f.endswith(f"_{mode}_disaster_target.png")])
         self.samples = []
+        print("Patches featuring class 4:")
         for fname in self.filenames:
             basename = fname.replace(f"_{mode}_disaster_target.png", "")
             mask = np.array(Image.open(os.path.join(self.mask_dir, fname)).convert('L'))
             h, w = mask.shape
-            print("Patches featuring class 4:")
+
             for y in range(0, h - patch_size + 1, stride):
                 for x in range(0, w - patch_size + 1, stride):
                     patch = mask[y:y + patch_size, x:x + patch_size]

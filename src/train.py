@@ -22,7 +22,7 @@ import metrics
 print("Loaded metrics.py from:", metrics.__file__)
 
 
-def train_and_eval(use_glcm, patch_size, stride, batch_size, epochs, lr, root, verbose, sample_size, levels, save_name):
+def train_and_eval(use_glcm, patch_size, stride, batch_size, epochs, lr, root, verbose, sample_size, levels, save_name, weights_str):
     TOTAL_start_time = time.perf_counter()  # Record the start time           PART OF TIME FUNCTION
 
     results_path = mkdir_results(save_name)                      # works to place contents of each individual run into respective directory
@@ -71,7 +71,7 @@ def train_and_eval(use_glcm, patch_size, stride, batch_size, epochs, lr, root, v
     # Initialize model, optimizer, and loss
     model = EnhancedDamageModel().to(device)
     print(f"Model loaded on: {next(model.parameters()).device}")
-    weights = get_class_weights(train_dataset).to(device)
+    weights = get_class_weights(train_dataset, weights_str).to(device)
     loss_fn = torch.nn.CrossEntropyLoss(weight=weights)
     optimizer = torch.optim.Adam(model.parameters(), lr=lr)
 
@@ -162,17 +162,17 @@ def train_and_eval(use_glcm, patch_size, stride, batch_size, epochs, lr, root, v
             best_probs, best_true, best_preds = np.array(y_probs), y_true.copy(), y_pred.copy()
 
         # ----------------------LOG-----------------------
-        """
-        log.append(f"{'Epoch':<30}: {epoch + 1}/{epochs}")
-        log.append(f"{'Train Loss':<30}: {train_loss:.4f}")
-        log.append(f"{'Confusion Matrix':<30}:\n{cm}")
-        log.append(f"{'Validation Accuracy':<30}: {acc:.4f}")
-        log.append(f"{'Macro F1 Score':<30}: {macro_f1:.4f}")
-        log.append(f"{'xView2 Score':<30}: {xview2:.4f}")
-        log.append(f"{'Epoch Duration':<30}: {hours:>2} hours, {minutes:>2} minutes, {seconds:>2} seconds")
-        if epoch + 1 < epochs:      # if all epochs printed, dont add seperator
-            log.append("-" * 67)
-        """
+        if verbose:
+            log.append(f"{'Epoch':<30}: {epoch + 1}/{epochs}")
+            log.append(f"{'Train Loss':<30}: {train_loss:.4f}")
+            log.append(f"{'Confusion Matrix':<30}:\n{cm}")
+            log.append(f"{'Validation Accuracy':<30}: {acc:.4f}")
+            log.append(f"{'Macro F1 Score':<30}: {macro_f1:.4f}")
+            log.append(f"{'xView2 Score':<30}: {xview2:.4f}")
+            log.append(f"{'Epoch Duration':<30}: {hours:>2} hours, {minutes:>2} minutes, {seconds:>2} seconds")
+            if epoch + 1 < epochs:      # if all epochs printed, dont add seperator
+                log.append("-" * 67)
+
         # ------------------------------------------------
 
 
