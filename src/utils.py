@@ -38,11 +38,11 @@ def get_class_weights(dataset, weights_str):
         for cls in range(5):
             w = class_weight_dict.get(cls, 1.0)
             if cls == 2:
-                w *= 3.0
+                w *= 2.0
             elif cls == 3:
                 w *= 1.0
             elif cls == 4:
-                w *= 4.0
+                w *= 2.0
             full_weights.append(w)
 
     else:
@@ -50,11 +50,11 @@ def get_class_weights(dataset, weights_str):
         for cls in range(5):
             w = class_weight_dict.get(cls, 1.0)
             if cls == 2:
-                w *= 3.0
+                w *= 1.0
             elif cls == 3:
                 w *= 1.0
             elif cls == 4:
-                w *= 4.0
+                w *= 1.0
             full_weights.append(w)
 
     print(f"Final class weights used in loss: {full_weights}")
