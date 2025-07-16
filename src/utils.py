@@ -45,16 +45,22 @@ def get_class_weights(dataset, weights_str):
                 w *= 2.0
             full_weights.append(w)
 
+    elif weights_str == 'floodv2':
+        print("Using floodv2 weights...")
+        for cls in range(5):
+            w = class_weight_dict.get(cls, 1.0)
+            if cls == 2:
+                w *= 3.0
+            elif cls == 3:
+                w *= 4.0
+            elif cls == 4:
+                w *= 5.0
+            full_weights.append(w)
+
     else:
         print("USING DEFAULT 1:1 WEIGHTS")
         for cls in range(5):
             w = class_weight_dict.get(cls, 1.0)
-            if cls == 2:
-                w *= 1.0
-            elif cls == 3:
-                w *= 1.0
-            elif cls == 4:
-                w *= 1.0
             full_weights.append(w)
 
     print(f"Final class weights used in loss: {full_weights}")

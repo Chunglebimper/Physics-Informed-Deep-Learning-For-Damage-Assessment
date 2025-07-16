@@ -7,7 +7,7 @@ from torchvision import transforms
 
 # Dataset class to handle pre, post, and mask images
 class DamageDataset(Dataset):
-    def __init__(self, pre_dir, post_dir, mask_dir, patch_size=128, stride=64, mode='post'):
+    def __init__(self, pre_dir, post_dir, mask_dir, class0and1percent=10, patch_size=128, stride=64, mode='post'):
         self.pre_dir = pre_dir
         self.post_dir = post_dir
         self.mask_dir = mask_dir
@@ -39,7 +39,7 @@ class DamageDataset(Dataset):
             for y in range(0, h - patch_size + 1, stride):
                 for x in range(0, w - patch_size + 1, stride):
                     patch = mask[y:y + patch_size, x:x + patch_size]
-                    include = (4 in patch or 3 in patch or 2 in patch or np.random.rand() < 0.1)
+                    include = (4 in patch or 3 in patch or 2 in patch or np.random.rand() < float(class0and1percent*0.1))
                     if include:
                         is_priority = any(cls in patch for cls in [2, 3, 4])
                         print((f'\t{basename, x, y}\n') if 4 in patch else "", end="")
