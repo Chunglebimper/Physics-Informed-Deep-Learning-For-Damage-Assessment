@@ -15,7 +15,7 @@ if __name__ == "__main__":
     parser.add_argument('--sample_size', type=int,  default=128, help='Amount of images sampled')
     parser.add_argument('--levels', type=int, default=32, help='Levels in powers of two')
     parser.add_argument('--save_name', type=str, default='results')
-    parser.add_argument('--weights_str', type=str, default='earthquake')
+    parser.add_argument('--weights_str', type=str, default='1,1,1,1,1')
     parser.add_argument('--class0and1percent', type=int, default=10)
     args = parser.parse_args()
 

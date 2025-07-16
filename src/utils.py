@@ -4,8 +4,15 @@ from collections import Counter
 from sklearn.utils.class_weight import compute_class_weight
 from tqdm import tqdm
 
+
 # Function to compute balanced class weights for loss calculation
 def get_class_weights(dataset, weights_str):
+    """
+
+    :param dataset:
+    :param weights_str: Manual balancing with multiplication; Should be a comma seperated list according to the following classes [0,1,2,3,4]
+    :return:
+    """
     all_labels = []
     for i in range(len(dataset)):
         _, _, mask, _ = dataset[i]
@@ -21,50 +28,28 @@ def get_class_weights(dataset, weights_str):
 
     # Apply manual scaling to focus on rare damage classes
     full_weights = []
-    if weights_str == 'earthquake':
-        print("Using earthquake weights...")
-        for cls in range(5):
-            w = class_weight_dict.get(cls, 1.0)
-            if cls == 2:
-                w *= 3.0
-            elif cls == 3:
-                w *= 10.0
-            elif cls == 4:
-                w *= 15.0
-            full_weights.append(w)
 
-    elif weights_str == 'flood':
-        print("Using flood weights...")
-        for cls in range(5):
-            w = class_weight_dict.get(cls, 1.0)
-            if cls == 2:
-                w *= 2.0
-            elif cls == 3:
-                w *= 1.0
-            elif cls == 4:
-                w *= 2.0
-            full_weights.append(w)
-
-    elif weights_str == 'floodv2':
-        print("Using floodv2 weights...")
-        for cls in range(5):
-            w = class_weight_dict.get(cls, 1.0)
-            if cls == 2:
-                w *= 3.0
-            elif cls == 3:
-                w *= 4.0
-            elif cls == 4:
-                w *= 5.0
-            full_weights.append(w)
-
-    else:
-        print("USING DEFAULT 1:1 WEIGHTS")
-        for cls in range(5):
-            w = class_weight_dict.get(cls, 1.0)
-            full_weights.append(w)
+    # Break down weights_str to feed into manual weighting
+    zero, one, two, three, four = weights_str.split(',')
+    for cls in range(5):
+        # classes      [  0,  1,  2,  3,  4]
+        # earthquake = [  1,  1,  3, 10, 15] weights
+        w = class_weight_dict.get(cls, 1.0)
+        if cls == 0:
+            w *= float(zero)
+        elif cls == 1:
+            w *= float(one)
+        elif cls == 2:
+            w *= float(two)
+        elif cls == 3:
+            w *= float(three)
+        elif cls == 4:
+            w *= float(four)
+        full_weights.append(w)
 
     print(f"Final class weights used in loss: {full_weights}")
     return torch.tensor(full_weights, dtype=torch.float32)
+
 
 # Function to analyze and print dataset class distribution
 def analyze_class_distribution(dataset, num_classes=5):

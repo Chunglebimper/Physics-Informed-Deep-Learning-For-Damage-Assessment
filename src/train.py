@@ -245,3 +245,4 @@ def train_and_eval(use_glcm, patch_size, stride, batch_size, epochs, lr, root, v
     log.append(f"{TOTAL_elapsed_time}, {avg_f1}, {macro_precision}, {avg_accuracy}")
     log.append("TOTAL_elapsed_time, avg_f1, macro_precision, avg_accuracy")
     log.close()                                                          # BE SURE TO CLOSE LOG
+    return best_macro_f1
