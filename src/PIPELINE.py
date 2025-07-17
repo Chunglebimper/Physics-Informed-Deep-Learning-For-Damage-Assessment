@@ -7,9 +7,38 @@ from log import Log
 # divide and conquer
 
 def run(num, param):
-    return num
+    global param_dict
+    param_dict[param] = num
+    x = train_and_eval(use_glcm=True,
+                   patch_size=int(param_dict.get('patch_size')),
+                   stride=int(param_dict.get('stride')),
+                   batch_size=int(param_dict.get('batch_size')),
+                   epochs=int(param_dict.get('epochs')),
+                   lr=float(param_dict.get('lr')),
+                   root='../data',
+                   verbose=False,
+                   sample_size=int(param_dict.get('sample_size')),
+                   levels=int(param_dict.get('levels')),
+                   save_name='./___________________________',
+                   weights_str=str(param_dict.get('weights_str')),
+                   class0and1percent=10)
+    log.append(f'{param_dict[param]} : {num}')
+    log.append(f'\tF1: {x}\n')
+    return x
+
+# --------------------------------------------------------------------------------------------------------
 
 def find_max(arr, low, high, best, param):
+    """
+    :param arr: Array of numbers to try
+    :param low: Lower bound
+    :param high: Upper bound
+    :param best:
+    :param param:
+    :return: returns best param value based on F1 scoring from run()
+    """
+    global recursive_step
+
     if low == high:
         return arr[low]  # Base case: one element
 
@@ -17,16 +46,87 @@ def find_max(arr, low, high, best, param):
 
     left_max = find_max(arr, low, mid, best, param)
     right_max = find_max(arr, mid + 1, high, best, param)
+    recursive_step += 1
+    print(recursive_step)
 
     if run(left_max, param) > run(right_max, param):
         return left_max
     else:
         return right_max
 
+# --------------------------------------------------------------------------------------------------------
 
-
+"""
+log = Log('pipelog.txt')
+log.open()
 arr = list(range(1000001))
-print(find_max(arr, 0, len(arr)-1, 0, 'null'))
+____param_dict = {'batch_size':  2,
+              'patch_size': 64,
+              'stride':     32,
+              'epochs':      0,
+              'lr':          0,
+              'sample_size' :0,
+              'levels' :     0,
+              'weights_str': [1,1,1,1,1]}
+"""
+
+param_dict = {}
+PARAMS_TO_CHANGE = ['batch_size', 'patch_size', 'stride', 'epochs', 'lr', 'sample_size', 'levels', 'weights_str']
+
+# ---------------- Load params ----------------
+key_num = 0
+with open('./pipe/test.txt', 'r') as src:
+    for line in src:
+        line = line.strip()
+        param_dict[ PARAMS_TO_CHANGE[ key_num ] ] = line
+        key_num += 1
+# ---------------------------------------------
+
+# Open log to write updates
+log = Log("./pipe/pipelog.txt")
+log.open()
+os.makedirs(f'./pipe', exist_ok=True)
+
+# Open another log for best new params
+with open('./pipe/test.txt', 'w') as src:
+
+    # Initiate param optimization
+    for param in param_dict:
+        recursive_step = 0
+        if param == 'batch_size':
+            src.write(f"{ find_max(range(1,100), 1, 101, 0, 'batch_size') }\n")
+            #src.write(f"2\n")
+            src.flush()
+
+        elif param == 'patch_size':
+            src.write('64\n')
+            pass
+        elif param == 'stride':
+            src.write('32\n')
+            pass
+        elif param == 'epochs':
+            src.write('15\n')
+            pass
+        elif param == 'lr':
+            src.write('1e-6\n')
+            pass
+        elif param == 'sample_size':
+            src.write('128\n')
+            pass
+        elif param == 'levels':
+            src.write('32\n')
+            pass
+        elif param == 'weights_str':
+            src.write('1,1,1,1,1')
+            pass
+        elif param == 'new_param_name_here':
+            pass
+        else:
+            print(f"Parameter: '{param}' array to run not found")
+
+    #print(f"{find_max(arr, 0, len(arr)-1, 0, 'batch_size')}")
+
+log.close()
 
 
 
@@ -43,7 +143,7 @@ Check first param and adjust; save this param and F1
 
     
 
-compare.csv:    Values to compare against
+compare.txt:    Values to compare against
 test.txt:       The best values so far
 pipelog.txt:    Review all changes
 
