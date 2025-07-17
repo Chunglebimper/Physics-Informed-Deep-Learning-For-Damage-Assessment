@@ -6,8 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="a1b87a2a-ec1b-4f93-b49f-0c0acaeca423" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/PCSE555Cont.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/PCSE555Cont.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dataset.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/dataset.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/run.sh" beforeDir="false" afterPath="$PROJECT_DIR$/src/run.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,38 +50,42 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;Python.DELETE.PY.executor&quot;: &quot;Run&quot;,
-    &quot;Python.python main.py --use_glcm --batch_size 10 --patch_size 64 --stride 32 --epochs 50 --data_root ../data.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/caiden/PycharmProjects/Physics-Informed-Deep-Learning-For-Damage-Assessment&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;terminal&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Python.DELETE.PY.executor": "Run",
+    "Python.dataset.executor": "Run",
+    "Python.python main.py --use_glcm --batch_size 10 --patch_size 64 --stride 32 --epochs 50 --data_root ../data.executor": "Run",
+    "Python.utils.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "SHELLCHECK.PATH": "I do mind",
+    "Shell Script.run.sh.executor": "Run",
+    "git-widget-placeholder": "UpdatedVersion",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "/home/caiden/PycharmProjects/Physics-Informed-Deep-Learning-For-Damage-Assessment",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Henry\PycharmProjects\Physics-Informed-Deep-Learning-For-Damage-Assessment" />
+      <recent name="C:\Users\Henry\PycharmProjects\Physics-Informed-Deep-Learning-For-Damage-Assessment\data\flood" />
       <recent name="$PROJECT_DIR$/results" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/results/good_run2" />
-      <recent name="C:\Users\bjren\PycharmProjects\PCSE555Cont\data" />
-      <recent name="C:\Users\bjren\PycharmProjects\PCSE555Cont\src" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.DELETE.PY">
+  <component name="RunManager">
     <configuration name="DELETE.PY" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="PCSE555Cont" />
       <option name="ENV_FILES" value="" />
@@ -92,6 +99,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/DELETEME/DELETE.PY.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
@@ -114,6 +122,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="main.py" />
       <option name="PARAMETERS" value="--use_glcm --batch_size 10 --patch_size 64 --stride 32 --epochs 50 --data_root ../data" />
       <option name="SHOW_COMMAND_LINE" value="false" />
@@ -121,6 +130,21 @@
       <option name="MODULE_MODE" value="false" />
       <option name="REDIRECT_INPUT" value="false" />
       <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="run.sh" type="ShConfigurationType">
+      <option name="SCRIPT_TEXT" value="" />
+      <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
+      <option name="SCRIPT_PATH" value="$PROJECT_DIR$/src/run.sh" />
+      <option name="SCRIPT_OPTIONS" value="" />
+      <option name="INDEPENDENT_SCRIPT_WORKING_DIRECTORY" value="true" />
+      <option name="SCRIPT_WORKING_DIRECTORY" value="$PROJECT_DIR$/src" />
+      <option name="INDEPENDENT_INTERPRETER_PATH" value="true" />
+      <option name="INTERPRETER_PATH" value="/bin/bash" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="EXECUTE_IN_TERMINAL" value="true" />
+      <option name="EXECUTE_SCRIPT_FILE" value="true" />
+      <envs />
       <method v="2" />
     </configuration>
     <recent_temporary>
@@ -133,7 +157,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-python-sdk-53e2683a6804-9cdd278e9d02-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-251.26094.141" />
+        <option value="bundled-js-predefined-d6986cc7102b-09060db00ec0-JavaScript-PY-251.26927.90" />
+        <option value="bundled-python-sdk-41e8cd69c857-64d779b69b7a-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-251.26927.90" />
       </set>
     </attachedChunks>
   </component>
@@ -154,6 +179,14 @@
       <workItem from="1748197660751" duration="9804000" />
       <workItem from="1748387258272" duration="9489000" />
       <workItem from="1748440248357" duration="6023000" />
+      <workItem from="1752502938006" duration="3397000" />
+      <workItem from="1752510171492" duration="1341000" />
+      <workItem from="1752516693042" duration="621000" />
+      <workItem from="1752545972688" duration="25000" />
+      <workItem from="1752675166106" duration="4090000" />
+      <workItem from="1752680000417" duration="725000" />
+      <workItem from="1752700764388" duration="301000" />
+      <workItem from="1752758679348" duration="10089000" />
     </task>
     <servers />
   </component>
@@ -189,5 +222,9 @@
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Physics_Informed_Deep_Learning_For_Damage_Assessment$dataset.coverage" NAME="dataset Coverage Results" MODIFIED="1752766288420" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
+    <SUITE FILE_PATH="coverage/Physics_Informed_Deep_Learning_For_Damage_Assessment$utils.coverage" NAME="utils Coverage Results" MODIFIED="1752759758143" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
   </component>
 </project>

@@ -14,6 +14,7 @@ class DamageDataset(Dataset):
         self.patch_size = patch_size
         self.stride = stride
         self.mode = mode
+        self.delete_list = []
 
         # Standard transforms
         self.base_transform = transforms.Compose([
@@ -41,12 +42,46 @@ class DamageDataset(Dataset):
                     patch = mask[y:y + patch_size, x:x + patch_size]
                     include = (4 in patch or 3 in patch or 2 in patch or np.random.rand() < 0.1)
                     if include:
-                        is_priority = any(cls in patch for cls in [2, 3, 4])
-                        print((f'\t{basename, x, y}\n') if 4 in patch else "", end="")
-                        self.samples.append((basename, x, y, is_priority))
+
+                        img = Image.open(f'../data/img_post/{basename}_post_disaster.png')
+                        file_array = np.transpose(np.array(img), (2, 0, 1))
+                        array_patch = [[], h, w]
+                        for band in range(3):
+                            array_patch[band] = file_array[band][y:y + patch_size, x:x + patch_size]
+                        c = 0
+                        for row in range(len(array_patch[0])):
+                            for col in range(len(array_patch[0][row])):
+                                if array_patch[0][row][col] == array_patch[1][row][col] == array_patch[2][row][col] == 0:
+                                    c += 1
+                                    if c == 10:
+                                        print(fname, x, y)
+                                        self.delete_list.append([basename, x, y])
+
+                        img = Image.open(f'../data/img_pre/{basename}_pre_disaster.png')
+                        file_array = np.transpose(np.array(img), (2, 0, 1))
+                        array_patch = [[], h, w]
+                        for band in range(3):
+                            array_patch[band] = file_array[band][y:y + patch_size, x:x + patch_size]
+                        c = 0
+                        for row in range(len(array_patch[0])):
+                            for col in range(len(array_patch[0][row])):
+                                if array_patch[0][row][col] == array_patch[1][row][col] == array_patch[2][row][
+                                    col] == 0:
+                                    c += 1
+                                    if c == 10:
+                                        print(fname, x, y)
+                                        self.delete_list.append([basename, x, y])
+
+                        if not [basename, x, y] in self.delete_list:
+                            is_priority = any(cls in patch for cls in [2, 3, 4])
+                            print((f'\t{basename, x, y}\n') if 4 in patch else "", end="")
+                            self.samples.append((basename, x, y, is_priority))
 
     def __len__(self):
         return len(self.samples)
+
+
+
 
     def __getitem__(self, idx):
         basename, x, y, is_priority = self.samples[idx]
