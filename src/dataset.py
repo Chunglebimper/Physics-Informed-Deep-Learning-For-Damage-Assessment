@@ -42,8 +42,8 @@ class DamageDataset(Dataset):
                     patch = mask[y:y + patch_size, x:x + patch_size]
                     include = (4 in patch or 3 in patch or 2 in patch or np.random.rand() < 0.1)
                     if include:
-
-                        img = Image.open(f'../data/img_post/{basename}_post_disaster.png')
+                        path = os.path.join(post_dir, f'{basename}_post_disaster.png')
+                        img = Image.open(path)
                         file_array = np.transpose(np.array(img), (2, 0, 1))
                         array_patch = [[], h, w]
                         for band in range(3):
@@ -54,10 +54,11 @@ class DamageDataset(Dataset):
                                 if array_patch[0][row][col] == array_patch[1][row][col] == array_patch[2][row][col] == 0:
                                     c += 1
                                     if c == 10:
-                                        print(fname, x, y)
+                                        print(fname, x, y, 'post')
                                         self.delete_list.append([basename, x, y])
 
-                        img = Image.open(f'../data/img_pre/{basename}_pre_disaster.png')
+                        path = os.path.join(post_dir, f'{basename}_pre_disaster.png')
+                        img = Image.open(path)
                         file_array = np.transpose(np.array(img), (2, 0, 1))
                         array_patch = [[], h, w]
                         for band in range(3):
@@ -69,7 +70,7 @@ class DamageDataset(Dataset):
                                     col] == 0:
                                     c += 1
                                     if c == 10:
-                                        print(fname, x, y)
+                                        print(fname, x, y, 'pre')
                                         self.delete_list.append([basename, x, y])
 
                         if not [basename, x, y] in self.delete_list:
