@@ -1,10 +1,6 @@
 import argparse
-import os
-from os import mkdir
-#from sympy import print_tree
 from train import train_and_eval
-import time
-from log import Log
+
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Damage Assessment Training")
@@ -20,6 +16,7 @@ if __name__ == "__main__":
     parser.add_argument('--levels', type=int, default=32, help='Levels in powers of two')
     parser.add_argument('--save_name', type=str, default='results')
     parser.add_argument('--weights_str', type=str, default='earthquake')
+    parser.add_argument('--class0and1percent', type=int, default=10)
     args = parser.parse_args()
 
 
@@ -36,6 +33,7 @@ if __name__ == "__main__":
         sample_size=args.sample_size,
         levels=args.levels,
         save_name=args.save_name,
-        weights_str=args.weights_str
+        weights_str=args.weights_str,
+        class0and1percent=args.class0and1percent
     )
     # ---------------------------------

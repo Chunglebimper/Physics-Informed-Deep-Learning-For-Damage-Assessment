@@ -15,20 +15,6 @@ The data used in this project is a reduced set from the xBD Damage Assessment da
 - xView2 scoring implementation
 
 
-## TODO
-- Put results in new directory
-- Improve efficiency 
-  - See if the default values from ImageNet are applicable to this data (mean and std)
-  - Find appropriate stride and patch size
-- More on stride:
-  - The larger the stride the more the model notices broader features while a small stride captures finer detials
-  - Noting the above, our data is filled with foliage so there is a lot of noise it is scanning. We really care about buildings.
-- Patch Size
-  - Bigger patches gives bigger context (consider patches as large as the biggest building or the smallest building)
-- Understand: Dissect Loss file
-
-
-
 ## Directory Structure
 
 ```
@@ -41,9 +27,11 @@ final_project/
     ├── src/
         ├── config.py
         ├── dataset.py
+        ├── log.py
         ├── loss.py
         ├── main.py
         ├── metrics.py
+        ├── mkdir.py
         ├── model.py
         ├── train.py
         ├── utils.py
@@ -53,19 +41,27 @@ final_project/
 
 ## Usage
 
-Given the above directory structure, use the following commands to train the model:
+Given the above directory structure, use the following baseline commands to train the model:
 
 ```bash
-python main.py --use_glcm --batch_size 4 --patch_size 64 --stride 32 --epochs 50 --data_root ../data
-python main.py --use_glcm --batch_size 5 --patch_size 64 --stride 32 --epochs 50 --data_root ../data
-python main.py --use_glcm --batch_size 6 --patch_size 64 --stride 32 --epochs 50 --data_root ../data
-python main.py --use_glcm --batch_size 7 --patch_size 64 --stride 32 --epochs 50 --data_root ../data
-python main.py --use_glcm --batch_size 8 --patch_size 64 --stride 32 --epochs 50 --data_root ../data
-python main.py --use_glcm --batch_size 9 --patch_size 64 --stride 32 --epochs 50 --data_root ../data
-python main.py --use_glcm --batch_size 10 --patch_size 64 --stride 32 --epochs 50 --data_root ../data
+python main.py --use_glcm --batch_size 2 --patch_size 32 --stride 16 --epochs 50 --data_root ../data
+
 ```
+### Required
+* `--data_root` Path to dataset root directory
 
-Disable GLCM loss with `--no-use_glcm`. Configure paths in `config.py` or pass `--data_root` at runtime.
-
+### Optional Commands
+* `--use_glcm`: Disable GLCM loss by excluding it from runtime command
+* `--patch_size`
+* `--stride`     
+* `--batch_size` 
+* `--epochs` 
+* `--lr` _Advanced testing_
+* `--verbose`: Disable Epoch data in log by excluding it from runtime command
+* `--sample_size ` _Advanced testing_
+* `--levels`: _Advanced testing_
+* `--save_name`: Send results to this directory name (appends to selected directory)
+* `--weights_str`: Default is 'earthquake' (see `utils.py`)
+* `--class0and1percent`: How much of class 0 and 1 to be included?
 ## Authors
 - Dr. Yan Lu, Brennan Miller, Abdul Anouti
