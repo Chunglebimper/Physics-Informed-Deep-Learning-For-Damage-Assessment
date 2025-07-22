@@ -15,6 +15,7 @@ from visuals import plot_loss_curves, plot_multiclass_roc, visualize_predictions
 from sklearn.metrics import accuracy_score, f1_score, precision_score
 import matplotlib.pyplot as plt
 from mkdir import mkdir_results
+from tqdm import tqdm
 
 # Function to train and evaluate the model with logging
 
@@ -58,7 +59,6 @@ def train_and_eval(use_glcm, patch_size, stride, batch_size, epochs, lr, root, v
 
     # Load dataset with patch size and stride
     dataset = DamageDataset(train_pre, train_post, train_mask, patch_size=patch_size, stride=stride)
-    print("Dataset loaded")
     analyze_class_distribution(dataset)
 
     train_size = int(0.8 * len(dataset))
@@ -84,7 +84,7 @@ def train_and_eval(use_glcm, patch_size, stride, batch_size, epochs, lr, root, v
 
     for epoch in range(epochs):
         print(f"\nEpoch {epoch + 1}/{epochs}")
-        start_time = time.perf_counter()  # Record the start time           PART OF TIME FUNCTION
+        start_time = time.perf_counter() # Record the start time           PART OF TIME FUNCTION
         model.train()
 
         """
@@ -96,16 +96,19 @@ def train_and_eval(use_glcm, patch_size, stride, batch_size, epochs, lr, root, v
             param.requires_grad = epoch >= 3
 
         total_loss = 0
-        for pre, post, mask, _ in train_loader:
-            pre, post, mask = pre.to(device), post.to(device), mask.to(device)
-            optimizer.zero_grad()
-            damage_out = model(pre, post)
-            loss_ce = loss_fn(damage_out, mask)
-            pred_classes = torch.argmax(damage_out, dim=1)
-            loss = loss_ce + 0.3 * adaptive_texture_loss(pre, post, pred_classes, sample_size, levels) if use_glcm else loss_ce
-            loss.backward()
-            optimizer.step()
-            total_loss += loss.item()
+
+        with tqdm(total=len(train_loader), desc="Epoch Data") as pbar:
+            for pre, post, mask, _ in train_loader:
+                pre, post, mask = pre.to(device), post.to(device), mask.to(device)
+                optimizer.zero_grad()
+                damage_out = model(pre, post)
+                loss_ce = loss_fn(damage_out, mask)
+                pred_classes = torch.argmax(damage_out, dim=1)
+                loss = loss_ce + 0.3 * adaptive_texture_loss(pre, post, pred_classes, sample_size, levels) if use_glcm else loss_ce
+                loss.backward()
+                optimizer.step()
+                total_loss += loss.item()
+                pbar.update(1)
 
         train_loss = total_loss / len(train_loader)
         train_loss_history.append(train_loss)
@@ -135,7 +138,6 @@ def train_and_eval(use_glcm, patch_size, stride, batch_size, epochs, lr, root, v
         print_f1_per_class(y_true, y_pred)
         print_precision_per_class(y_true, y_pred)
         print_recall_per_class(y_true, y_pred)
-
 
         acc = accuracy_score(y_true, y_pred)
         macro_f1 = f1_score(y_true, y_pred, average='macro', zero_division=0)

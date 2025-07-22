@@ -29,12 +29,12 @@ class DamageDataset(Dataset):
         ])
 
         # Collect image samples
-        self.filenames = sorted([f for f in os.listdir(mask_dir) if f.endswith(f"_{mode}_disaster_target.png")])
+        self.filenames = sorted([f for f in os.listdir(self.mask_dir) if f.endswith(f"_{mode}_disaster_target.png")])
         self.samples = []
         print("Patches featuring class 4:")
         for fname in self.filenames:
             basename = fname.replace(f"_{mode}_disaster_target.png", "")
-            mask = np.array(Image.open(os.path.join(self.mask_dir, fname)).convert('L'))
+            mask = np.array(Image.open(os.path.join(mask_dir, fname)).convert('L'))
             h, w = mask.shape
 
             for y in range(0, h - patch_size + 1, stride):
@@ -57,7 +57,7 @@ class DamageDataset(Dataset):
                                         print(fname, x, y, 'post')
                                         self.delete_list.append([basename, x, y])
 
-                        path = os.path.join(post_dir, f'{basename}_pre_disaster.png')
+                        path = os.path.join(pre_dir, f'{basename}_pre_disaster.png')
                         img = Image.open(path)
                         file_array = np.transpose(np.array(img), (2, 0, 1))
                         array_patch = [[], h, w]
@@ -75,7 +75,7 @@ class DamageDataset(Dataset):
 
                         if not [basename, x, y] in self.delete_list:
                             is_priority = any(cls in patch for cls in [2, 3, 4])
-                            print((f'\t{basename, x, y}\n') if 4 in patch else "", end="")
+                            print(f'\t{basename, x, y}\n' if 4 in patch else "", end="")
                             self.samples.append((basename, x, y, is_priority))
 
     def __len__(self):
