@@ -75,7 +75,7 @@ PARAMS_TO_CHANGE = ['batch_size', 'patch_size', 'stride', 'epochs', 'lr', 'sampl
 
 # ---------------- Load params ----------------
 key_num = 0
-with open('./pipe/test.txt', 'r') as src:
+with open('../src/pipe/test.txt', 'r') as src:
     for line in src:
         line = line.strip()
         param_dict[ PARAMS_TO_CHANGE[ key_num ] ] = line
@@ -85,10 +85,10 @@ with open('./pipe/test.txt', 'r') as src:
 # Open log to write updates
 log = Log("./pipe/pipelog.txt")
 log.open()
-os.makedirs(f'./pipe', exist_ok=True)
+os.makedirs(f'../src/pipe', exist_ok=True)
 
 # Open another log for best new params
-with open('./pipe/test.txt', 'w') as src:
+with open('../src/pipe/test.txt', 'w') as src:
 
     # Initiate param optimization
     for param in param_dict:

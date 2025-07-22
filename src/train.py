@@ -225,8 +225,9 @@ def train_and_eval(use_glcm, patch_size, stride, batch_size, epochs, lr, root, v
         total_acc = i + total_acc
     for i in f1_list:
         total_f1 = i + total_f1
-    avg_accuracy = total_acc/len(acc_list)
+    avg_accuracy = total_acc / len(acc_list)
     avg_f1 = total_f1 / len(f1_list)
+    avg_valoss = sum(val_loss_history) / len(val_loss_history)
 
 
     log.append(f"{'Average Accuracy':<30}: {avg_accuracy:.4f}")
@@ -242,7 +243,7 @@ def train_and_eval(use_glcm, patch_size, stride, batch_size, epochs, lr, root, v
     TOTAL_seconds = int(TOTAL_elapsed_time % 60)                                     # PART OF TIME FUNCTION
     log.append(f'Seconds elapsed: {TOTAL_elapsed_time}')
     log.append(f"Total elapsed time: {TOTAL_hours: >6} hours, {TOTAL_minutes: >6} minutes, {TOTAL_seconds: >6} seconds")
-    log.append(f"{TOTAL_elapsed_time}, {avg_f1}, {macro_precision}, {avg_accuracy}")
-    log.append("TOTAL_elapsed_time, avg_f1, macro_precision, avg_accuracy")
+    log.append(f"{TOTAL_elapsed_time}, {avg_f1}, {macro_precision}, {avg_accuracy}, {avg_valoss}")
+    log.append("TOTAL_elapsed_time, avg_f1, macro_precision, avg_accuracy, avg_valoss")
     log.close()                                                          # BE SURE TO CLOSE LOG
-    return best_macro_f1
+    return best_macro_f1, avg_accuracy, avg_valoss

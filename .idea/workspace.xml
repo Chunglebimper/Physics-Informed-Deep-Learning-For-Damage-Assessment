@@ -5,9 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a1b87a2a-ec1b-4f93-b49f-0c0acaeca423" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/recTest.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/optune_PIPELINE_weights.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/optune_PIPELINE_weightsvV2.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PIPELINE.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/PIPELINE.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/optune_PIPELINE.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/optune_PIPELINE.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pipe/pipelog.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/pipe/pipelog.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/train.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,14 +57,16 @@
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "Python.DELETE.PY.executor": "Run",
     "Python.PIPELINE.executor": "Run",
+    "Python.optune_PIPELINE.executor": "Run",
     "Python.python main.py --use_glcm --batch_size 10 --patch_size 64 --stride 32 --epochs 50 --data_root ../data.executor": "Run",
+    "Python.recTest.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
     "RunOnceActivity.git.unshallow": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "pipeline",
     "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "/home/caiden/PycharmProjects/ConvolutionalNeuralNetwork",
+    "last_opened_file_path": "/home/caiden/PycharmProjects/Physics-Informed-Deep-Learning-For-Damage-Assessment/src",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -71,15 +77,18 @@
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/collcted_results" />
       <recent name="$PROJECT_DIR$/data" />
-      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/results" />
       <recent name="$PROJECT_DIR$/results/good_run2" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.PIPELINE">
+  <component name="RunManager" selected="Python.optune_PIPELINE">
     <configuration name="DELETE.PY" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="PCSE555Cont" />
       <option name="ENV_FILES" value="" />
@@ -124,6 +133,28 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="optune_PIPELINE" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="PCSE555Cont" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/optune_PIPELINE.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="python main.py --use_glcm --batch_size 10 --patch_size 64 --stride 32 --epochs 50 --data_root ../data" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="PCSE555Cont" />
       <option name="ENV_FILES" value="" />
@@ -146,8 +177,32 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="recTest" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="PCSE555Cont" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/recTest.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.optune_PIPELINE" />
+        <item itemvalue="Python.recTest" />
         <item itemvalue="Python.PIPELINE" />
         <item itemvalue="Python.DELETE.PY" />
         <item itemvalue="Python.python main.py --use_glcm --batch_size 10 --patch_size 64 --stride 32 --epochs 50 --data_root ../data" />
@@ -210,6 +265,15 @@
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/src/config.py</url>
           <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/src/optune_PIPELINE_weights.py</url>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/src/optune_PIPELINE_weightsvV2.py</url>
+          <line>39</line>
+          <option name="timeStamp" value="8" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
