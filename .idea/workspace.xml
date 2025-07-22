@@ -5,13 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a1b87a2a-ec1b-4f93-b49f-0c0acaeca423" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/recTest.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/optune_PIPELINE_weights.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/optune_PIPELINE_weightsvV2.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/optune_PIPELINE.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/optune_PIPELINE.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pipe/pipelog.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/pipe/pipelog.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/train.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/optune_PIPELINE_weightsvV2.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/optune_PIPELINE_weightsvV2.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,11 +76,11 @@
       <recent name="$PROJECT_DIR$/src" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/unused" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/collcted_results" />
       <recent name="$PROJECT_DIR$/data" />
       <recent name="$PROJECT_DIR$/results" />
-      <recent name="$PROJECT_DIR$/results/good_run2" />
     </key>
   </component>
   <component name="RunManager" selected="Python.optune_PIPELINE">
@@ -124,7 +119,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/PIPELINE.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/unused/PIPELINE.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -146,7 +141,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/optune_PIPELINE.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/unused/optune_PIPELINE.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -190,7 +185,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/recTest.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/unused/recTest.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -267,13 +262,8 @@
           <option name="timeStamp" value="6" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/src/optune_PIPELINE_weights.py</url>
+          <url>file://$PROJECT_DIR$/unused/optune_PIPELINE_weights.py</url>
           <option name="timeStamp" value="7" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/src/optune_PIPELINE_weightsvV2.py</url>
-          <line>39</line>
-          <option name="timeStamp" value="8" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

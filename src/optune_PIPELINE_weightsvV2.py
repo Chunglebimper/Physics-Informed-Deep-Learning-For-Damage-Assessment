@@ -43,7 +43,7 @@ weights_dict = {'class5': 1, 'class4': 1, 'class3': 1, 'class2': 1, 'class1': 1}
 
 for class_key in weights_dict:
     study = optuna.create_study(directions=['maximize', 'maximize', 'minimize'])
-    study.optimize(lambda trial: objective(trial, class_to_optimize=class_key), n_trials=2) # what?????
+    study.optimize(lambda trial: objective(trial, class_to_optimize=class_key), n_trials=50) # what?????
 
     # My code:
     #best_params = study.best_params
@@ -53,10 +53,10 @@ for class_key in weights_dict:
     pareto_trials = study.best_trials
     try:
         print(pareto_trials)
-        log.append((pareto_trials, "\n"))
+        log.append((f'pareto_trials {pareto_trials}'))
     except Exception as e:
         print(e)
-        log.append((e, "\n"))
+        log.append((f'{e}\n'))
     best_trial = max(pareto_trials, key=lambda t: t.user_attrs["f1"])
     found_x = best_trial.params[class_key]
 
