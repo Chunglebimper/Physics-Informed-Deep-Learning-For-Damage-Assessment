@@ -5,6 +5,7 @@ from sklearn.utils.class_weight import compute_class_weight
 from tqdm import tqdm
 
 # Function to compute balanced class weights for loss calculation
+
 def get_class_weights(dataset, weights_str):
     all_labels = []
     for i in range(len(dataset)):
@@ -67,6 +68,7 @@ def get_class_weights(dataset, weights_str):
     return torch.tensor(full_weights, dtype=torch.float32)
 
 # Function to analyze and print dataset class distribution
+
 def analyze_class_distribution(dataset, num_classes=5):
     print("Analyzing class distribution")
     counter = Counter()

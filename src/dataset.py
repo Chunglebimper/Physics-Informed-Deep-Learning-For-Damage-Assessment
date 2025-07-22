@@ -14,6 +14,7 @@ class DamageDataset(Dataset):
         self.patch_size = patch_size
         self.stride = stride
         self.mode = mode
+        self.delete_list = []
 
         # Standard transforms
         self.base_transform = transforms.Compose([
@@ -28,12 +29,12 @@ class DamageDataset(Dataset):
         ])
 
         # Collect image samples
-        self.filenames = sorted([f for f in os.listdir(mask_dir) if f.endswith(f"_{mode}_disaster_target.png")])
+        self.filenames = sorted([f for f in os.listdir(self.mask_dir) if f.endswith(f"_{mode}_disaster_target.png")])
         self.samples = []
         print("Patches featuring class 4:")
         for fname in self.filenames:
             basename = fname.replace(f"_{mode}_disaster_target.png", "")
-            mask = np.array(Image.open(os.path.join(self.mask_dir, fname)).convert('L'))
+            mask = np.array(Image.open(os.path.join(mask_dir, fname)).convert('L'))
             h, w = mask.shape
 
             for y in range(0, h - patch_size + 1, stride):
@@ -41,12 +42,47 @@ class DamageDataset(Dataset):
                     patch = mask[y:y + patch_size, x:x + patch_size]
                     include = (4 in patch or 3 in patch or 2 in patch or np.random.rand() < float(class0and1percent*0.1))
                     if include:
-                        is_priority = any(cls in patch for cls in [2, 3, 4])
-                        print((f'\t{basename, x, y}\n') if 4 in patch else "", end="")
-                        self.samples.append((basename, x, y, is_priority))
+                        path = os.path.join(post_dir, f'{basename}_post_disaster.png')
+                        img = Image.open(path)
+                        file_array = np.transpose(np.array(img), (2, 0, 1))
+                        array_patch = [[], h, w]
+                        for band in range(3):
+                            array_patch[band] = file_array[band][y:y + patch_size, x:x + patch_size]
+                        c = 0
+                        for row in range(len(array_patch[0])):
+                            for col in range(len(array_patch[0][row])):
+                                if array_patch[0][row][col] == array_patch[1][row][col] == array_patch[2][row][col] == 0:
+                                    c += 1
+                                    if c == 10:
+                                        print(fname, x, y, 'post')
+                                        self.delete_list.append([basename, x, y])
+
+                        path = os.path.join(pre_dir, f'{basename}_pre_disaster.png')
+                        img = Image.open(path)
+                        file_array = np.transpose(np.array(img), (2, 0, 1))
+                        array_patch = [[], h, w]
+                        for band in range(3):
+                            array_patch[band] = file_array[band][y:y + patch_size, x:x + patch_size]
+                        c = 0
+                        for row in range(len(array_patch[0])):
+                            for col in range(len(array_patch[0][row])):
+                                if array_patch[0][row][col] == array_patch[1][row][col] == array_patch[2][row][
+                                    col] == 0:
+                                    c += 1
+                                    if c == 10:
+                                        print(fname, x, y, 'pre')
+                                        self.delete_list.append([basename, x, y])
+
+                        if not [basename, x, y] in self.delete_list:
+                            is_priority = any(cls in patch for cls in [2, 3, 4])
+                            print(f'\t{basename, x, y}\n' if 4 in patch else "", end="")
+                            self.samples.append((basename, x, y, is_priority))
 
     def __len__(self):
         return len(self.samples)
+
+
+
 
     def __getitem__(self, idx):
         basename, x, y, is_priority = self.samples[idx]
