@@ -105,4 +105,4 @@
 #python main.py --use_glcm --batch_size 4 --patch_size 64 --stride 32 --epochs 31 --data_root ../data_flood --save_name 'uncleanFLOODglcm_1to1weights'
 #python main.py --use_glcm --batch_size 4 --patch_size 64 --stride 32 --epochs 31 --data_root ../data_flood --save_name 'uncleanFLOODglcm_1to1weights'
 #python main.py --use_glcm --batch_size 4 --patch_size 64 --stride 32 --epochs 31 --data_root ../data_flood --save_name 'uncleanFLOODglcm_1to1weights'
-python main.py --use_glcm --batch_size 4 --patch_size 256 --stride 128 --epochs 31 --data_root ../data --save_name 'nulllllllllllllllllll' --weights_str '1,2,3,4,5'
+python main.py --use_glcm --batch_size 4 --patch_size 512 --stride 256 --epochs 31 --data_root ../data --save_name 'nulllllllllllllllllll' --weights_str '1,1,1,1,1'

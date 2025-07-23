@@ -33,6 +33,10 @@ def objective(trial, class_to_optimize):
     return f1, accuracy, val_loss
 
 
+
+
+
+
 log = Log("./pipe/pipelogv2.txt")
 log.open()
 os.makedirs(f'./pipe', exist_ok=True)
@@ -53,10 +57,10 @@ for class_key in weights_dict:
     pareto_trials = study.best_trials
     try:
         print(pareto_trials)
-        log.append((f'pareto_trials {pareto_trials}'))
+        log.append(f'pareto_trials {pareto_trials}')
     except Exception as e:
         print(e)
-        log.append((f'{e}\n'))
+        log.append(f'{e}\n')
     best_trial = max(pareto_trials, key=lambda t: t.user_attrs["f1"])
     found_x = best_trial.params[class_key]
 
