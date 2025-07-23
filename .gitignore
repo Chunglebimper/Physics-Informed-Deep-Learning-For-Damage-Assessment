@@ -2,5 +2,13 @@
 /.venv/
 /data_flood/
 /delete_me_results/
-
 /test_results/
+/uncleanFLOOD_32x8_GLCM-on_results/
+/uncleanFLOOD_results/
+/uncleanFLOODglcm_results/
+/my_data_GLCM-on_results/
+/GLCM-on_results/
+/GLCM-off_results/
+/test_results/
+/data_my/
+/uncleanFLOODglcm_1to1weights_results/
