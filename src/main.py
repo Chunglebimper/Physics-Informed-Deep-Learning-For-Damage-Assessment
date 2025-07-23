@@ -18,8 +18,9 @@ if __name__ == "__main__":
     parser.add_argument('--verbose', action='store_true', help='Includes Epoch data in log')
     parser.add_argument('--sample_size', type=int,  default=128, help='Amount of images sampled')
     parser.add_argument('--levels', type=int, default=32, help='Levels in powers of two')
-    parser.add_argument('--save_name', type=str, default='results')
+    parser.add_argument('--save_name', type=str, default='not_specified')
     parser.add_argument('--weights_str', type=str, default='earthquake')
+    parser.add_argument('--image_number', type=str, default='0', help = 'Image number')
     args = parser.parse_args()
 
 
@@ -36,6 +37,7 @@ if __name__ == "__main__":
         sample_size=args.sample_size,
         levels=args.levels,
         save_name=args.save_name,
-        weights_str=args.weights_str
+        weights_str=args.weights_str,
+        image_number=args.image_number
     )
     # ---------------------------------

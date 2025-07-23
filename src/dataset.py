@@ -15,6 +15,7 @@ class DamageDataset(Dataset):
         self.stride = stride
         self.mode = mode
         self.delete_list = []
+        self.stitch_list = []
 
         # Standard transforms
         self.base_transform = transforms.Compose([
@@ -31,7 +32,6 @@ class DamageDataset(Dataset):
         # Collect image samples
         self.filenames = sorted([f for f in os.listdir(self.mask_dir) if f.endswith(f"_{mode}_disaster_target.png")])
         self.samples = []
-        print("Patches featuring class 4:")
         for fname in self.filenames:
             basename = fname.replace(f"_{mode}_disaster_target.png", "")
             mask = np.array(Image.open(os.path.join(mask_dir, fname)).convert('L'))
@@ -56,6 +56,7 @@ class DamageDataset(Dataset):
                                     if c == 10:
                                         print(fname, x, y, 'post')
                                         self.delete_list.append([basename, x, y])
+                                        break
 
                         path = os.path.join(pre_dir, f'{basename}_pre_disaster.png')
                         img = Image.open(path)
@@ -72,11 +73,16 @@ class DamageDataset(Dataset):
                                     if c == 10:
                                         print(fname, x, y, 'pre')
                                         self.delete_list.append([basename, x, y])
+                                        break
 
                         if not [basename, x, y] in self.delete_list:
                             is_priority = any(cls in patch for cls in [2, 3, 4])
-                            print(f'\t{basename, x, y}\n' if 4 in patch else "", end="")
+                            print(f'Patch featuring class 4: \t{basename, x, y}\n' if 4 in patch else "", end="")
                             self.samples.append((basename, x, y, is_priority))
+                            if x % patch_size == 0 and y % patch_size == 0:
+                                self.stitch_list.append([basename, x, y])
+
+
 
     def __len__(self):
         return len(self.samples)
@@ -101,3 +107,30 @@ class DamageDataset(Dataset):
         post_patch = transform(Image.fromarray(post_patch))
 
         return pre_patch, post_patch, torch.from_numpy(mask_patch).long(), f"{basename}_x{x}_y{y}"
+
+    def create_stitched_mask_image(self, image_number, model, results_path):
+        '''
+        :param image_number: image number with leading 0s ex. ---> 00003
+        :param model: this is an initiated class instance
+        :param results_path: preset in the mkdirs class
+        :return: creates a stitched mask image which is added to the log directory
+        '''
+        array = np.zeros((512,512)).astype(np.uint8)
+        image_number = f'000{image_number}'
+        for number, patch in enumerate(self.stitch_list):
+            if patch[0][-len(str(image_number)):] == str(image_number):
+                print(patch, 'yay')
+                x = patch[1]
+                y = patch[2]
+                pre, post, _, _ = self[number]
+                with torch.no_grad():
+                    damage_out = model(pre, post)
+                    pred = torch.argmax(damage_out.squeeze(), dim=0).cpu().numpy().astype(np.uint8)
+                array[y : y + self.patch_size, x : x + self.patch_size] = pred
+
+
+        array = (array * 255 / 4).astype(np.uint8)
+        img = Image.fromarray(array, 'L')
+        img.save(f'{results_path}/full_mask_image_{image_number}.png')
+
+

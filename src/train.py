@@ -23,7 +23,7 @@ import metrics
 print("Loaded metrics.py from:", metrics.__file__)
 
 
-def train_and_eval(use_glcm, patch_size, stride, batch_size, epochs, lr, root, verbose, sample_size, levels, save_name, weights_str):
+def train_and_eval(use_glcm, patch_size, stride, batch_size, epochs, lr, root, verbose, sample_size, levels, save_name, weights_str, image_number):
     TOTAL_start_time = time.perf_counter()  # Record the start time           PART OF TIME FUNCTION
 
     results_path = mkdir_results(save_name)                      # works to place contents of each individual run into respective directory
@@ -79,6 +79,7 @@ def train_and_eval(use_glcm, patch_size, stride, batch_size, epochs, lr, root, v
     train_loss_history, val_loss_history = [], []
     best_probs, best_true, best_preds = [], [], []
 
+    # build accuracy graph over epoch time
     # build accuracy graph over epoch time
     epochs_for_plotting = {}
 
@@ -175,6 +176,7 @@ def train_and_eval(use_glcm, patch_size, stride, batch_size, epochs, lr, root, v
             if epoch + 1 < epochs:      # if all epochs printed, dont add seperator
                 log.append("-" * 67)
 
+        dataset.create_stitched_mask_image(image_number, model, results_path)
         # ------------------------------------------------
 
 
