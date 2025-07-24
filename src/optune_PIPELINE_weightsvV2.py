@@ -24,7 +24,7 @@ def objective(trial, class_to_optimize):
                        verbose=False,
                        sample_size=int(param_dict.get('sample_size')),
                        levels=int(param_dict.get('levels')),
-                       save_name='./____________optune',
+                       save_name='./____________optune2',
                        weights_str=str(to_model), # <----------------- what we care about
                        class0and1percent=10)
     trial.set_user_attr("f1", f1)
@@ -41,14 +41,14 @@ log = Log("./pipe/pipelogv2.txt")
 log.open()
 os.makedirs(f'./pipe', exist_ok=True)
 
-param_dict = {'batch_size': 4, 'patch_size': 512, 'stride':256, 'epochs':10, 'lr':1e-6, 'sample_size':128, 'levels':32,
+param_dict = {'batch_size': 4, 'patch_size': 128, 'stride':64, 'epochs':10, 'lr':1e-6, 'sample_size':128, 'levels':32,
               'weights_str':'1,1,1,1,1'}
 weights_dict = {'class5': 1, 'class4': 1, 'class3': 1, 'class2': 1, 'class1': 1}
 
 for class_key in weights_dict:
     study = optuna.create_study(directions=['maximize', 'maximize', 'minimize'])
     study.optimize(lambda trial: objective(trial, class_to_optimize=class_key), n_trials=50) # what?????
-
+    print("--------------------------------------------")
     # My code:
     #best_params = study.best_params
     #found_x = best_params[class_key]
