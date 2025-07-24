@@ -64,4 +64,4 @@ python main.py --use_glcm --batch_size 2 --patch_size 32 --stride 16 --epochs 50
 * `--weights_str`: Default is 'earthquake' (see `utils.py`)
 * `--class0and1percent`: How much of class 0 and 1 to be included?
 ## Authors
-- Dr. Yan Lu, Brennan Miller, Abdul Anouti
+- Dr. Yan Lu, Brennan Miller, Abdul Anouti, Caiden Pleis, Henry Stern
