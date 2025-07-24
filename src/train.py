@@ -120,17 +120,19 @@ def train_and_eval(use_glcm, patch_size, stride, batch_size, epochs, lr, root, v
         model.eval()
         y_true, y_pred, y_probs = [], [], []
         val_loss = 0.0
-        with torch.no_grad():
-            for pre, post, mask, _ in val_loader:
-                pre, post, mask = pre.to(device), post.to(device), mask.to(device)
-                damage_out = model(pre, post)
-                loss_ce = loss_fn(damage_out, mask)
-                preds = torch.argmax(damage_out, dim=1)
-                probs = F.softmax(damage_out, dim=1).permute(0, 2, 3, 1).reshape(-1, 5)
-                y_true.extend(mask.cpu().numpy().flatten())
-                y_pred.extend(preds.cpu().numpy().flatten())
-                y_probs.extend(probs.cpu().numpy())
-                val_loss += loss_ce.item()
+        with tqdm(total=len(val_loader), desc="Validation Data") as pbar:
+            with torch.no_grad():
+                for pre, post, mask, _ in val_loader:
+                    pre, post, mask = pre.to(device), post.to(device), mask.to(device)
+                    damage_out = model(pre, post)
+                    loss_ce = loss_fn(damage_out, mask)
+                    preds = torch.argmax(damage_out, dim=1)
+                    probs = F.softmax(damage_out, dim=1).permute(0, 2, 3, 1).reshape(-1, 5)
+                    y_true.extend(mask.cpu().numpy().flatten())
+                    y_pred.extend(preds.cpu().numpy().flatten())
+                    y_probs.extend(probs.cpu().numpy())
+                    val_loss += loss_ce.item()
+                    pbar.update(1)
 
         val_loss /= len(val_loader)
         val_loss_history.append(val_loss)
