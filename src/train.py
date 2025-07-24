@@ -23,7 +23,7 @@ import metrics
 print("Loaded metrics.py from:", metrics.__file__)
 
 
-def train_and_eval(use_glcm, patch_size, stride, batch_size, epochs, lr, root, verbose, sample_size, levels, save_name, weights_str, class0and1percent):
+def train_and_eval(use_glcm, patch_size, stride, batch_size, epochs, lr, root, verbose, sample_size, levels, save_name, weights_str, image_number, class0and1percent):
     TOTAL_start_time = time.perf_counter()  # Record the start time           PART OF TIME FUNCTION
 
     results_path = mkdir_results(save_name)                      # works to place contents of each individual run into respective directory
@@ -60,7 +60,7 @@ def train_and_eval(use_glcm, patch_size, stride, batch_size, epochs, lr, root, v
     # Load dataset with patch size and stride
     dataset = DamageDataset(train_pre, train_post, train_mask, class0and1percent=class0and1percent, patch_size=patch_size, stride=stride)
     print("Dataset loaded")
-    
+
     analyze_class_distribution(dataset)
 
     train_size = int(0.8 * len(dataset))
@@ -120,17 +120,19 @@ def train_and_eval(use_glcm, patch_size, stride, batch_size, epochs, lr, root, v
         model.eval()
         y_true, y_pred, y_probs = [], [], []
         val_loss = 0.0
-        with torch.no_grad():
-            for pre, post, mask, _ in val_loader:
-                pre, post, mask = pre.to(device), post.to(device), mask.to(device)
-                damage_out = model(pre, post)
-                loss_ce = loss_fn(damage_out, mask)
-                preds = torch.argmax(damage_out, dim=1)
-                probs = F.softmax(damage_out, dim=1).permute(0, 2, 3, 1).reshape(-1, 5)
-                y_true.extend(mask.cpu().numpy().flatten())
-                y_pred.extend(preds.cpu().numpy().flatten())
-                y_probs.extend(probs.cpu().numpy())
-                val_loss += loss_ce.item()
+        with tqdm(total=len(val_loader), desc="Validation Data") as pbar:
+            with torch.no_grad():
+                for pre, post, mask, _ in val_loader:
+                    pre, post, mask = pre.to(device), post.to(device), mask.to(device)
+                    damage_out = model(pre, post)
+                    loss_ce = loss_fn(damage_out, mask)
+                    preds = torch.argmax(damage_out, dim=1)
+                    probs = F.softmax(damage_out, dim=1).permute(0, 2, 3, 1).reshape(-1, 5)
+                    y_true.extend(mask.cpu().numpy().flatten())
+                    y_pred.extend(preds.cpu().numpy().flatten())
+                    y_probs.extend(probs.cpu().numpy())
+                    val_loss += loss_ce.item()
+                    pbar.update(1)
 
         val_loss /= len(val_loader)
         val_loss_history.append(val_loss)
@@ -177,6 +179,7 @@ def train_and_eval(use_glcm, patch_size, stride, batch_size, epochs, lr, root, v
             if epoch + 1 < epochs:      # if all epochs printed, dont add seperator
                 log.append("-" * 67)
 
+        dataset.create_stitched_mask_image(image_number, model, results_path)
         # ------------------------------------------------
 
 
