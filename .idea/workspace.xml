@@ -5,7 +5,295 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a1b87a2a-ec1b-4f93-b49f-0c0acaeca423" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OptunaBestTrials/189/log.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OptunaBestTrials/189/plot_epoch_accuracy.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OptunaBestTrials/189/plot_epoch_f1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OptunaBestTrials/189/plot_loss_curves.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OptunaBestTrials/189/plot_multiclass_roc.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OptunaBestTrials/189/test512_256_weights.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OptunaBestTrials/189/visualize_predictions.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/0/log.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/0/plot_epoch_accuracy.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/0/plot_loss_curves.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/0/plot_multiclass_roc.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/0/visualize_predictions.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/1/log.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/1/plot_epoch_accuracy.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/1/plot_loss_curves.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/1/plot_multiclass_roc.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/1/visualize_predictions.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/10/log.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/10/plot_epoch_accuracy.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/10/plot_epoch_f1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/10/plot_loss_curves.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/10/plot_multiclass_roc.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/10/visualize_predictions.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/11/log.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/11/plot_epoch_accuracy.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/11/plot_epoch_f1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/11/plot_loss_curves.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/11/plot_multiclass_roc.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/11/visualize_predictions.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/12/log.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/12/plot_epoch_accuracy.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/12/plot_epoch_f1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/12/plot_loss_curves.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/12/plot_multiclass_roc.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/12/visualize_predictions.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/13/log.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/13/plot_epoch_accuracy.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/13/plot_epoch_f1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/13/plot_loss_curves.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/13/plot_multiclass_roc.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/13/visualize_predictions.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/14/log.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/14/plot_epoch_accuracy.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/14/plot_epoch_f1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/14/plot_loss_curves.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/14/plot_multiclass_roc.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/14/visualize_predictions.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/15/log.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/15/plot_epoch_accuracy.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/15/plot_epoch_f1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/15/plot_loss_curves.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/15/plot_multiclass_roc.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/15/visualize_predictions.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/17/log.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/17/plot_epoch_accuracy.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/17/plot_epoch_f1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/17/plot_loss_curves.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/17/plot_multiclass_roc.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/17/visualize_predictions.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/18/log.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/18/plot_epoch_accuracy.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/18/plot_epoch_f1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/18/plot_loss_curves.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/18/plot_multiclass_roc.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/18/visualize_predictions.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/19/log.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/19/plot_epoch_accuracy.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/19/plot_epoch_f1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/19/plot_loss_curves.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/19/plot_multiclass_roc.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/19/visualize_predictions.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/2/log.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/2/plot_epoch_accuracy.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/2/plot_loss_curves.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/2/plot_multiclass_roc.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/2/visualize_predictions.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/20/log.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/20/plot_epoch_accuracy.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/20/plot_epoch_f1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/20/plot_loss_curves.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/20/plot_multiclass_roc.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/20/visualize_predictions.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/21/log.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/21/plot_epoch_accuracy.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/21/plot_epoch_f1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/21/plot_loss_curves.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/21/plot_multiclass_roc.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/21/visualize_predictions.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/22/log.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/22/plot_epoch_accuracy.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/22/plot_epoch_f1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/22/plot_loss_curves.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/22/plot_multiclass_roc.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/22/visualize_predictions.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/23/log.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/23/plot_epoch_accuracy.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/23/plot_epoch_f1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/23/plot_loss_curves.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/23/plot_multiclass_roc.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/23/visualize_predictions.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/25/log.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/25/plot_epoch_accuracy.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/25/plot_epoch_f1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/25/plot_loss_curves.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/25/plot_multiclass_roc.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/25/visualize_predictions.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/26/log.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/26/plot_epoch_accuracy.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/26/plot_epoch_f1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/26/plot_loss_curves.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/26/plot_multiclass_roc.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/26/visualize_predictions.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/27/log.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/27/plot_epoch_accuracy.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/27/plot_epoch_f1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/27/plot_loss_curves.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/27/plot_multiclass_roc.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/27/visualize_predictions.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/28/log.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/28/plot_epoch_accuracy.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/28/plot_epoch_f1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/28/plot_loss_curves.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/28/plot_multiclass_roc.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/28/visualize_predictions.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/29/log.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/29/plot_epoch_accuracy.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/29/plot_epoch_f1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/29/plot_loss_curves.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/29/plot_multiclass_roc.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/29/visualize_predictions.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/3/log.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/3/plot_epoch_accuracy.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/3/plot_loss_curves.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/3/plot_multiclass_roc.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/3/visualize_predictions.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/30/log.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/30/plot_epoch_accuracy.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/30/plot_epoch_f1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/30/plot_loss_curves.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/30/plot_multiclass_roc.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/30/visualize_predictions.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/31/log.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/31/plot_epoch_accuracy.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/31/plot_epoch_f1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/31/plot_loss_curves.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/31/plot_multiclass_roc.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/31/visualize_predictions.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/32/log.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/32/plot_epoch_accuracy.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/32/plot_epoch_f1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/32/plot_loss_curves.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/32/plot_multiclass_roc.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/32/visualize_predictions.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/33/log.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/33/plot_epoch_accuracy.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/33/plot_epoch_f1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/33/plot_loss_curves.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/33/plot_multiclass_roc.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/33/visualize_predictions.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/34/log.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/34/plot_epoch_accuracy.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/34/plot_epoch_f1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/34/plot_loss_curves.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/34/plot_multiclass_roc.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/34/visualize_predictions.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/35/log.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/35/plot_epoch_accuracy.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/35/plot_epoch_f1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/35/plot_loss_curves.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/35/plot_multiclass_roc.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/35/visualize_predictions.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/36/log.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/36/plot_epoch_accuracy.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/36/plot_epoch_f1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/36/plot_loss_curves.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/36/plot_multiclass_roc.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/36/visualize_predictions.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/37/log.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/38/log.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/38/plot_epoch_accuracy.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/38/plot_epoch_f1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/38/plot_loss_curves.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/38/plot_multiclass_roc.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/38/visualize_predictions.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/39/log.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/39/plot_epoch_accuracy.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/39/plot_epoch_f1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/39/plot_loss_curves.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/39/plot_multiclass_roc.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/39/visualize_predictions.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/4/log.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/4/plot_epoch_accuracy.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/4/plot_epoch_f1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/4/plot_loss_curves.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/4/plot_multiclass_roc.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/4/visualize_predictions.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/40/log.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/40/plot_epoch_accuracy.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/40/plot_epoch_f1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/40/plot_loss_curves.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/40/plot_multiclass_roc.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/40/visualize_predictions.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/42/log.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/42/plot_epoch_accuracy.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/42/plot_epoch_f1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/42/plot_loss_curves.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/42/plot_multiclass_roc.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/42/visualize_predictions.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/43/log.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/43/plot_epoch_accuracy.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/43/plot_epoch_f1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/43/plot_loss_curves.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/43/plot_multiclass_roc.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/43/visualize_predictions.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/44/log.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/44/plot_epoch_accuracy.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/44/plot_epoch_f1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/44/plot_loss_curves.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/44/plot_multiclass_roc.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/44/visualize_predictions.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/45/log.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/45/plot_epoch_accuracy.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/45/plot_epoch_f1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/45/plot_loss_curves.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/45/plot_multiclass_roc.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/45/visualize_predictions.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/47/log.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/48/log.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/48/plot_epoch_accuracy.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/48/plot_epoch_f1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/48/plot_loss_curves.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/48/plot_multiclass_roc.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/48/visualize_predictions.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/49/log.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/50/log.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/51/log.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/52/log.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/53/log.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/54/log.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/55/log.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/56/log.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/57/log.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/58/log.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/59/log.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/6/log.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/6/plot_epoch_accuracy.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/6/plot_epoch_f1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/6/plot_loss_curves.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/6/plot_multiclass_roc.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/6/visualize_predictions.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/60/log.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/61/log.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/62/log.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/63/log.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/64/log.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/66/log.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/67/log.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/68/log.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/69/log.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/7/log.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/7/plot_epoch_accuracy.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/7/plot_epoch_f1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/7/plot_loss_curves.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/7/plot_multiclass_roc.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/7/visualize_predictions.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/70/log.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/71/log.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/72/log.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/73/log.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/73/plot_epoch_accuracy.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/73/plot_epoch_f1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/73/plot_loss_curves.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/73/plot_multiclass_roc.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/73/visualize_predictions.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/8/log.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/8/plot_epoch_accuracy.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/8/plot_epoch_f1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/8/plot_loss_curves.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/8/plot_multiclass_roc.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/8/visualize_predictions.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/9/log.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/9/plot_epoch_accuracy.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/9/plot_epoch_f1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/9/plot_loss_curves.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/9/plot_multiclass_roc.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collcted_results/results/9/visualize_predictions.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filenameWeights50Trials.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/dataset.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/dataset.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/filename.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/filename.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/optune_PIPELINE_weightsvV2.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/optune_PIPELINE_weightsvV2.py" afterDir="false" />
@@ -49,32 +337,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;Python.DELETE.PY.executor&quot;: &quot;Run&quot;,
-    &quot;Python.PIPELINE.executor&quot;: &quot;Run&quot;,
-    &quot;Python.optune_PIPELINE.executor&quot;: &quot;Run&quot;,
-    &quot;Python.python main.py --use_glcm --batch_size 10 --patch_size 64 --stride 32 --epochs 50 --data_root ../data.executor&quot;: &quot;Run&quot;,
-    &quot;Python.recTest.executor&quot;: &quot;Run&quot;,
-    &quot;Python.vimtest.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;pipeline&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/caiden/PycharmProjects/Physics-Informed-Deep-Learning-For-Damage-Assessment&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;terminal&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Python.DELETE.PY.executor": "Run",
+    "Python.PIPELINE.executor": "Run",
+    "Python.optune_PIPELINE.executor": "Run",
+    "Python.optune_PIPELINE_weightsvV2.executor": "Run",
+    "Python.python main.py --use_glcm --batch_size 10 --patch_size 64 --stride 32 --epochs 50 --data_root ../data.executor": "Run",
+    "Python.recTest.executor": "Run",
+    "Python.vimtest.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "pipeline",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "/home/caiden/PycharmProjects/Physics-Informed-Deep-Learning-For-Damage-Assessment",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "terminal",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/OptunaBestTrials" />
@@ -89,29 +378,7 @@
       <recent name="$PROJECT_DIR$/results" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.vimtest">
-    <configuration name="DELETE.PY" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="PCSE555Cont" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/DELETEME" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/DELETEME/DELETE.PY.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Python.optune_PIPELINE_weightsvV2">
     <configuration name="PIPELINE" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="PCSE555Cont" />
       <option name="ENV_FILES" value="" />
@@ -148,6 +415,28 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/unused/optune_PIPELINE.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="optune_PIPELINE_weightsvV2" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="PCSE555Cont" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/optune_PIPELINE_weightsvV2.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -202,11 +491,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.optune_PIPELINE_weightsvV2" />
         <item itemvalue="Python.vimtest" />
         <item itemvalue="Python.optune_PIPELINE" />
         <item itemvalue="Python.recTest" />
         <item itemvalue="Python.PIPELINE" />
-        <item itemvalue="Python.DELETE.PY" />
       </list>
     </recent_temporary>
   </component>

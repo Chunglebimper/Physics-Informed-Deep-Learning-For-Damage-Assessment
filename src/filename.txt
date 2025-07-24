@@ -53503,3 +53503,2606 @@ Patches featuring class 4:
 	('mexico-earthquake_00000142', 384, 320)
 Dataset loaded
 Analyzing class distribution
+Class 0: 9,973,840 pixels (71.12%)
+Class 1: 3,899,588 pixels (27.81%)
+Class 2: 124,650 pixels (0.89%)
+Class 3: 22,822 pixels (0.16%)
+Class 4: 3,804 pixels (0.03%)
+--------------------------------------------------
+Model loaded on: cuda:0
+[0 1 2 3 4]
+{0: 0.2785607410683892, 1: 0.7378314319122713, 2: 22.02717561152988, 3: 129.78177185871454, 4: 591.0683544303797}
+Final class weights used in loss: [0.30483633842670865, 0.7378314319122713, 22.02717561152988, 129.78177185871454, 591.0683544303797]
+
+Epoch 1/10
+Train Loss: 1.5741
+Confusion Matrix:
+ [[ 657219 1211766   55121      68    3553]
+ [  83941  757308   19796     107     708]
+ [   1841   19912    1067       0      77]
+ [   1190    4291      71       0       0]
+ [      0      12       0       0       0]]
+Class 0 F1: 0.4919
+Class 1 F1: 0.5305
+Class 2 F1: 0.0216
+Class 3 F1: 0.0000
+Class 4 F1: 0.0000
+Class 0 Precision: 0.8831
+Class 1 Precision: 0.3799
+Class 2 Precision: 0.0140
+Class 3 Precision: 0.0000
+Class 4 Precision: 0.0000
+Class 0 Recall: 0.3409
+Class 1 Recall: 0.8787
+Class 2 Recall: 0.0466
+Class 3 Recall: 0.0000
+Class 4 Recall: 0.0000
+Validation Accuracy: 0.5023
+Macro F1 Score: 0.2088
+xView2 Score: 0.2985
+Epoch 1 took:  0 hours,  4 minutes, 49 seconds
+
+Epoch 2/10
+Train Loss: 1.4559
+Confusion Matrix:
+ [[1020994  902363    4370       0       0]
+ [ 205516  655846     498       0       0]
+ [   5130   17766       1       0       0]
+ [   2287    3265       0       0       0]
+ [      3       9       0       0       0]]
+Class 0 F1: 0.6459
+Class 1 F1: 0.5373
+Class 2 F1: 0.0001
+Class 3 F1: 0.0000
+Class 4 F1: 0.0000
+Class 0 Precision: 0.8274
+Class 1 Precision: 0.4153
+Class 2 Precision: 0.0002
+Class 3 Precision: 0.0000
+Class 4 Precision: 0.0000
+Class 0 Recall: 0.5296
+Class 1 Recall: 0.7610
+Class 2 Recall: 0.0000
+Class 3 Recall: 0.0000
+Class 4 Recall: 0.0000
+Validation Accuracy: 0.5950
+Macro F1 Score: 0.2367
+xView2 Score: 0.2836
+Epoch 2 took:  0 hours,  0 minutes, 29 seconds
+
+Epoch 3/10
+Train Loss: 1.3775
+Confusion Matrix:
+ [[1050082  875857    1788       0       0]
+ [ 195103  666675      82       0       0]
+ [   6981   15914       2       0       0]
+ [   3019    2533       0       0       0]
+ [      6       6       0       0       0]]
+Class 0 F1: 0.6598
+Class 1 F1: 0.5503
+Class 2 F1: 0.0002
+Class 3 F1: 0.0000
+Class 4 F1: 0.0000
+Class 0 Precision: 0.8366
+Class 1 Precision: 0.4271
+Class 2 Precision: 0.0011
+Class 3 Precision: 0.0000
+Class 4 Precision: 0.0000
+Class 0 Recall: 0.5447
+Class 1 Recall: 0.7735
+Class 2 Recall: 0.0001
+Class 3 Recall: 0.0000
+Class 4 Recall: 0.0000
+Validation Accuracy: 0.6092
+Macro F1 Score: 0.2421
+xView2 Score: 0.2883
+Epoch 3 took:  0 hours,  0 minutes, 25 seconds
+
+Epoch 4/10
+Train Loss: 1.3449
+Confusion Matrix:
+ [[1128044  797580    2103       0       0]
+ [ 204471  656680     709       0       0]
+ [   9963   12934       0       0       0]
+ [   3087    2465       0       0       0]
+ [     12       0       0       0       0]]
+Class 0 F1: 0.6892
+Class 1 F1: 0.5633
+Class 2 F1: 0.0000
+Class 3 F1: 0.0000
+Class 4 F1: 0.0000
+Class 0 Precision: 0.8383
+Class 1 Precision: 0.4468
+Class 2 Precision: 0.0000
+Class 3 Precision: 0.0000
+Class 4 Precision: 0.0000
+Class 0 Recall: 0.5852
+Class 1 Recall: 0.7619
+Class 2 Recall: 0.0000
+Class 3 Recall: 0.0000
+Class 4 Recall: 0.0000
+Validation Accuracy: 0.6333
+Macro F1 Score: 0.2505
+xView2 Score: 0.2907
+Epoch 4 took:  0 hours,  0 minutes, 30 seconds
+
+Epoch 5/10
+Train Loss: 1.2851
+Confusion Matrix:
+ [[1166589  757809    3329       0       0]
+ [ 209424  651658     778       0       0]
+ [  10163   12693      41       0       0]
+ [   3723    1829       0       0       0]
+ [     12       0       0       0       0]]
+Class 0 F1: 0.7033
+Class 1 F1: 0.5702
+Class 2 F1: 0.0030
+Class 3 F1: 0.0000
+Class 4 F1: 0.0000
+Class 0 Precision: 0.8393
+Class 1 Precision: 0.4576
+Class 2 Precision: 0.0099
+Class 3 Precision: 0.0000
+Class 4 Precision: 0.0000
+Class 0 Recall: 0.6052
+Class 1 Recall: 0.7561
+Class 2 Recall: 0.0018
+Class 3 Recall: 0.0000
+Class 4 Recall: 0.0000
+Validation Accuracy: 0.6452
+Macro F1 Score: 0.2553
+xView2 Score: 0.2925
+Epoch 5 took:  0 hours,  0 minutes, 30 seconds
+
+Epoch 6/10
+Train Loss: 1.2492
+Confusion Matrix:
+ [[1092105  823783   11839       0       0]
+ [ 159349  698617    3894       0       0]
+ [   8472   13003    1422       0       0]
+ [   2879    2508     165       0       0]
+ [     12       0       0       0       0]]
+Class 0 F1: 0.6846
+Class 1 F1: 0.5822
+Class 2 F1: 0.0707
+Class 3 F1: 0.0000
+Class 4 F1: 0.0000
+Class 0 Precision: 0.8648
+Class 1 Precision: 0.4543
+Class 2 Precision: 0.0821
+Class 3 Precision: 0.0000
+Class 4 Precision: 0.0000
+Class 0 Recall: 0.5665
+Class 1 Recall: 0.8106
+Class 2 Recall: 0.0621
+Class 3 Recall: 0.0000
+Class 4 Recall: 0.0000
+Validation Accuracy: 0.6360
+Macro F1 Score: 0.2675
+xView2 Score: 0.3147
+Epoch 6 took:  0 hours,  0 minutes, 30 seconds
+
+Epoch 7/10
+Train Loss: 1.2058
+Confusion Matrix:
+ [[1120182  790783   16762       0       0]
+ [ 163075  690073    8712       0       0]
+ [   9272   12824     801       0       0]
+ [   2725    1969     858       0       0]
+ [     12       0       0       0       0]]
+Class 0 F1: 0.6951
+Class 1 F1: 0.5854
+Class 2 F1: 0.0320
+Class 3 F1: 0.0000
+Class 4 F1: 0.0000
+Class 0 Precision: 0.8648
+Class 1 Precision: 0.4614
+Class 2 Precision: 0.0295
+Class 3 Precision: 0.0000
+Class 4 Precision: 0.0000
+Class 0 Recall: 0.5811
+Class 1 Recall: 0.8007
+Class 2 Recall: 0.0350
+Class 3 Recall: 0.0000
+Class 4 Recall: 0.0000
+Validation Accuracy: 0.6427
+Macro F1 Score: 0.2625
+xView2 Score: 0.3079
+Epoch 7 took:  0 hours,  0 minutes, 30 seconds
+
+Epoch 8/10
+Train Loss: 1.1683
+Confusion Matrix:
+ [[1070591  824496   32640       0       0]
+ [ 130967  717843   13050       0       0]
+ [   9348   11897    1652       0       0]
+ [   1665    3177     710       0       0]
+ [     12       0       0       0       0]]
+Class 0 F1: 0.6818
+Class 1 F1: 0.5934
+Class 2 F1: 0.0466
+Class 3 F1: 0.0000
+Class 4 F1: 0.0000
+Class 0 Precision: 0.8829
+Class 1 Precision: 0.4609
+Class 2 Precision: 0.0344
+Class 3 Precision: 0.0000
+Class 4 Precision: 0.0000
+Class 0 Recall: 0.5554
+Class 1 Recall: 0.8329
+Class 2 Recall: 0.0721
+Class 3 Recall: 0.0000
+Class 4 Recall: 0.0000
+Validation Accuracy: 0.6352
+Macro F1 Score: 0.2644
+xView2 Score: 0.3180
+Epoch 8 took:  0 hours,  0 minutes, 29 seconds
+
+Epoch 9/10
+Train Loss: 1.1329
+Confusion Matrix:
+ [[1035657  848813   43257       0       0]
+ [ 101661  743818   16381       0       0]
+ [   5428   14434    3035       0       0]
+ [   1537    2392    1623       0       0]
+ [     12       0       0       0       0]]
+Class 0 F1: 0.6743
+Class 1 F1: 0.6020
+Class 2 F1: 0.0696
+Class 3 F1: 0.0000
+Class 4 F1: 0.0000
+Class 0 Precision: 0.9051
+Class 1 Precision: 0.4622
+Class 2 Precision: 0.0472
+Class 3 Precision: 0.0000
+Class 4 Precision: 0.0000
+Class 0 Recall: 0.5372
+Class 1 Recall: 0.8630
+Class 2 Recall: 0.1326
+Class 3 Recall: 0.0000
+Class 4 Recall: 0.0000
+Validation Accuracy: 0.6325
+Macro F1 Score: 0.2692
+xView2 Score: 0.3306
+Epoch 9 took:  0 hours,  0 minutes, 29 seconds
+
+Epoch 10/10
+Train Loss: 1.1032
+Confusion Matrix:
+ [[1226092  669783   31852       0       0]
+ [ 191034  652828   17998       0       0]
+ [   9752   11350    1795       0       0]
+ [   2503    2191     858       0       0]
+ [     12       0       0       0       0]]
+Class 0 F1: 0.7304
+Class 1 F1: 0.5940
+Class 2 F1: 0.0476
+Class 3 F1: 0.0000
+Class 4 F1: 0.0000
+Class 0 Precision: 0.8578
+Class 1 Precision: 0.4886
+Class 2 Precision: 0.0342
+Class 3 Precision: 0.0000
+Class 4 Precision: 0.0000
+Class 0 Recall: 0.6360
+Class 1 Recall: 0.7575
+Class 2 Recall: 0.0784
+Class 3 Recall: 0.0000
+Class 4 Recall: 0.0000
+Validation Accuracy: 0.6674
+Macro F1 Score: 0.2744
+xView2 Score: 0.3120
+Epoch 10 took:  0 hours,  0 minutes, 29 seconds
+
+=== FINAL EVALUATION ===
+Best Accuracy: 0.6325
+Best Macro F1: 0.2692
+Best xView2 Score: 0.3306
+=== FINAL PRECISION RESULTS ===
+Class 0 Precision: 0.9051
+Class 1 Precision: 0.4622
+Class 2 Precision: 0.0472
+Class 3 Precision: 0.0000
+Class 4 Precision: 0.0000
+Macro Precision: 0.2829
+ROC curve saved to .././____________optune2_results/14/plot_multiclass_roc.jpg
+ROC curve saved to .././____________optune2_results/14/plot_loss_curves.jpg
+Prediction distribution: {0: 2251, 1: 14133}
+ROC curve saved to .././____________optune2_results/14/visualize_predictions.jpg
+Prediction distribution: {0: 5217, 1: 11167}
+ROC curve saved to .././____________optune2_results/14/visualize_predictions.jpg
+Prediction distribution: {0: 45, 1: 16339}
+ROC curve saved to .././____________optune2_results/14/visualize_predictions.jpg
+ROC curve saved to .././____________optune2_results/14/plot_epoch_accuracy.jpg
+ROC curve saved to .././____________optune2_results/14/plot_epoch_f1.jpg
+Training on cuda cores: True
+Training with texture loss: True
+Using device: cuda
+Patches featuring class 4:
+	('mexico-earthquake_00000059', 0, 64)
+	('mexico-earthquake_00000059', 64, 64)
+	('mexico-earthquake_00000059', 0, 128)
+	('mexico-earthquake_00000059', 64, 128)
+	('mexico-earthquake_00000059', 0, 192)
+	('mexico-earthquake_00000059', 64, 192)
+	('mexico-earthquake_00000142', 320, 192)
+	('mexico-earthquake_00000142', 384, 192)
+	('mexico-earthquake_00000142', 320, 256)
+	('mexico-earthquake_00000142', 384, 256)
+	('mexico-earthquake_00000142', 320, 320)
+	('mexico-earthquake_00000142', 384, 320)
+Dataset loaded
+Analyzing class distribution
+Class 0: 9,393,770 pixels (70.87%)
+Class 1: 3,709,610 pixels (27.99%)
+Class 2: 124,650 pixels (0.94%)
+Class 3: 22,822 pixels (0.17%)
+Class 4: 3,804 pixels (0.03%)
+--------------------------------------------------
+Model loaded on: cuda:0
+[0 1 2 3 4]
+{0: 0.2823128488064197, 1: 0.715009471788841, 2: 20.230248668867727, 3: 113.89146387322052, 4: 964.9929904415111}
+Final class weights used in loss: [0.492302268048458, 0.715009471788841, 20.230248668867727, 113.89146387322052, 964.9929904415111]
+
+Epoch 1/10
+Train Loss: 1.5943
+Confusion Matrix:
+ [[1663057  161846   27449   30054    1647]
+ [ 549212  161683   13605   19540     449]
+ [  17818    1491     186     351       6]
+ [   3377      85     461     284       0]
+ [    900       8     696       3       0]]
+Class 0 F1: 0.8076
+Class 1 F1: 0.3023
+Class 2 F1: 0.0060
+Class 3 F1: 0.0104
+Class 4 F1: 0.0000
+Class 0 Precision: 0.7443
+Class 1 Precision: 0.4973
+Class 2 Precision: 0.0044
+Class 3 Precision: 0.0057
+Class 4 Precision: 0.0000
+Class 0 Recall: 0.8827
+Class 1 Recall: 0.2172
+Class 2 Recall: 0.0094
+Class 3 Recall: 0.0675
+Class 4 Recall: 0.0000
+Validation Accuracy: 0.6877
+Macro F1 Score: 0.2253
+xView2 Score: 0.1549
+Epoch 1 took:  0 hours,  4 minutes, 18 seconds
+
+Epoch 2/10
+Train Loss: 1.4333
+Confusion Matrix:
+ [[1761438  122356     246      13       0]
+ [ 600707  143584      97     101       0]
+ [  18342    1510       0       0       0]
+ [   4098     109       0       0       0]
+ [   1603       4       0       0       0]]
+Class 0 F1: 0.8250
+Class 1 F1: 0.2837
+Class 2 F1: 0.0000
+Class 3 F1: 0.0000
+Class 4 F1: 0.0000
+Class 0 Precision: 0.7382
+Class 1 Precision: 0.5366
+Class 2 Precision: 0.0000
+Class 3 Precision: 0.0000
+Class 4 Precision: 0.0000
+Class 0 Recall: 0.9349
+Class 1 Recall: 0.1929
+Class 2 Recall: 0.0000
+Class 3 Recall: 0.0000
+Class 4 Recall: 0.0000
+Validation Accuracy: 0.7177
+Macro F1 Score: 0.2217
+xView2 Score: 0.1292
+Epoch 2 took:  0 hours,  0 minutes, 27 seconds
+
+Epoch 3/10
+Train Loss: 1.3447
+Confusion Matrix:
+ [[1724954  159086      13       0       0]
+ [ 563978  180462      49       0       0]
+ [  18152    1700       0       0       0]
+ [   3891     316       0       0       0]
+ [    947     660       0       0       0]]
+Class 0 F1: 0.8222
+Class 1 F1: 0.3321
+Class 2 F1: 0.0000
+Class 3 F1: 0.0000
+Class 4 F1: 0.0000
+Class 0 Precision: 0.7461
+Class 1 Precision: 0.5273
+Class 2 Precision: 0.0000
+Class 3 Precision: 0.0000
+Class 4 Precision: 0.0000
+Class 0 Recall: 0.9156
+Class 1 Recall: 0.2424
+Class 2 Recall: 0.0000
+Class 3 Recall: 0.0000
+Class 4 Recall: 0.0000
+Validation Accuracy: 0.7179
+Macro F1 Score: 0.2309
+xView2 Score: 0.1533
+Epoch 3 took:  0 hours,  0 minutes, 23 seconds
+
+Epoch 4/10
+Train Loss: 1.2728
+Confusion Matrix:
+ [[1569836  314117     100       0       0]
+ [ 428319  316119      51       0       0]
+ [  16512    3340       0       0       0]
+ [   3119    1088       0       0       0]
+ [      7    1600       0       0       0]]
+Class 0 F1: 0.8047
+Class 1 F1: 0.4579
+Class 2 F1: 0.0000
+Class 3 F1: 0.0000
+Class 4 F1: 0.0000
+Class 0 Precision: 0.7780
+Class 1 Precision: 0.4968
+Class 2 Precision: 0.0000
+Class 3 Precision: 0.0000
+Class 4 Precision: 0.0000
+Class 0 Recall: 0.8332
+Class 1 Recall: 0.4246
+Class 2 Recall: 0.0000
+Class 3 Recall: 0.0000
+Class 4 Recall: 0.0000
+Validation Accuracy: 0.7106
+Macro F1 Score: 0.2525
+xView2 Score: 0.2204
+Epoch 4 took:  0 hours,  0 minutes, 29 seconds
+
+Epoch 5/10
+Train Loss: 1.2162
+Confusion Matrix:
+ [[1453677  430105     271       0       0]
+ [ 320070  424372      47       0       0]
+ [  13538    6314       0       0       0]
+ [   2647    1560       0       0       0]
+ [    837     770       0       0       0]]
+Class 0 F1: 0.7912
+Class 1 F1: 0.5280
+Class 2 F1: 0.0000
+Class 3 F1: 0.0000
+Class 4 F1: 0.0000
+Class 0 Precision: 0.8118
+Class 1 Precision: 0.4917
+Class 2 Precision: 0.0000
+Class 3 Precision: 0.0000
+Class 4 Precision: 0.0000
+Class 0 Recall: 0.7716
+Class 1 Recall: 0.5700
+Class 2 Recall: 0.0000
+Class 3 Recall: 0.0000
+Class 4 Recall: 0.0000
+Validation Accuracy: 0.7076
+Macro F1 Score: 0.2638
+xView2 Score: 0.2600
+Epoch 5 took:  0 hours,  0 minutes, 28 seconds
+
+Epoch 6/10
+Train Loss: 1.1841
+Confusion Matrix:
+ [[1499722  384057     274       0       0]
+ [ 344303  400020     166       0       0]
+ [  14339    5513       0       0       0]
+ [   2977    1230       0       0       0]
+ [   1119     488       0       0       0]]
+Class 0 F1: 0.8006
+Class 1 F1: 0.5209
+Class 2 F1: 0.0000
+Class 3 F1: 0.0000
+Class 4 F1: 0.0000
+Class 0 Precision: 0.8052
+Class 1 Precision: 0.5055
+Class 2 Precision: 0.0000
+Class 3 Precision: 0.0000
+Class 4 Precision: 0.0000
+Class 0 Recall: 0.7960
+Class 1 Recall: 0.5373
+Class 2 Recall: 0.0000
+Class 3 Recall: 0.0000
+Class 4 Recall: 0.0000
+Validation Accuracy: 0.7157
+Macro F1 Score: 0.2643
+xView2 Score: 0.2538
+Epoch 6 took:  0 hours,  0 minutes, 28 seconds
+
+Epoch 7/10
+Train Loss: 1.1496
+Confusion Matrix:
+ [[1544112  333798    6143       0       0]
+ [ 364665  376781    3043       0       0]
+ [  15028    4516     308       0       0]
+ [   1927    1905     375       0       0]
+ [    767     840       0       0       0]]
+Class 0 F1: 0.8104
+Class 1 F1: 0.5153
+Class 2 F1: 0.0207
+Class 3 F1: 0.0000
+Class 4 F1: 0.0000
+Class 0 Precision: 0.8015
+Class 1 Precision: 0.5249
+Class 2 Precision: 0.0312
+Class 3 Precision: 0.0000
+Class 4 Precision: 0.0000
+Class 0 Recall: 0.8196
+Class 1 Recall: 0.5061
+Class 2 Recall: 0.0155
+Class 3 Recall: 0.0000
+Class 4 Recall: 0.0000
+Validation Accuracy: 0.7238
+Macro F1 Score: 0.2693
+xView2 Score: 0.2525
+Epoch 7 took:  0 hours,  0 minutes, 28 seconds
+
+Epoch 8/10
+Train Loss: 1.1136
+Confusion Matrix:
+ [[1562632  304324   17097       0       0]
+ [ 369801  363212   11476       0       0]
+ [  15213    4013     626       0       0]
+ [   3091    1068      48       0       0]
+ [   1055     217     335       0       0]]
+Class 0 F1: 0.8148
+Class 1 F1: 0.5125
+Class 2 F1: 0.0253
+Class 3 F1: 0.0000
+Class 4 F1: 0.0000
+Class 0 Precision: 0.8006
+Class 1 Precision: 0.5398
+Class 2 Precision: 0.0212
+Class 3 Precision: 0.0000
+Class 4 Precision: 0.0000
+Class 0 Recall: 0.8294
+Class 1 Recall: 0.4879
+Class 2 Recall: 0.0315
+Class 3 Recall: 0.0000
+Class 4 Recall: 0.0000
+Validation Accuracy: 0.7258
+Macro F1 Score: 0.2705
+xView2 Score: 0.2520
+Epoch 8 took:  0 hours,  0 minutes, 28 seconds
+
+Epoch 9/10
+Train Loss: 1.0773
+Confusion Matrix:
+ [[1565974  301449   16540      90       0]
+ [ 368173  366762    9506      48       0]
+ [  13514    5801     537       0       0]
+ [   2397    1724      86       0       0]
+ [    714     650     243       0       0]]
+Class 0 F1: 0.8167
+Class 1 F1: 0.5162
+Class 2 F1: 0.0230
+Class 3 F1: 0.0000
+Class 4 F1: 0.0000
+Class 0 Precision: 0.8027
+Class 1 Precision: 0.5422
+Class 2 Precision: 0.0200
+Class 3 Precision: 0.0000
+Class 4 Precision: 0.0000
+Class 0 Recall: 0.8312
+Class 1 Recall: 0.4926
+Class 2 Recall: 0.0271
+Class 3 Recall: 0.0000
+Class 4 Recall: 0.0000
+Validation Accuracy: 0.7284
+Macro F1 Score: 0.2712
+xView2 Score: 0.2536
+Epoch 9 took:  0 hours,  0 minutes, 30 seconds
+
+Epoch 10/10
+Train Loss: 1.0422
+Confusion Matrix:
+ [[1443670  394298   44695    1390       0]
+ [ 254783  458878   30264     564       0]
+ [  11756    5741    2355       0       0]
+ [   1961     463     421    1362       0]
+ [    878     587     142       0       0]]
+Class 0 F1: 0.8027
+Class 1 F1: 0.5720
+Class 2 F1: 0.0482
+Class 3 F1: 0.3621
+Class 4 F1: 0.0000
+Class 0 Precision: 0.8427
+Class 1 Precision: 0.5336
+Class 2 Precision: 0.0302
+Class 3 Precision: 0.4107
+Class 4 Precision: 0.0000
+Class 0 Recall: 0.7663
+Class 1 Recall: 0.6164
+Class 2 Recall: 0.1186
+Class 3 Recall: 0.3237
+Class 4 Recall: 0.0000
+Validation Accuracy: 0.7182
+Macro F1 Score: 0.3570
+xView2 Score: 0.3564
+Epoch 10 took:  0 hours,  0 minutes, 29 seconds
+
+=== FINAL EVALUATION ===
+Best Accuracy: 0.7182
+Best Macro F1: 0.3570
+Best xView2 Score: 0.3564
+=== FINAL PRECISION RESULTS ===
+Class 0 Precision: 0.8427
+Class 1 Precision: 0.5336
+Class 2 Precision: 0.0302
+Class 3 Precision: 0.4107
+Class 4 Precision: 0.0000
+Macro Precision: 0.3635
+ROC curve saved to .././____________optune2_results/15/plot_multiclass_roc.jpg
+ROC curve saved to .././____________optune2_results/15/plot_loss_curves.jpg
+Prediction distribution: {0: 16384}
+ROC curve saved to .././____________optune2_results/15/visualize_predictions.jpg
+Prediction distribution: {0: 6756, 1: 9628}
+ROC curve saved to .././____________optune2_results/15/visualize_predictions.jpg
+Prediction distribution: {0: 9889, 1: 6495}
+ROC curve saved to .././____________optune2_results/15/visualize_predictions.jpg
+ROC curve saved to .././____________optune2_results/15/plot_epoch_accuracy.jpg
+ROC curve saved to .././____________optune2_results/15/plot_epoch_f1.jpg
+Training on cuda cores: True
+Training with texture loss: True
+Using device: cuda
+Patches featuring class 4:
+	('mexico-earthquake_00000059', 0, 64)
+	('mexico-earthquake_00000059', 64, 64)
+	('mexico-earthquake_00000059', 0, 128)
+	('mexico-earthquake_00000059', 64, 128)
+	('mexico-earthquake_00000059', 0, 192)
+	('mexico-earthquake_00000059', 64, 192)
+	('mexico-earthquake_00000142', 320, 192)
+	('mexico-earthquake_00000142', 384, 192)
+	('mexico-earthquake_00000142', 320, 256)
+	('mexico-earthquake_00000142', 384, 256)
+	('mexico-earthquake_00000142', 320, 320)
+	('mexico-earthquake_00000142', 384, 320)
+Dataset loaded
+Analyzing class distribution
+Class 0: 9,689,748 pixels (70.32%)
+Class 1: 3,937,920 pixels (28.58%)
+Class 2: 124,650 pixels (0.90%)
+Class 3: 22,822 pixels (0.17%)
+Class 4: 3,804 pixels (0.03%)
+--------------------------------------------------
+Model loaded on: cuda:0
+[0 1 2 3 4]
+{0: 0.28325197056713564, 1: 0.7084991209758583, 2: 21.603155106445598, 3: 98.51510379384395, 4: 588.3007213465135}
+Final class weights used in loss: [0.30186865283582076, 0.7084991209758583, 21.603155106445598, 98.51510379384395, 588.3007213465135]
+
+Epoch 1/10
+Train Loss: 1.5727
+Confusion Matrix:
+ [[ 659051 1229594   22372    4051     649]
+ [  91080  727838    8703    2020     287]
+ [   1350   21199     154      12       5]
+ [     27     443       0       0       0]
+ [     38      23       0       0       0]]
+Class 0 F1: 0.4942
+Class 1 F1: 0.5182
+Class 2 F1: 0.0057
+Class 3 F1: 0.0000
+Class 4 F1: 0.0000
+Class 0 Precision: 0.8769
+Class 1 Precision: 0.3678
+Class 2 Precision: 0.0049
+Class 3 Precision: 0.0000
+Class 4 Precision: 0.0000
+Class 0 Recall: 0.3440
+Class 1 Recall: 0.8770
+Class 2 Recall: 0.0068
+Class 3 Recall: 0.0000
+Class 4 Recall: 0.0000
+Validation Accuracy: 0.5009
+Macro F1 Score: 0.2036
+xView2 Score: 0.2894
+Epoch 1 took:  0 hours,  4 minutes,  9 seconds
+
+Epoch 2/10
+Train Loss: 1.4626
+Confusion Matrix:
+ [[988960 926023    732      2      0]
+ [205180 624318    429      1      0]
+ [  4299  18417      0      4      0]
+ [    12    458      0      0      0]
+ [    61      0      0      0      0]]
+Class 0 F1: 0.6351
+Class 1 F1: 0.5205
+Class 2 F1: 0.0000
+Class 3 F1: 0.0000
+Class 4 F1: 0.0000
+Class 0 Precision: 0.8252
+Class 1 Precision: 0.3979
+Class 2 Precision: 0.0000
+Class 3 Precision: 0.0000
+Class 4 Precision: 0.0000
+Class 0 Recall: 0.5162
+Class 1 Recall: 0.7523
+Class 2 Recall: 0.0000
+Class 3 Recall: 0.0000
+Class 4 Recall: 0.0000
+Validation Accuracy: 0.5826
+Macro F1 Score: 0.2311
+xView2 Score: 0.2780
+Epoch 2 took:  0 hours,  0 minutes, 28 seconds
+
+Epoch 3/10
+Train Loss: 1.4119
+Confusion Matrix:
+ [[1290020  625290     407       0       0]
+ [ 354241  475417     270       0       0]
+ [   9012   13699       9       0       0]
+ [    124     346       0       0       0]
+ [     61       0       0       0       0]]
+Class 0 F1: 0.7229
+Class 1 F1: 0.4889
+Class 2 F1: 0.0008
+Class 3 F1: 0.0000
+Class 4 F1: 0.0000
+Class 0 Precision: 0.7802
+Class 1 Precision: 0.4265
+Class 2 Precision: 0.0131
+Class 3 Precision: 0.0000
+Class 4 Precision: 0.0000
+Class 0 Recall: 0.6734
+Class 1 Recall: 0.5728
+Class 2 Recall: 0.0004
+Class 3 Recall: 0.0000
+Class 4 Recall: 0.0000
+Validation Accuracy: 0.6376
+Macro F1 Score: 0.2425
+xView2 Score: 0.2503
+Epoch 3 took:  0 hours,  0 minutes, 24 seconds
+
+Epoch 4/10
+Train Loss: 1.3506
+Confusion Matrix:
+ [[1115793  799762     162       0       0]
+ [ 214851  615055      22       0       0]
+ [   4798   17922       0       0       0]
+ [      5     465       0       0       0]
+ [     61       0       0       0       0]]
+Class 0 F1: 0.6864
+Class 1 F1: 0.5435
+Class 2 F1: 0.0000
+Class 3 F1: 0.0000
+Class 4 F1: 0.0000
+Class 0 Precision: 0.8355
+Class 1 Precision: 0.4291
+Class 2 Precision: 0.0000
+Class 3 Precision: 0.0000
+Class 4 Precision: 0.0000
+Class 0 Recall: 0.5824
+Class 1 Recall: 0.7411
+Class 2 Recall: 0.0000
+Class 3 Recall: 0.0000
+Class 4 Recall: 0.0000
+Validation Accuracy: 0.6251
+Macro F1 Score: 0.2460
+xView2 Score: 0.2839
+Epoch 4 took:  0 hours,  0 minutes, 29 seconds
+
+Epoch 5/10
+Train Loss: 1.3103
+Confusion Matrix:
+ [[1169455  743195    3067       0       0]
+ [ 218878  609767    1283       0       0]
+ [   5653   16483     584       0       0]
+ [      6     464       0       0       0]
+ [     61       0       0       0       0]]
+Class 0 F1: 0.7067
+Class 1 F1: 0.5544
+Class 2 F1: 0.0422
+Class 3 F1: 0.0000
+Class 4 F1: 0.0000
+Class 0 Precision: 0.8389
+Class 1 Precision: 0.4451
+Class 2 Precision: 0.1184
+Class 3 Precision: 0.0000
+Class 4 Precision: 0.0000
+Class 0 Recall: 0.6105
+Class 1 Recall: 0.7347
+Class 2 Recall: 0.0257
+Class 3 Recall: 0.0000
+Class 4 Recall: 0.0000
+Validation Accuracy: 0.6428
+Macro F1 Score: 0.2607
+xView2 Score: 0.2931
+Epoch 5 took:  0 hours,  0 minutes, 30 seconds
+
+Epoch 6/10
+Train Loss: 1.2593
+Confusion Matrix:
+ [[1157574  754156    3987       0       0]
+ [ 204159  624063    1706       0       0]
+ [   6050   16468     202       0       0]
+ [     24     446       0       0       0]
+ [     61       0       0       0       0]]
+Class 0 F1: 0.7051
+Class 1 F1: 0.5609
+Class 2 F1: 0.0141
+Class 3 F1: 0.0000
+Class 4 F1: 0.0000
+Class 0 Precision: 0.8463
+Class 1 Precision: 0.4473
+Class 2 Precision: 0.0343
+Class 3 Precision: 0.0000
+Class 4 Precision: 0.0000
+Class 0 Recall: 0.6043
+Class 1 Recall: 0.7519
+Class 2 Recall: 0.0089
+Class 3 Recall: 0.0000
+Class 4 Recall: 0.0000
+Validation Accuracy: 0.6435
+Macro F1 Score: 0.2560
+xView2 Score: 0.2922
+Epoch 6 took:  0 hours,  0 minutes, 29 seconds
+
+Epoch 7/10
+Train Loss: 1.2223
+Confusion Matrix:
+ [[1165215  740532    9970       0       0]
+ [ 192953  632695    4280       0       0]
+ [   7829   14171     720       0       0]
+ [      6     464       0       0       0]
+ [     61       0       0       0       0]]
+Class 0 F1: 0.7101
+Class 1 F1: 0.5706
+Class 2 F1: 0.0382
+Class 3 F1: 0.0000
+Class 4 F1: 0.0000
+Class 0 Precision: 0.8530
+Class 1 Precision: 0.4559
+Class 2 Precision: 0.0481
+Class 3 Precision: 0.0000
+Class 4 Precision: 0.0000
+Class 0 Recall: 0.6082
+Class 1 Recall: 0.7623
+Class 2 Recall: 0.0317
+Class 3 Recall: 0.0000
+Class 4 Recall: 0.0000
+Validation Accuracy: 0.6496
+Macro F1 Score: 0.2638
+xView2 Score: 0.3007
+Epoch 7 took:  0 hours,  0 minutes, 29 seconds
+
+Epoch 8/10
+Train Loss: 1.1719
+Confusion Matrix:
+ [[1081909  792750   40782     276       0]
+ [ 143319  667855   18723      31       0]
+ [   6794   14175    1751       0       0]
+ [      5     465       0       0       0]
+ [     61       0       0       0       0]]
+Class 0 F1: 0.6874
+Class 1 F1: 0.5794
+Class 2 F1: 0.0417
+Class 3 F1: 0.0000
+Class 4 F1: 0.0000
+Class 0 Precision: 0.8781
+Class 1 Precision: 0.4527
+Class 2 Precision: 0.0286
+Class 3 Precision: 0.0000
+Class 4 Precision: 0.0000
+Class 0 Recall: 0.5648
+Class 1 Recall: 0.8047
+Class 2 Recall: 0.0771
+Class 3 Recall: 0.0000
+Class 4 Recall: 0.0000
+Validation Accuracy: 0.6326
+Macro F1 Score: 0.2617
+xView2 Score: 0.3115
+Epoch 8 took:  0 hours,  0 minutes, 30 seconds
+
+Epoch 9/10
+Train Loss: 1.1401
+Confusion Matrix:
+ [[1175096  691074   49546       1       0]
+ [ 193690  618314   17924       0       0]
+ [   6515   14378    1827       0       0]
+ [      6     464       0       0       0]
+ [     61       0       0       0       0]]
+Class 0 F1: 0.7141
+Class 1 F1: 0.5741
+Class 2 F1: 0.0397
+Class 3 F1: 0.0000
+Class 4 F1: 0.0000
+Class 0 Precision: 0.8544
+Class 1 Precision: 0.4669
+Class 2 Precision: 0.0264
+Class 3 Precision: 0.0000
+Class 4 Precision: 0.0000
+Class 0 Recall: 0.6134
+Class 1 Recall: 0.7450
+Class 2 Recall: 0.0804
+Class 3 Recall: 0.0000
+Class 4 Recall: 0.0000
+Validation Accuracy: 0.6484
+Macro F1 Score: 0.2656
+xView2 Score: 0.3047
+Epoch 9 took:  0 hours,  0 minutes, 30 seconds
+
+Epoch 10/10
+Train Loss: 1.1192
+Confusion Matrix:
+ [[1182582  635204   97701     230       0]
+ [ 194179  587639   47753     357       0]
+ [   6563    9712    6445       0       0]
+ [      5     465       0       0       0]
+ [     61       0       0       0       0]]
+Class 0 F1: 0.7169
+Class 1 F1: 0.5697
+Class 2 F1: 0.0738
+Class 3 F1: 0.0000
+Class 4 F1: 0.0000
+Class 0 Precision: 0.8548
+Class 1 Precision: 0.4766
+Class 2 Precision: 0.0424
+Class 3 Precision: 0.0000
+Class 4 Precision: 0.0000
+Class 0 Recall: 0.6173
+Class 1 Recall: 0.7081
+Class 2 Recall: 0.2837
+Class 3 Recall: 0.0000
+Class 4 Recall: 0.0000
+Validation Accuracy: 0.6417
+Macro F1 Score: 0.2721
+xView2 Score: 0.3136
+Epoch 10 took:  0 hours,  0 minutes, 29 seconds
+
+=== FINAL EVALUATION ===
+Best Accuracy: 0.6417
+Best Macro F1: 0.2721
+Best xView2 Score: 0.3136
+=== FINAL PRECISION RESULTS ===
+Class 0 Precision: 0.8548
+Class 1 Precision: 0.4766
+Class 2 Precision: 0.0424
+Class 3 Precision: 0.0000
+Class 4 Precision: 0.0000
+Macro Precision: 0.2748
+ROC curve saved to .././____________optune2_results/16/plot_multiclass_roc.jpg
+ROC curve saved to .././____________optune2_results/16/plot_loss_curves.jpg
+Prediction distribution: {0: 5993, 1: 10391}
+ROC curve saved to .././____________optune2_results/16/visualize_predictions.jpg
+Prediction distribution: {0: 16384}
+ROC curve saved to .././____________optune2_results/16/visualize_predictions.jpg
+Prediction distribution: {0: 16384}
+ROC curve saved to .././____________optune2_results/16/visualize_predictions.jpg
+ROC curve saved to .././____________optune2_results/16/plot_epoch_accuracy.jpg
+ROC curve saved to .././____________optune2_results/16/plot_epoch_f1.jpg
+Training on cuda cores: True
+Training with texture loss: True
+Using device: cuda
+Patches featuring class 4:
+	('mexico-earthquake_00000059', 0, 64)
+	('mexico-earthquake_00000059', 64, 64)
+	('mexico-earthquake_00000059', 0, 128)
+	('mexico-earthquake_00000059', 64, 128)
+	('mexico-earthquake_00000059', 0, 192)
+	('mexico-earthquake_00000059', 64, 192)
+	('mexico-earthquake_00000142', 320, 192)
+	('mexico-earthquake_00000142', 384, 192)
+	('mexico-earthquake_00000142', 320, 256)
+	('mexico-earthquake_00000142', 384, 256)
+	('mexico-earthquake_00000142', 320, 320)
+	('mexico-earthquake_00000142', 384, 320)
+Dataset loaded
+Analyzing class distribution
+Class 0: 8,968,450 pixels (71.09%)
+Class 1: 3,495,954 pixels (27.71%)
+Class 2: 124,650 pixels (0.99%)
+Class 3: 22,822 pixels (0.18%)
+Class 4: 3,804 pixels (0.03%)
+--------------------------------------------------
+Model loaded on: cuda:0
+[0 1 2 3 4]
+{0: 0.2829778589891797, 1: 0.7091078418870301, 2: 22.897009846181767, 3: 95.73198008062603, 4: 551.8066703116457}
+Final class weights used in loss: [4.337586430137987, 0.7091078418870301, 22.897009846181767, 95.73198008062603, 551.8066703116457]
+
+Epoch 1/10
+Train Loss: 1.2316
+Confusion Matrix:
+ [[1835347       5       0       0       0]
+ [ 649388      19       0       0       0]
+ [  36494       0       0       0       0]
+ [   1737       0       0       0       0]
+ [    146       0       0       0       0]]
+Class 0 F1: 0.8422
+Class 1 F1: 0.0001
+Class 2 F1: 0.0000
+Class 3 F1: 0.0000
+Class 4 F1: 0.0000
+Class 0 Precision: 0.7274
+Class 1 Precision: 0.7917
+Class 2 Precision: 0.0000
+Class 3 Precision: 0.0000
+Class 4 Precision: 0.0000
+Class 0 Recall: 1.0000
+Class 1 Recall: 0.0000
+Class 2 Recall: 0.0000
+Class 3 Recall: 0.0000
+Class 4 Recall: 0.0000
+Validation Accuracy: 0.7274
+Macro F1 Score: 0.1685
+xView2 Score: 0.0000
+Epoch 1 took:  0 hours,  0 minutes, 43 seconds
+
+Epoch 2/10
+Train Loss: 0.8636
+Confusion Matrix:
+ [[1835352       0       0       0       0]
+ [ 649407       0       0       0       0]
+ [  36494       0       0       0       0]
+ [   1737       0       0       0       0]
+ [    146       0       0       0       0]]
+Class 0 F1: 0.8422
+Class 1 F1: 0.0000
+Class 2 F1: 0.0000
+Class 3 F1: 0.0000
+Class 4 F1: 0.0000
+Class 0 Precision: 0.7274
+Class 1 Precision: 0.0000
+Class 2 Precision: 0.0000
+Class 3 Precision: 0.0000
+Class 4 Precision: 0.0000
+Class 0 Recall: 1.0000
+Class 1 Recall: 0.0000
+Class 2 Recall: 0.0000
+Class 3 Recall: 0.0000
+Class 4 Recall: 0.0000
+Validation Accuracy: 0.7274
+Macro F1 Score: 0.1684
+xView2 Score: 0.0000
+Epoch 2 took:  0 hours,  0 minutes, 22 seconds
+
+Epoch 3/10
+Train Loss: 0.7286
+Confusion Matrix:
+ [[1835352       0       0       0       0]
+ [ 649407       0       0       0       0]
+ [  36494       0       0       0       0]
+ [   1737       0       0       0       0]
+ [    146       0       0       0       0]]
+Class 0 F1: 0.8422
+Class 1 F1: 0.0000
+Class 2 F1: 0.0000
+Class 3 F1: 0.0000
+Class 4 F1: 0.0000
+Class 0 Precision: 0.7274
+Class 1 Precision: 0.0000
+Class 2 Precision: 0.0000
+Class 3 Precision: 0.0000
+Class 4 Precision: 0.0000
+Class 0 Recall: 1.0000
+Class 1 Recall: 0.0000
+Class 2 Recall: 0.0000
+Class 3 Recall: 0.0000
+Class 4 Recall: 0.0000
+Validation Accuracy: 0.7274
+Macro F1 Score: 0.1684
+xView2 Score: 0.0000
+Epoch 3 took:  0 hours,  0 minutes, 22 seconds
+
+Epoch 4/10
+Train Loss: 0.6496
+Confusion Matrix:
+ [[1835352       0       0       0       0]
+ [ 649407       0       0       0       0]
+ [  36494       0       0       0       0]
+ [   1737       0       0       0       0]
+ [    146       0       0       0       0]]
+Class 0 F1: 0.8422
+Class 1 F1: 0.0000
+Class 2 F1: 0.0000
+Class 3 F1: 0.0000
+Class 4 F1: 0.0000
+Class 0 Precision: 0.7274
+Class 1 Precision: 0.0000
+Class 2 Precision: 0.0000
+Class 3 Precision: 0.0000
+Class 4 Precision: 0.0000
+Class 0 Recall: 1.0000
+Class 1 Recall: 0.0000
+Class 2 Recall: 0.0000
+Class 3 Recall: 0.0000
+Class 4 Recall: 0.0000
+Validation Accuracy: 0.7274
+Macro F1 Score: 0.1684
+xView2 Score: 0.0000
+Epoch 4 took:  0 hours,  0 minutes, 27 seconds
+
+Epoch 5/10
+Train Loss: 0.6176
+Confusion Matrix:
+ [[1835352       0       0       0       0]
+ [ 649407       0       0       0       0]
+ [  36494       0       0       0       0]
+ [   1737       0       0       0       0]
+ [    146       0       0       0       0]]
+Class 0 F1: 0.8422
+Class 1 F1: 0.0000
+Class 2 F1: 0.0000
+Class 3 F1: 0.0000
+Class 4 F1: 0.0000
+Class 0 Precision: 0.7274
+Class 1 Precision: 0.0000
+Class 2 Precision: 0.0000
+Class 3 Precision: 0.0000
+Class 4 Precision: 0.0000
+Class 0 Recall: 1.0000
+Class 1 Recall: 0.0000
+Class 2 Recall: 0.0000
+Class 3 Recall: 0.0000
+Class 4 Recall: 0.0000
+Validation Accuracy: 0.7274
+Macro F1 Score: 0.1684
+xView2 Score: 0.0000
+Epoch 5 took:  0 hours,  0 minutes, 27 seconds
+
+Epoch 6/10
+Train Loss: 0.6000
+Confusion Matrix:
+ [[1835352       0       0       0       0]
+ [ 649407       0       0       0       0]
+ [  36494       0       0       0       0]
+ [   1737       0       0       0       0]
+ [    146       0       0       0       0]]
+Class 0 F1: 0.8422
+Class 1 F1: 0.0000
+Class 2 F1: 0.0000
+Class 3 F1: 0.0000
+Class 4 F1: 0.0000
+Class 0 Precision: 0.7274
+Class 1 Precision: 0.0000
+Class 2 Precision: 0.0000
+Class 3 Precision: 0.0000
+Class 4 Precision: 0.0000
+Class 0 Recall: 1.0000
+Class 1 Recall: 0.0000
+Class 2 Recall: 0.0000
+Class 3 Recall: 0.0000
+Class 4 Recall: 0.0000
+Validation Accuracy: 0.7274
+Macro F1 Score: 0.1684
+xView2 Score: 0.0000
+Epoch 6 took:  0 hours,  0 minutes, 26 seconds
+
+Epoch 7/10
+Train Loss: 0.5875
+Confusion Matrix:
+ [[1835352       0       0       0       0]
+ [ 649407       0       0       0       0]
+ [  36494       0       0       0       0]
+ [   1737       0       0       0       0]
+ [    146       0       0       0       0]]
+Class 0 F1: 0.8422
+Class 1 F1: 0.0000
+Class 2 F1: 0.0000
+Class 3 F1: 0.0000
+Class 4 F1: 0.0000
+Class 0 Precision: 0.7274
+Class 1 Precision: 0.0000
+Class 2 Precision: 0.0000
+Class 3 Precision: 0.0000
+Class 4 Precision: 0.0000
+Class 0 Recall: 1.0000
+Class 1 Recall: 0.0000
+Class 2 Recall: 0.0000
+Class 3 Recall: 0.0000
+Class 4 Recall: 0.0000
+Validation Accuracy: 0.7274
+Macro F1 Score: 0.1684
+xView2 Score: 0.0000
+Epoch 7 took:  0 hours,  0 minutes, 27 seconds
+
+Epoch 8/10
+Train Loss: 0.5652
+Confusion Matrix:
+ [[1835352       0       0       0       0]
+ [ 649407       0       0       0       0]
+ [  36494       0       0       0       0]
+ [   1737       0       0       0       0]
+ [    146       0       0       0       0]]
+Class 0 F1: 0.8422
+Class 1 F1: 0.0000
+Class 2 F1: 0.0000
+Class 3 F1: 0.0000
+Class 4 F1: 0.0000
+Class 0 Precision: 0.7274
+Class 1 Precision: 0.0000
+Class 2 Precision: 0.0000
+Class 3 Precision: 0.0000
+Class 4 Precision: 0.0000
+Class 0 Recall: 1.0000
+Class 1 Recall: 0.0000
+Class 2 Recall: 0.0000
+Class 3 Recall: 0.0000
+Class 4 Recall: 0.0000
+Validation Accuracy: 0.7274
+Macro F1 Score: 0.1684
+xView2 Score: 0.0000
+Epoch 8 took:  0 hours,  0 minutes, 26 seconds
+
+Epoch 9/10
+Train Loss: 0.5445
+Confusion Matrix:
+ [[1835352       0       0       0       0]
+ [ 649407       0       0       0       0]
+ [  36494       0       0       0       0]
+ [   1737       0       0       0       0]
+ [    146       0       0       0       0]]
+Class 0 F1: 0.8422
+Class 1 F1: 0.0000
+Class 2 F1: 0.0000
+Class 3 F1: 0.0000
+Class 4 F1: 0.0000
+Class 0 Precision: 0.7274
+Class 1 Precision: 0.0000
+Class 2 Precision: 0.0000
+Class 3 Precision: 0.0000
+Class 4 Precision: 0.0000
+Class 0 Recall: 1.0000
+Class 1 Recall: 0.0000
+Class 2 Recall: 0.0000
+Class 3 Recall: 0.0000
+Class 4 Recall: 0.0000
+Validation Accuracy: 0.7274
+Macro F1 Score: 0.1684
+xView2 Score: 0.0000
+Epoch 9 took:  0 hours,  0 minutes, 26 seconds
+
+Epoch 10/10
+Train Loss: 0.5271
+Confusion Matrix:
+ [[1835352       0       0       0       0]
+ [ 649407       0       0       0       0]
+ [  36494       0       0       0       0]
+ [   1737       0       0       0       0]
+ [    146       0       0       0       0]]
+Class 0 F1: 0.8422
+Class 1 F1: 0.0000
+Class 2 F1: 0.0000
+Class 3 F1: 0.0000
+Class 4 F1: 0.0000
+Class 0 Precision: 0.7274
+Class 1 Precision: 0.0000
+Class 2 Precision: 0.0000
+Class 3 Precision: 0.0000
+Class 4 Precision: 0.0000
+Class 0 Recall: 1.0000
+Class 1 Recall: 0.0000
+Class 2 Recall: 0.0000
+Class 3 Recall: 0.0000
+Class 4 Recall: 0.0000
+Validation Accuracy: 0.7274
+Macro F1 Score: 0.1684
+xView2 Score: 0.0000
+Epoch 10 took:  0 hours,  0 minutes, 26 seconds
+
+=== FINAL EVALUATION ===
+Best Accuracy: 0.7274
+Best Macro F1: 0.1685
+Best xView2 Score: 0.0000
+=== FINAL PRECISION RESULTS ===
+Class 0 Precision: 0.7274
+Class 1 Precision: 0.7917
+Class 2 Precision: 0.0000
+Class 3 Precision: 0.0000
+Class 4 Precision: 0.0000
+Macro Precision: 0.3038
+ROC curve saved to .././____________optune2_results/17/plot_multiclass_roc.jpg
+ROC curve saved to .././____________optune2_results/17/plot_loss_curves.jpg
+Prediction distribution: {0: 16384}
+ROC curve saved to .././____________optune2_results/17/visualize_predictions.jpg
+Prediction distribution: {0: 16384}
+ROC curve saved to .././____________optune2_results/17/visualize_predictions.jpg
+Prediction distribution: {0: 16384}
+ROC curve saved to .././____________optune2_results/17/visualize_predictions.jpg
+ROC curve saved to .././____________optune2_results/17/plot_epoch_accuracy.jpg
+ROC curve saved to .././____________optune2_results/17/plot_epoch_f1.jpg
+Training on cuda cores: True
+Training with texture loss: True
+Using device: cuda
+Patches featuring class 4:
+	('mexico-earthquake_00000059', 0, 64)
+	('mexico-earthquake_00000059', 64, 64)
+	('mexico-earthquake_00000059', 0, 128)
+	('mexico-earthquake_00000059', 64, 128)
+	('mexico-earthquake_00000059', 0, 192)
+	('mexico-earthquake_00000059', 64, 192)
+	('mexico-earthquake_00000142', 320, 192)
+	('mexico-earthquake_00000142', 384, 192)
+	('mexico-earthquake_00000142', 320, 256)
+	('mexico-earthquake_00000142', 384, 256)
+	('mexico-earthquake_00000142', 320, 320)
+	('mexico-earthquake_00000142', 384, 320)
+Dataset loaded
+Analyzing class distribution
+Class 0: 9,770,762 pixels (71.08%)
+Class 1: 3,824,138 pixels (27.82%)
+Class 2: 124,650 pixels (0.91%)
+Class 3: 22,822 pixels (0.17%)
+Class 4: 3,804 pixels (0.03%)
+--------------------------------------------------
+Model loaded on: cuda:0
+[0 1 2 3 4]
+{0: 0.2816968693768285, 1: 0.716532668442302, 2: 21.88556014532424, 3: 133.49925925925925, 4: 773.9291798662442}
+Final class weights used in loss: [5.179332407593234, 0.716532668442302, 21.88556014532424, 133.49925925925925, 773.9291798662442]
+
+Epoch 1/10
+Train Loss: 1.2682
+Confusion Matrix:
+ [[1965447       0       0       0       0]
+ [ 755565       0       0       0       0]
+ [  24185       0       0       0       0]
+ [   6352       0       0       0       0]
+ [    963       0       0       0       0]]
+Class 0 F1: 0.8332
+Class 1 F1: 0.0000
+Class 2 F1: 0.0000
+Class 3 F1: 0.0000
+Class 4 F1: 0.0000
+Class 0 Precision: 0.7141
+Class 1 Precision: 0.0000
+Class 2 Precision: 0.0000
+Class 3 Precision: 0.0000
+Class 4 Precision: 0.0000
+Class 0 Recall: 1.0000
+Class 1 Recall: 0.0000
+Class 2 Recall: 0.0000
+Class 3 Recall: 0.0000
+Class 4 Recall: 0.0000
+Validation Accuracy: 0.7141
+Macro F1 Score: 0.1666
+xView2 Score: 0.0000
+Epoch 1 took:  0 hours,  1 minutes,  9 seconds
+
+Epoch 2/10
+Train Loss: 0.8282
+Confusion Matrix:
+ [[1965447       0       0       0       0]
+ [ 755565       0       0       0       0]
+ [  24185       0       0       0       0]
+ [   6352       0       0       0       0]
+ [    963       0       0       0       0]]
+Class 0 F1: 0.8332
+Class 1 F1: 0.0000
+Class 2 F1: 0.0000
+Class 3 F1: 0.0000
+Class 4 F1: 0.0000
+Class 0 Precision: 0.7141
+Class 1 Precision: 0.0000
+Class 2 Precision: 0.0000
+Class 3 Precision: 0.0000
+Class 4 Precision: 0.0000
+Class 0 Recall: 1.0000
+Class 1 Recall: 0.0000
+Class 2 Recall: 0.0000
+Class 3 Recall: 0.0000
+Class 4 Recall: 0.0000
+Validation Accuracy: 0.7141
+Macro F1 Score: 0.1666
+xView2 Score: 0.0000
+Epoch 2 took:  0 hours,  0 minutes, 24 seconds
+
+Epoch 3/10
+Train Loss: 0.6612
+Confusion Matrix:
+ [[1965447       0       0       0       0]
+ [ 755565       0       0       0       0]
+ [  24185       0       0       0       0]
+ [   6352       0       0       0       0]
+ [    963       0       0       0       0]]
+Class 0 F1: 0.8332
+Class 1 F1: 0.0000
+Class 2 F1: 0.0000
+Class 3 F1: 0.0000
+Class 4 F1: 0.0000
+Class 0 Precision: 0.7141
+Class 1 Precision: 0.0000
+Class 2 Precision: 0.0000
+Class 3 Precision: 0.0000
+Class 4 Precision: 0.0000
+Class 0 Recall: 1.0000
+Class 1 Recall: 0.0000
+Class 2 Recall: 0.0000
+Class 3 Recall: 0.0000
+Class 4 Recall: 0.0000
+Validation Accuracy: 0.7141
+Macro F1 Score: 0.1666
+xView2 Score: 0.0000
+Epoch 3 took:  0 hours,  0 minutes, 24 seconds
+
+Epoch 4/10
+Train Loss: 0.5944
+Confusion Matrix:
+ [[1965447       0       0       0       0]
+ [ 755565       0       0       0       0]
+ [  24185       0       0       0       0]
+ [   6352       0       0       0       0]
+ [    963       0       0       0       0]]
+Class 0 F1: 0.8332
+Class 1 F1: 0.0000
+Class 2 F1: 0.0000
+Class 3 F1: 0.0000
+Class 4 F1: 0.0000
+Class 0 Precision: 0.7141
+Class 1 Precision: 0.0000
+Class 2 Precision: 0.0000
+Class 3 Precision: 0.0000
+Class 4 Precision: 0.0000
+Class 0 Recall: 1.0000
+Class 1 Recall: 0.0000
+Class 2 Recall: 0.0000
+Class 3 Recall: 0.0000
+Class 4 Recall: 0.0000
+Validation Accuracy: 0.7141
+Macro F1 Score: 0.1666
+xView2 Score: 0.0000
+Epoch 4 took:  0 hours,  0 minutes, 29 seconds
+
+Epoch 5/10
+Train Loss: 0.5639
+Confusion Matrix:
+ [[1965447       0       0       0       0]
+ [ 755565       0       0       0       0]
+ [  24185       0       0       0       0]
+ [   6352       0       0       0       0]
+ [    963       0       0       0       0]]
+Class 0 F1: 0.8332
+Class 1 F1: 0.0000
+Class 2 F1: 0.0000
+Class 3 F1: 0.0000
+Class 4 F1: 0.0000
+Class 0 Precision: 0.7141
+Class 1 Precision: 0.0000
+Class 2 Precision: 0.0000
+Class 3 Precision: 0.0000
+Class 4 Precision: 0.0000
+Class 0 Recall: 1.0000
+Class 1 Recall: 0.0000
+Class 2 Recall: 0.0000
+Class 3 Recall: 0.0000
+Class 4 Recall: 0.0000
+Validation Accuracy: 0.7141
+Macro F1 Score: 0.1666
+xView2 Score: 0.0000
+Epoch 5 took:  0 hours,  0 minutes, 29 seconds
+
+Epoch 6/10
+Train Loss: 0.5274
+Confusion Matrix:
+ [[1965447       0       0       0       0]
+ [ 755565       0       0       0       0]
+ [  24185       0       0       0       0]
+ [   6352       0       0       0       0]
+ [    963       0       0       0       0]]
+Class 0 F1: 0.8332
+Class 1 F1: 0.0000
+Class 2 F1: 0.0000
+Class 3 F1: 0.0000
+Class 4 F1: 0.0000
+Class 0 Precision: 0.7141
+Class 1 Precision: 0.0000
+Class 2 Precision: 0.0000
+Class 3 Precision: 0.0000
+Class 4 Precision: 0.0000
+Class 0 Recall: 1.0000
+Class 1 Recall: 0.0000
+Class 2 Recall: 0.0000
+Class 3 Recall: 0.0000
+Class 4 Recall: 0.0000
+Validation Accuracy: 0.7141
+Macro F1 Score: 0.1666
+xView2 Score: 0.0000
+Epoch 6 took:  0 hours,  0 minutes, 29 seconds
+
+Epoch 7/10
+Train Loss: 0.5216
+Confusion Matrix:
+ [[1965447       0       0       0       0]
+ [ 755565       0       0       0       0]
+ [  24185       0       0       0       0]
+ [   6352       0       0       0       0]
+ [    963       0       0       0       0]]
+Class 0 F1: 0.8332
+Class 1 F1: 0.0000
+Class 2 F1: 0.0000
+Class 3 F1: 0.0000
+Class 4 F1: 0.0000
+Class 0 Precision: 0.7141
+Class 1 Precision: 0.0000
+Class 2 Precision: 0.0000
+Class 3 Precision: 0.0000
+Class 4 Precision: 0.0000
+Class 0 Recall: 1.0000
+Class 1 Recall: 0.0000
+Class 2 Recall: 0.0000
+Class 3 Recall: 0.0000
+Class 4 Recall: 0.0000
+Validation Accuracy: 0.7141
+Macro F1 Score: 0.1666
+xView2 Score: 0.0000
+Epoch 7 took:  0 hours,  0 minutes, 29 seconds
+
+Epoch 8/10
+Train Loss: 0.5119
+Confusion Matrix:
+ [[1965447       0       0       0       0]
+ [ 755565       0       0       0       0]
+ [  24185       0       0       0       0]
+ [   6352       0       0       0       0]
+ [    963       0       0       0       0]]
+Class 0 F1: 0.8332
+Class 1 F1: 0.0000
+Class 2 F1: 0.0000
+Class 3 F1: 0.0000
+Class 4 F1: 0.0000
+Class 0 Precision: 0.7141
+Class 1 Precision: 0.0000
+Class 2 Precision: 0.0000
+Class 3 Precision: 0.0000
+Class 4 Precision: 0.0000
+Class 0 Recall: 1.0000
+Class 1 Recall: 0.0000
+Class 2 Recall: 0.0000
+Class 3 Recall: 0.0000
+Class 4 Recall: 0.0000
+Validation Accuracy: 0.7141
+Macro F1 Score: 0.1666
+xView2 Score: 0.0000
+Epoch 8 took:  0 hours,  0 minutes, 29 seconds
+
+Epoch 9/10
+Train Loss: 0.4932
+Confusion Matrix:
+ [[1965447       0       0       0       0]
+ [ 755565       0       0       0       0]
+ [  24185       0       0       0       0]
+ [   6352       0       0       0       0]
+ [    963       0       0       0       0]]
+Class 0 F1: 0.8332
+Class 1 F1: 0.0000
+Class 2 F1: 0.0000
+Class 3 F1: 0.0000
+Class 4 F1: 0.0000
+Class 0 Precision: 0.7141
+Class 1 Precision: 0.0000
+Class 2 Precision: 0.0000
+Class 3 Precision: 0.0000
+Class 4 Precision: 0.0000
+Class 0 Recall: 1.0000
+Class 1 Recall: 0.0000
+Class 2 Recall: 0.0000
+Class 3 Recall: 0.0000
+Class 4 Recall: 0.0000
+Validation Accuracy: 0.7141
+Macro F1 Score: 0.1666
+xView2 Score: 0.0000
+Epoch 9 took:  0 hours,  0 minutes, 29 seconds
+
+Epoch 10/10
+Train Loss: 0.4767
+Confusion Matrix:
+ [[1965447       0       0       0       0]
+ [ 755565       0       0       0       0]
+ [  24185       0       0       0       0]
+ [   6352       0       0       0       0]
+ [    963       0       0       0       0]]
+Class 0 F1: 0.8332
+Class 1 F1: 0.0000
+Class 2 F1: 0.0000
+Class 3 F1: 0.0000
+Class 4 F1: 0.0000
+Class 0 Precision: 0.7141
+Class 1 Precision: 0.0000
+Class 2 Precision: 0.0000
+Class 3 Precision: 0.0000
+Class 4 Precision: 0.0000
+Class 0 Recall: 1.0000
+Class 1 Recall: 0.0000
+Class 2 Recall: 0.0000
+Class 3 Recall: 0.0000
+Class 4 Recall: 0.0000
+Validation Accuracy: 0.7141
+Macro F1 Score: 0.1666
+xView2 Score: 0.0000
+Epoch 10 took:  0 hours,  0 minutes, 29 seconds
+
+=== FINAL EVALUATION ===
+Best Accuracy: 0.0000
+Best Macro F1: 0.0000
+Best xView2 Score: 0.0000
+=== FINAL PRECISION RESULTS ===
+Class 0 Precision: 0.0000
+Class 1 Precision: 0.0000
+Class 2 Precision: 0.0000
+Class 3 Precision: 0.0000
+Class 4 Precision: 0.0000
+Macro Precision: nan
+Loaded metrics.py from: /home/caiden/PycharmProjects/Physics-Informed-Deep-Learning-For-Damage-Assessment/src/metrics.py
+Training on cuda cores: True
+Training with texture loss: True
+Using device: cuda
+Patches featuring class 4:
+	('mexico-earthquake_00000059', 0, 64)
+	('mexico-earthquake_00000059', 64, 64)
+	('mexico-earthquake_00000059', 0, 128)
+	('mexico-earthquake_00000059', 64, 128)
+	('mexico-earthquake_00000059', 0, 192)
+	('mexico-earthquake_00000059', 64, 192)
+	('mexico-earthquake_00000142', 320, 192)
+	('mexico-earthquake_00000142', 384, 192)
+	('mexico-earthquake_00000142', 320, 256)
+	('mexico-earthquake_00000142', 384, 256)
+	('mexico-earthquake_00000142', 320, 320)
+	('mexico-earthquake_00000142', 384, 320)
+Dataset loaded
+Analyzing class distribution
+Class 0: 9,449,512 pixels (70.51%)
+Class 1: 3,801,324 pixels (28.36%)
+Class 2: 124,650 pixels (0.93%)
+Class 3: 22,822 pixels (0.17%)
+Class 4: 3,804 pixels (0.03%)
+--------------------------------------------------
+Model loaded on: cuda:0
+[0 1 2 3 4]
+{0: 0.2844991610501032, 1: 0.7005701254275941, 2: 21.32726132778679, 3: 106.1272322091814, 4: 751.1486855941115}
+Final class weights used in loss: [0.4756179818900418, 0.7005701254275941, 21.32726132778679, 106.1272322091814, 751.1486855941115]
+
+Epoch 1/10
+Train Loss: 1.5191
+Confusion Matrix:
+ [[1808088   82459   26327       2       5]
+ [ 641070   79146   22127       0       5]
+ [  22285    1473     409       0       0]
+ [   2608      10      11       0       0]
+ [    951       0       0       0       0]]
+Class 0 F1: 0.8234
+Class 1 F1: 0.1748
+Class 2 F1: 0.0112
+Class 3 F1: 0.0000
+Class 4 F1: 0.0000
+Class 0 Precision: 0.7305
+Class 1 Precision: 0.4853
+Class 2 Precision: 0.0084
+Class 3 Precision: 0.0000
+Class 4 Precision: 0.0000
+Class 0 Recall: 0.9432
+Class 1 Recall: 0.1066
+Class 2 Recall: 0.0169
+Class 3 Recall: 0.0000
+Class 4 Recall: 0.0000
+Validation Accuracy: 0.7025
+Macro F1 Score: 0.2019
+xView2 Score: 0.0924
+Epoch 1 took:  0 hours,  1 minutes, 41 seconds
+
+Epoch 2/10
+Train Loss: 1.3939
+Confusion Matrix:
+ [[1813874  102842     165       0       0]
+ [ 629401  112641     306       0       0]
+ [  22413    1731      23       0       0]
+ [   2622       7       0       0       0]
+ [    951       0       0       0       0]]
+Class 0 F1: 0.8271
+Class 1 F1: 0.2348
+Class 2 F1: 0.0019
+Class 3 F1: 0.0000
+Class 4 F1: 0.0000
+Class 0 Precision: 0.7346
+Class 1 Precision: 0.5186
+Class 2 Precision: 0.0466
+Class 3 Precision: 0.0000
+Class 4 Precision: 0.0000
+Class 0 Recall: 0.9463
+Class 1 Recall: 0.1517
+Class 2 Recall: 0.0010
+Class 3 Recall: 0.0000
+Class 4 Recall: 0.0000
+Validation Accuracy: 0.7170
+Macro F1 Score: 0.2127
+xView2 Score: 0.1068
+Epoch 2 took:  0 hours,  0 minutes, 23 seconds
+
+Epoch 3/10
+Train Loss: 1.3212
+Confusion Matrix:
+ [[1834170   82711       0       0       0]
+ [ 649404   92943       1       0       0]
+ [  21309    2858       0       0       0]
+ [   2629       0       0       0       0]
+ [    951       0       0       0       0]]
+Class 0 F1: 0.8289
+Class 1 F1: 0.2019
+Class 2 F1: 0.0000
+Class 3 F1: 0.0000
+Class 4 F1: 0.0000
+Class 0 Precision: 0.7312
+Class 1 Precision: 0.5207
+Class 2 Precision: 0.0000
+Class 3 Precision: 0.0000
+Class 4 Precision: 0.0000
+Class 0 Recall: 0.9569
+Class 1 Recall: 0.1252
+Class 2 Recall: 0.0000
+Class 3 Recall: 0.0000
+Class 4 Recall: 0.0000
+Validation Accuracy: 0.7172
+Macro F1 Score: 0.2062
+xView2 Score: 0.0916
+Epoch 3 took:  0 hours,  0 minutes, 23 seconds
+
+Epoch 4/10
+Train Loss: 1.2750
+Confusion Matrix:
+ [[1732143  184738       0       0       0]
+ [ 538988  203360       0       0       0]
+ [  19081    5086       0       0       0]
+ [   2176     453       0       0       0]
+ [    389     562       0       0       0]]
+Class 0 F1: 0.8229
+Class 1 F1: 0.3579
+Class 2 F1: 0.0000
+Class 3 F1: 0.0000
+Class 4 F1: 0.0000
+Class 0 Precision: 0.7555
+Class 1 Precision: 0.5159
+Class 2 Precision: 0.0000
+Class 3 Precision: 0.0000
+Class 4 Precision: 0.0000
+Class 0 Recall: 0.9036
+Class 1 Recall: 0.2739
+Class 2 Recall: 0.0000
+Class 3 Recall: 0.0000
+Class 4 Recall: 0.0000
+Validation Accuracy: 0.7203
+Macro F1 Score: 0.2362
+xView2 Score: 0.1678
+Epoch 4 took:  0 hours,  0 minutes, 28 seconds
+
+Epoch 5/10
+Train Loss: 1.2084
+Confusion Matrix:
+ [[1570842  346039       0       0       0]
+ [ 377247  365101       0       0       0]
+ [  15809    8358       0       0       0]
+ [   1557    1072       0       0       0]
+ [    714     237       0       0       0]]
+Class 0 F1: 0.8091
+Class 1 F1: 0.4991
+Class 2 F1: 0.0000
+Class 3 F1: 0.0000
+Class 4 F1: 0.0000
+Class 0 Precision: 0.7989
+Class 1 Precision: 0.5065
+Class 2 Precision: 0.0000
+Class 3 Precision: 0.0000
+Class 4 Precision: 0.0000
+Class 0 Recall: 0.8195
+Class 1 Recall: 0.4918
+Class 2 Recall: 0.0000
+Class 3 Recall: 0.0000
+Class 4 Recall: 0.0000
+Validation Accuracy: 0.7205
+Macro F1 Score: 0.2616
+xView2 Score: 0.2423
+Epoch 5 took:  0 hours,  0 minutes, 28 seconds
+
+Epoch 6/10
+Train Loss: 1.1960
+Confusion Matrix:
+ [[1636264  280608       9       0       0]
+ [ 432576  309769       3       0       0]
+ [  17015    7152       0       0       0]
+ [   2087     542       0       0       0]
+ [    951       0       0       0       0]]
+Class 0 F1: 0.8170
+Class 1 F1: 0.4622
+Class 2 F1: 0.0000
+Class 3 F1: 0.0000
+Class 4 F1: 0.0000
+Class 0 Precision: 0.7833
+Class 1 Precision: 0.5179
+Class 2 Precision: 0.0000
+Class 3 Precision: 0.0000
+Class 4 Precision: 0.0000
+Class 0 Recall: 0.8536
+Class 1 Recall: 0.4173
+Class 2 Recall: 0.0000
+Class 3 Recall: 0.0000
+Class 4 Recall: 0.0000
+Validation Accuracy: 0.7242
+Macro F1 Score: 0.2558
+xView2 Score: 0.2211
+Epoch 6 took:  0 hours,  0 minutes, 28 seconds
+
+Epoch 7/10
+Train Loss: 1.1367
+Confusion Matrix:
+ [[1612483  304112     286       0       0]
+ [ 390028  352057     263       0       0]
+ [  16520    7637      10       0       0]
+ [   1885     744       0       0       0]
+ [    949       2       0       0       0]]
+Class 0 F1: 0.8188
+Class 1 F1: 0.5005
+Class 2 F1: 0.0008
+Class 3 F1: 0.0000
+Class 4 F1: 0.0000
+Class 0 Precision: 0.7975
+Class 1 Precision: 0.5298
+Class 2 Precision: 0.0179
+Class 3 Precision: 0.0000
+Class 4 Precision: 0.0000
+Class 0 Recall: 0.8412
+Class 1 Recall: 0.4742
+Class 2 Recall: 0.0004
+Class 3 Recall: 0.0000
+Class 4 Recall: 0.0000
+Validation Accuracy: 0.7311
+Macro F1 Score: 0.2640
+xView2 Score: 0.2403
+Epoch 7 took:  0 hours,  0 minutes, 28 seconds
+
+Epoch 8/10
+Train Loss: 1.1186
+Confusion Matrix:
+ [[1566943  348857    1081       0       0]
+ [ 345029  396659     660       0       0]
+ [  16218    7916      33       0       0]
+ [   1924     705       0       0       0]
+ [    934      17       0       0       0]]
+Class 0 F1: 0.8144
+Class 1 F1: 0.5301
+Class 2 F1: 0.0025
+Class 3 F1: 0.0000
+Class 4 F1: 0.0000
+Class 0 Precision: 0.8114
+Class 1 Precision: 0.5260
+Class 2 Precision: 0.0186
+Class 3 Precision: 0.0000
+Class 4 Precision: 0.0000
+Class 0 Recall: 0.8174
+Class 1 Recall: 0.5343
+Class 2 Recall: 0.0014
+Class 3 Recall: 0.0000
+Class 4 Recall: 0.0000
+Validation Accuracy: 0.7308
+Macro F1 Score: 0.2694
+xView2 Score: 0.2568
+Epoch 8 took:  0 hours,  0 minutes, 28 seconds
+
+Epoch 9/10
+Train Loss: 1.0854
+Confusion Matrix:
+ [[1404288  508227    4366       0       0]
+ [ 210038  530564    1746       0       0]
+ [  11476   12403     288       0       0]
+ [   1252    1359      18       0       0]
+ [    570     377       4       0       0]]
+Class 0 F1: 0.7924
+Class 1 F1: 0.5911
+Class 2 F1: 0.0188
+Class 3 F1: 0.0000
+Class 4 F1: 0.0000
+Class 0 Precision: 0.8628
+Class 1 Precision: 0.5039
+Class 2 Precision: 0.0448
+Class 3 Precision: 0.0000
+Class 4 Precision: 0.0000
+Class 0 Recall: 0.7326
+Class 1 Recall: 0.7147
+Class 2 Recall: 0.0119
+Class 3 Recall: 0.0000
+Class 4 Recall: 0.0000
+Validation Accuracy: 0.7202
+Macro F1 Score: 0.2805
+xView2 Score: 0.2978
+Epoch 9 took:  0 hours,  0 minutes, 28 seconds
+
+Epoch 10/10
+Train Loss: 1.0413
+Confusion Matrix:
+ [[1639971  270266    6420     224       0]
+ [ 383231  354006    4863     248       0]
+ [  16999    6047    1121       0       0]
+ [   1022    1607       0       0       0]
+ [    744     207       0       0       0]]
+Class 0 F1: 0.8285
+Class 1 F1: 0.5151
+Class 2 F1: 0.0613
+Class 3 F1: 0.0000
+Class 4 F1: 0.0000
+Class 0 Precision: 0.8031
+Class 1 Precision: 0.5600
+Class 2 Precision: 0.0904
+Class 3 Precision: 0.0000
+Class 4 Precision: 0.0000
+Class 0 Recall: 0.8555
+Class 1 Recall: 0.4769
+Class 2 Recall: 0.0464
+Class 3 Recall: 0.0000
+Class 4 Recall: 0.0000
+Validation Accuracy: 0.7425
+Macro F1 Score: 0.2810
+xView2 Score: 0.2562
+Epoch 10 took:  0 hours,  0 minutes, 28 seconds
+
+=== FINAL EVALUATION ===
+Best Accuracy: 0.7202
+Best Macro F1: 0.2805
+Best xView2 Score: 0.2978
+=== FINAL PRECISION RESULTS ===
+Class 0 Precision: 0.8628
+Class 1 Precision: 0.5039
+Class 2 Precision: 0.0448
+Class 3 Precision: 0.0000
+Class 4 Precision: 0.0000
+Macro Precision: 0.2823
+ROC curve saved to .././____________optune2_results/20/plot_multiclass_roc.jpg
+ROC curve saved to .././____________optune2_results/20/plot_loss_curves.jpg
+Prediction distribution: {0: 16384}
+ROC curve saved to .././____________optune2_results/20/visualize_predictions.jpg
+Prediction distribution: {0: 11695, 1: 3322, 2: 1367}
+ROC curve saved to .././____________optune2_results/20/visualize_predictions.jpg
+Prediction distribution: {0: 11278, 1: 5099, 3: 7}
+ROC curve saved to .././____________optune2_results/20/visualize_predictions.jpg
+ROC curve saved to .././____________optune2_results/20/plot_epoch_accuracy.jpg
+ROC curve saved to .././____________optune2_results/20/plot_epoch_f1.jpg
+Training on cuda cores: True
+Training with texture loss: True
+Using device: cuda
+Patches featuring class 4:
+	('mexico-earthquake_00000059', 0, 64)
+	('mexico-earthquake_00000059', 64, 64)
+	('mexico-earthquake_00000059', 0, 128)
+	('mexico-earthquake_00000059', 64, 128)
+	('mexico-earthquake_00000059', 0, 192)
+	('mexico-earthquake_00000059', 64, 192)
+	('mexico-earthquake_00000142', 320, 192)
+	('mexico-earthquake_00000142', 384, 192)
+	('mexico-earthquake_00000142', 320, 256)
+	('mexico-earthquake_00000142', 384, 256)
+	('mexico-earthquake_00000142', 320, 320)
+	('mexico-earthquake_00000142', 384, 320)
+Dataset loaded
+Analyzing class distribution
+Class 0: 9,112,869 pixels (70.41%)
+Class 1: 3,679,215 pixels (28.43%)
+Class 2: 124,650 pixels (0.96%)
+Class 3: 22,822 pixels (0.18%)
+Class 4: 3,804 pixels (0.03%)
+--------------------------------------------------
+Model loaded on: cuda:0
+[0 1 2 3 4]
+{0: 0.2873744589537534, 1: 0.6857793035438076, 2: 20.141388834857032, 3: 94.62385086356575, 4: 553.2828212663638}
+Final class weights used in loss: [0.9009745197145803, 0.6857793035438076, 20.141388834857032, 94.62385086356575, 553.2828212663638]
+
+Epoch 1/10
+Train Loss: 1.4835
+Confusion Matrix:
+ [[1906011     352      22      67       9]
+ [ 659048     266       6      64       0]
+ [  21825       0       0       5       0]
+ [    936       0       0       0       0]
+ [     61       0       0       0       0]]
+Class 0 F1: 0.8482
+Class 1 F1: 0.0008
+Class 2 F1: 0.0000
+Class 3 F1: 0.0000
+Class 4 F1: 0.0000
+Class 0 Precision: 0.7365
+Class 1 Precision: 0.4304
+Class 2 Precision: 0.0000
+Class 3 Precision: 0.0000
+Class 4 Precision: 0.0000
+Class 0 Recall: 0.9998
+Class 1 Recall: 0.0004
+Class 2 Recall: 0.0000
+Class 3 Recall: 0.0000
+Class 4 Recall: 0.0000
+Validation Accuracy: 0.7364
+Macro F1 Score: 0.1698
+xView2 Score: 0.0004
+Epoch 1 took:  0 hours,  1 minutes, 58 seconds
+
+Epoch 2/10
+Train Loss: 1.2913
+Confusion Matrix:
+ [[1906461       0       0       0       0]
+ [ 659384       0       0       0       0]
+ [  21830       0       0       0       0]
+ [    936       0       0       0       0]
+ [     61       0       0       0       0]]
+Class 0 F1: 0.8482
+Class 1 F1: 0.0000
+Class 2 F1: 0.0000
+Class 3 F1: 0.0000
+Class 4 F1: 0.0000
+Class 0 Precision: 0.7365
+Class 1 Precision: 0.0000
+Class 2 Precision: 0.0000
+Class 3 Precision: 0.0000
+Class 4 Precision: 0.0000
+Class 0 Recall: 1.0000
+Class 1 Recall: 0.0000
+Class 2 Recall: 0.0000
+Class 3 Recall: 0.0000
+Class 4 Recall: 0.0000
+Validation Accuracy: 0.7365
+Macro F1 Score: 0.1696
+xView2 Score: 0.0000
+Epoch 2 took:  0 hours,  0 minutes, 22 seconds
+
+Epoch 3/10
+Train Loss: 1.1950
+Confusion Matrix:
+ [[1906461       0       0       0       0]
+ [ 659384       0       0       0       0]
+ [  21830       0       0       0       0]
+ [    936       0       0       0       0]
+ [     61       0       0       0       0]]
+Class 0 F1: 0.8482
+Class 1 F1: 0.0000
+Class 2 F1: 0.0000
+Class 3 F1: 0.0000
+Class 4 F1: 0.0000
+Class 0 Precision: 0.7365
+Class 1 Precision: 0.0000
+Class 2 Precision: 0.0000
+Class 3 Precision: 0.0000
+Class 4 Precision: 0.0000
+Class 0 Recall: 1.0000
+Class 1 Recall: 0.0000
+Class 2 Recall: 0.0000
+Class 3 Recall: 0.0000
+Class 4 Recall: 0.0000
+Validation Accuracy: 0.7365
+Macro F1 Score: 0.1696
+xView2 Score: 0.0000
+Epoch 3 took:  0 hours,  0 minutes, 23 seconds
+
+Epoch 4/10
+Train Loss: 1.1620
+Confusion Matrix:
+ [[1906231     230       0       0       0]
+ [ 659033     351       0       0       0]
+ [  21826       4       0       0       0]
+ [    936       0       0       0       0]
+ [     61       0       0       0       0]]
+Class 0 F1: 0.8482
+Class 1 F1: 0.0011
+Class 2 F1: 0.0000
+Class 3 F1: 0.0000
+Class 4 F1: 0.0000
+Class 0 Precision: 0.7365
+Class 1 Precision: 0.6000
+Class 2 Precision: 0.0000
+Class 3 Precision: 0.0000
+Class 4 Precision: 0.0000
+Class 0 Recall: 0.9999
+Class 1 Recall: 0.0005
+Class 2 Recall: 0.0000
+Class 3 Recall: 0.0000
+Class 4 Recall: 0.0000
+Validation Accuracy: 0.7365
+Macro F1 Score: 0.1699
+xView2 Score: 0.0005
+Epoch 4 took:  0 hours,  0 minutes, 27 seconds
+
+Epoch 5/10
+Train Loss: 1.1097
+Confusion Matrix:
+ [[1905522     939       0       0       0]
+ [ 657043    2341       0       0       0]
+ [  21825       5       0       0       0]
+ [    936       0       0       0       0]
+ [     61       0       0       0       0]]
+Class 0 F1: 0.8484
+Class 1 F1: 0.0071
+Class 2 F1: 0.0000
+Class 3 F1: 0.0000
+Class 4 F1: 0.0000
+Class 0 Precision: 0.7370
+Class 1 Precision: 0.7126
+Class 2 Precision: 0.0000
+Class 3 Precision: 0.0000
+Class 4 Precision: 0.0000
+Class 0 Recall: 0.9995
+Class 1 Recall: 0.0036
+Class 2 Recall: 0.0000
+Class 3 Recall: 0.0000
+Class 4 Recall: 0.0000
+Validation Accuracy: 0.7370
+Macro F1 Score: 0.1711
+xView2 Score: 0.0030
+Epoch 5 took:  0 hours,  0 minutes, 27 seconds
+
+Epoch 6/10
+Train Loss: 1.0721
+Confusion Matrix:
+ [[1895028   11433       0       0       0]
+ [ 639134   20250       0       0       0]
+ [  21667     163       0       0       0]
+ [    936       0       0       0       0]
+ [     61       0       0       0       0]]
+Class 0 F1: 0.8492
+Class 1 F1: 0.0586
+Class 2 F1: 0.0000
+Class 3 F1: 0.0000
+Class 4 F1: 0.0000
+Class 0 Precision: 0.7412
+Class 1 Precision: 0.6359
+Class 2 Precision: 0.0000
+Class 3 Precision: 0.0000
+Class 4 Precision: 0.0000
+Class 0 Recall: 0.9940
+Class 1 Recall: 0.0307
+Class 2 Recall: 0.0000
+Class 3 Recall: 0.0000
+Class 4 Recall: 0.0000
+Validation Accuracy: 0.7399
+Macro F1 Score: 0.1816
+xView2 Score: 0.0255
+Epoch 6 took:  0 hours,  0 minutes, 28 seconds
+
+Epoch 7/10
+Train Loss: 1.0360
+Confusion Matrix:
+ [[1898012    8449       0       0       0]
+ [ 643458   15926       0       0       0]
+ [  21745      85       0       0       0]
+ [    936       0       0       0       0]
+ [     61       0       0       0       0]]
+Class 0 F1: 0.8491
+Class 1 F1: 0.0466
+Class 2 F1: 0.0000
+Class 3 F1: 0.0000
+Class 4 F1: 0.0000
+Class 0 Precision: 0.7402
+Class 1 Precision: 0.6511
+Class 2 Precision: 0.0000
+Class 3 Precision: 0.0000
+Class 4 Precision: 0.0000
+Class 0 Recall: 0.9956
+Class 1 Recall: 0.0242
+Class 2 Recall: 0.0000
+Class 3 Recall: 0.0000
+Class 4 Recall: 0.0000
+Validation Accuracy: 0.7394
+Macro F1 Score: 0.1791
+xView2 Score: 0.0202
+Epoch 7 took:  0 hours,  0 minutes, 27 seconds
+
+Epoch 8/10
+Train Loss: 1.0102
+Confusion Matrix:
+ [[1886125   20105      17     214       0]
+ [ 622688   36620      23      53       0]
+ [  21602     228       0       0       0]
+ [    936       0       0       0       0]
+ [     61       0       0       0       0]]
+Class 0 F1: 0.8500
+Class 1 F1: 0.1022
+Class 2 F1: 0.0000
+Class 3 F1: 0.0000
+Class 4 F1: 0.0000
+Class 0 Precision: 0.7451
+Class 1 Precision: 0.6430
+Class 2 Precision: 0.0000
+Class 3 Precision: 0.0000
+Class 4 Precision: 0.0000
+Class 0 Recall: 0.9893
+Class 1 Recall: 0.0555
+Class 2 Recall: 0.0000
+Class 3 Recall: 0.0000
+Class 4 Recall: 0.0000
+Validation Accuracy: 0.7428
+Macro F1 Score: 0.1905
+xView2 Score: 0.0447
+Epoch 8 took:  0 hours,  0 minutes, 27 seconds
+
+Epoch 9/10
+Train Loss: 0.9694
+Confusion Matrix:
+ [[1887215   17579     583    1084       0]
+ [ 623323   34283     733    1045       0]
+ [  21573     257       0       0       0]
+ [    936       0       0       0       0]
+ [     61       0       0       0       0]]
+Class 0 F1: 0.8502
+Class 1 F1: 0.0964
+Class 2 F1: 0.0000
+Class 3 F1: 0.0000
+Class 4 F1: 0.0000
+Class 0 Precision: 0.7450
+Class 1 Precision: 0.6578
+Class 2 Precision: 0.0000
+Class 3 Precision: 0.0000
+Class 4 Precision: 0.0000
+Class 0 Recall: 0.9899
+Class 1 Recall: 0.0520
+Class 2 Recall: 0.0000
+Class 3 Recall: 0.0000
+Class 4 Recall: 0.0000
+Validation Accuracy: 0.7423
+Macro F1 Score: 0.1893
+xView2 Score: 0.0434
+Epoch 9 took:  0 hours,  0 minutes, 27 seconds
+
+Epoch 10/10
+Train Loss: 0.9348
+Confusion Matrix:
+ [[1873476   27841    2213    2931       0]
+ [ 602344   52163    1250    3627       0]
+ [  20330    1405      95       0       0]
+ [    936       0       0       0       0]
+ [     61       0       0       0       0]]
+Class 0 F1: 0.8509
+Class 1 F1: 0.1408
+Class 2 F1: 0.0075
+Class 3 F1: 0.0000
+Class 4 F1: 0.0000
+Class 0 Precision: 0.7502
+Class 1 Precision: 0.6408
+Class 2 Precision: 0.0267
+Class 3 Precision: 0.0000
+Class 4 Precision: 0.0000
+Class 0 Recall: 0.9827
+Class 1 Recall: 0.0791
+Class 2 Recall: 0.0044
+Class 3 Recall: 0.0000
+Class 4 Recall: 0.0000
+Validation Accuracy: 0.7439
+Macro F1 Score: 0.1998
+xView2 Score: 0.0670
+Epoch 10 took:  0 hours,  0 minutes, 29 seconds
+
+=== FINAL EVALUATION ===
+Best Accuracy: 0.7439
+Best Macro F1: 0.1998
+Best xView2 Score: 0.0670
+=== FINAL PRECISION RESULTS ===
+Class 0 Precision: 0.7502
+Class 1 Precision: 0.6408
+Class 2 Precision: 0.0267
+Class 3 Precision: 0.0000
+Class 4 Precision: 0.0000
+Macro Precision: 0.2835
+ROC curve saved to .././____________optune2_results/21/plot_multiclass_roc.jpg
+ROC curve saved to .././____________optune2_results/21/plot_loss_curves.jpg
+Prediction distribution: {0: 16384}
+ROC curve saved to .././____________optune2_results/21/visualize_predictions.jpg
+Prediction distribution: {0: 16384}
+ROC curve saved to .././____________optune2_results/21/visualize_predictions.jpg
+Prediction distribution: {0: 13833, 1: 2340, 2: 189, 3: 22}
+ROC curve saved to .././____________optune2_results/21/visualize_predictions.jpg
+ROC curve saved to .././____________optune2_results/21/plot_epoch_accuracy.jpg
+ROC curve saved to .././____________optune2_results/21/plot_epoch_f1.jpg
+Training on cuda cores: True
+Training with texture loss: True
+Using device: cuda
+Patches featuring class 4:
+	('mexico-earthquake_00000059', 0, 64)
+	('mexico-earthquake_00000059', 64, 64)
+	('mexico-earthquake_00000059', 0, 128)
+	('mexico-earthquake_00000059', 64, 128)
+	('mexico-earthquake_00000059', 0, 192)
+	('mexico-earthquake_00000059', 64, 192)
+	('mexico-earthquake_00000142', 320, 192)
+	('mexico-earthquake_00000142', 384, 192)
+	('mexico-earthquake_00000142', 320, 256)
+	('mexico-earthquake_00000142', 384, 256)
+	('mexico-earthquake_00000142', 320, 320)
+	('mexico-earthquake_00000142', 384, 320)
+Dataset loaded
+Analyzing class distribution
+Class 0: 8,887,895 pixels (70.73%)
+Class 1: 3,527,357 pixels (28.07%)
+Class 2: 124,650 pixels (0.99%)
+Class 3: 22,822 pixels (0.18%)
+Class 4: 3,804 pixels (0.03%)
+--------------------------------------------------
+Model loaded on: cuda:0
+[0 1 2 3 4]
+{0: 0.28527326780229, 1: 0.6967138905508875, 2: 20.096631349361186, 3: 123.45902888752305, 4: 704.0583245706274}
+Final class weights used in loss: [0.36069366294810296, 0.6967138905508875, 20.096631349361186, 123.45902888752305, 704.0583245706274]
+
+Epoch 1/10
+Train Loss: 1.5579
+Confusion Matrix:
+ [[1317290  513982   14009     527     844]
+ [ 273208  366119    4317     282     356]
+ [  12347   12249      99       2       2]
+ [   3563    2735     254       0       0]
+ [    322     624       5       0       0]]
+Class 0 F1: 0.7629
+Class 1 F1: 0.4755
+Class 2 F1: 0.0046
+Class 3 F1: 0.0000
+Class 4 F1: 0.0000
+Class 0 Precision: 0.8199
+Class 1 Precision: 0.4087
+Class 2 Precision: 0.0053
+Class 3 Precision: 0.0000
+Class 4 Precision: 0.0000
+Class 0 Recall: 0.7133
+Class 1 Recall: 0.5683
+Class 2 Recall: 0.0040
+Class 3 Recall: 0.0000
+Class 4 Recall: 0.0000
+Validation Accuracy: 0.6672
+Macro F1 Score: 0.2486
+xView2 Score: 0.2466
+Epoch 1 took:  0 hours,  4 minutes,  9 seconds
+
+Epoch 2/10
+Train Loss: 1.4478
+Confusion Matrix:
+ [[1343240  502619     793       0       0]
+ [ 276577  367405     300       0       0]
+ [  14036   10663       0       0       0]
+ [   2828    3724       0       0       0]
+ [    196     755       0       0       0]]
+Class 0 F1: 0.7712
+Class 1 F1: 0.4804
+Class 2 F1: 0.0000
+Class 3 F1: 0.0000
+Class 4 F1: 0.0000
+Class 0 Precision: 0.8206
+Class 1 Precision: 0.4151
+Class 2 Precision: 0.0000
+Class 3 Precision: 0.0000
+Class 4 Precision: 0.0000
+Class 0 Recall: 0.7274
+Class 1 Recall: 0.5703
+Class 2 Recall: 0.0000
+Class 3 Recall: 0.0000
+Class 4 Recall: 0.0000
+Validation Accuracy: 0.6780
+Macro F1 Score: 0.2503
+xView2 Score: 0.2472
+Epoch 2 took:  0 hours,  0 minutes, 23 seconds
+
+Epoch 3/10
+Train Loss: 1.3848
+Confusion Matrix:
+ [[1432216  414403      33       0       0]
+ [ 319979  324288      15       0       0]
+ [  14852    9847       0       0       0]
+ [   4317    2235       0       0       0]
+ [    351     600       0       0       0]]
+Class 0 F1: 0.7916
+Class 1 F1: 0.4647
+Class 2 F1: 0.0000
+Class 3 F1: 0.0000
+Class 4 F1: 0.0000
+Class 0 Precision: 0.8084
+Class 1 Precision: 0.4316
+Class 2 Precision: 0.0000
+Class 3 Precision: 0.0000
+Class 4 Precision: 0.0000
+Class 0 Recall: 0.7756
+Class 1 Recall: 0.5033
+Class 2 Recall: 0.0000
+Class 3 Recall: 0.0000
+Class 4 Recall: 0.0000
+Validation Accuracy: 0.6962
+Macro F1 Score: 0.2513
+xView2 Score: 0.2341
+Epoch 3 took:  0 hours,  0 minutes, 22 seconds
+
+Epoch 4/10
+Train Loss: 1.3337
+Confusion Matrix:
+ [[1334610  512039       3       0       0]
+ [ 238253  406025       4       0       0]
+ [  11931   12768       0       0       0]
+ [   3953    2599       0       0       0]
+ [    951       0       0       0       0]]
+Class 0 F1: 0.7768
+Class 1 F1: 0.5147
+Class 2 F1: 0.0000
+Class 3 F1: 0.0000
+Class 4 F1: 0.0000
+Class 0 Precision: 0.8395
+Class 1 Precision: 0.4350
+Class 2 Precision: 0.0000
+Class 3 Precision: 0.0000
+Class 4 Precision: 0.0000
+Class 0 Recall: 0.7227
+Class 1 Recall: 0.6302
+Class 2 Recall: 0.0000
+Class 3 Recall: 0.0000
+Class 4 Recall: 0.0000
+Validation Accuracy: 0.6899
+Macro F1 Score: 0.2583
+xView2 Score: 0.2637
+Epoch 4 took:  0 hours,  0 minutes, 27 seconds
+
+Epoch 5/10
+Train Loss: 1.2923
+Confusion Matrix:
+ [[1364594  481996      62       0       0]
+ [ 246049  398184      49       0       0]
+ [  12517   12182       0       0       0]
+ [   4358    2194       0       0       0]
+ [    951       0       0       0       0]]
+Class 0 F1: 0.7854
+Class 1 F1: 0.5175
+Class 2 F1: 0.0000
+Class 3 F1: 0.0000
+Class 4 F1: 0.0000
+Class 0 Precision: 0.8380
+Class 1 Precision: 0.4451
+Class 2 Precision: 0.0000
+Class 3 Precision: 0.0000
+Class 4 Precision: 0.0000
+Class 0 Recall: 0.7390
+Class 1 Recall: 0.6180
+Class 2 Recall: 0.0000
+Class 3 Recall: 0.0000
+Class 4 Recall: 0.0000
+Validation Accuracy: 0.6986
+Macro F1 Score: 0.2606
+xView2 Score: 0.2631
+Epoch 5 took:  0 hours,  0 minutes, 27 seconds
+
+Epoch 6/10
+Train Loss: 1.2532
+Confusion Matrix:
+ [[1397283  449069     300       0       0]
+ [ 251143  392940     199       0       0]
+ [  11183   13515       1       0       0]
+ [   4405    2147       0       0       0]
+ [    951       0       0       0       0]]
+Class 0 F1: 0.7958
+Class 1 F1: 0.5232
+Class 2 F1: 0.0001
+Class 3 F1: 0.0000
+Class 4 F1: 0.0000
+Class 0 Precision: 0.8392
+Class 1 Precision: 0.4581
+Class 2 Precision: 0.0020
+Class 3 Precision: 0.0000
+Class 4 Precision: 0.0000
+Class 0 Recall: 0.7567
+Class 1 Recall: 0.6099
+Class 2 Recall: 0.0000
+Class 3 Recall: 0.0000
+Class 4 Recall: 0.0000
+Validation Accuracy: 0.7095
+Macro F1 Score: 0.2638
+xView2 Score: 0.2643
+Epoch 6 took:  0 hours,  0 minutes, 27 seconds
+
+Epoch 7/10
+Train Loss: 1.2172
+Confusion Matrix:
+ [[1396831  442434    7387       0       0]
+ [ 238635  401831    3808       8       0]
+ [  11276   12742     681       0       0]
+ [   4055    2482      15       0       0]
+ [    951       0       0       0       0]]
+Class 0 F1: 0.7986
+Class 1 F1: 0.5344
+Class 2 F1: 0.0372
+Class 3 F1: 0.0000
+Class 4 F1: 0.0000
+Class 0 Precision: 0.8457
+Class 1 Precision: 0.4675
+Class 2 Precision: 0.0573
+Class 3 Precision: 0.0000
+Class 4 Precision: 0.0000
+Class 0 Recall: 0.7564
+Class 1 Recall: 0.6237
+Class 2 Recall: 0.0276
+Class 3 Recall: 0.0000
+Class 4 Recall: 0.0000
+Validation Accuracy: 0.7131
+Macro F1 Score: 0.2740
+xView2 Score: 0.2760
+Epoch 7 took:  0 hours,  0 minutes, 27 seconds
+
+Epoch 8/10
+Train Loss: 1.1666
+Confusion Matrix:
+ [[1269402  559634   17615       1       0]
+ [ 172442  464163    7669       8       0]
+ [   8499   15206     994       0       0]
+ [   1837    4095     620       0       0]
+ [    405     384     162       0       0]]
+Class 0 F1: 0.7695
+Class 1 F1: 0.5500
+Class 2 F1: 0.0384
+Class 3 F1: 0.0000
+Class 4 F1: 0.0000
+Class 0 Precision: 0.8739
+Class 1 Precision: 0.4448
+Class 2 Precision: 0.0367
+Class 3 Precision: 0.0000
+Class 4 Precision: 0.0000
+Class 0 Recall: 0.6874
+Class 1 Recall: 0.7204
+Class 2 Recall: 0.0402
+Class 3 Recall: 0.0000
+Class 4 Recall: 0.0000
+Validation Accuracy: 0.6875
+Macro F1 Score: 0.2716
+xView2 Score: 0.2928
+Epoch 8 took:  0 hours,  0 minutes, 26 seconds
+
+Epoch 9/10
+Train Loss: 1.1241
+Confusion Matrix:
+ [[1384131  440726   21627     168       0]
+ [ 223663  408933   11217     469       0]
+ [   8487   13474    2738       0       0]
+ [   3974    2112     456      10       0]
+ [    526       0     425       0       0]]
+Class 0 F1: 0.7984
+Class 1 F1: 0.5418
+Class 2 F1: 0.0895
+Class 3 F1: 0.0028
+Class 4 F1: 0.0000
+Class 0 Precision: 0.8540
+Class 1 Precision: 0.4726
+Class 2 Precision: 0.0751
+Class 3 Precision: 0.0155
+Class 4 Precision: 0.0000
+Class 0 Recall: 0.7495
+Class 1 Recall: 0.6347
+Class 2 Recall: 0.1109
+Class 3 Recall: 0.0015
+Class 4 Recall: 0.0000
+Validation Accuracy: 0.7117
+Macro F1 Score: 0.2865
+xView2 Score: 0.2941
+Epoch 9 took:  0 hours,  0 minutes, 26 seconds
+
+Epoch 10/10
+Train Loss: 1.1022
+Confusion Matrix:
+ [[1432095  375282   38616     659       0]
+ [ 232835  392238   18388     821       0]
+ [   8951   11880    3868       0       0]
+ [   3508    2107     929       8       0]
+ [    118       0     833       0       0]]
+Class 0 F1: 0.8127
+Class 1 F1: 0.5502
+Class 2 F1: 0.0886
+Class 3 F1: 0.0020
+Class 4 F1: 0.0000
+Class 0 Precision: 0.8537
+Class 1 Precision: 0.5019
+Class 2 Precision: 0.0618
+Class 3 Precision: 0.0054
+Class 4 Precision: 0.0000
+Class 0 Recall: 0.7755
+Class 1 Recall: 0.6088
+Class 2 Recall: 0.1566
+Class 3 Recall: 0.0012
+Class 4 Recall: 0.0000
+Validation Accuracy: 0.7246
+Macro F1 Score: 0.2907
+xView2 Score: 0.2970
+Epoch 10 took:  0 hours,  0 minutes, 27 seconds
+
+=== FINAL EVALUATION ===
+Best Accuracy: 0.7246
+Best Macro F1: 0.2907
+Best xView2 Score: 0.2970
+=== FINAL PRECISION RESULTS ===
+Class 0 Precision: 0.8537
+Class 1 Precision: 0.5019
+Class 2 Precision: 0.0618
+Class 3 Precision: 0.0054
+Class 4 Precision: 0.0000
+Macro Precision: 0.2845

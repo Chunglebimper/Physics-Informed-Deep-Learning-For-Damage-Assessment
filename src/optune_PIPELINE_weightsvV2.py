@@ -61,7 +61,7 @@ for class_key in weights_dict:
     except Exception as e:
         print(e)
         log.append(f'{e}\n')
-    best_trial = max(pareto_trials, key=lambda t: t.user_attrs["f1"])
+    best_trial = max(pareto_trials, key=lambda t: t.user_attrs["f1"]) # dont know what this line does but it solves an issue i had
     found_x = best_trial.params[class_key]
 
     msg = f"Found '{class_key}': {found_x}"
